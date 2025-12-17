@@ -718,10 +718,199 @@
       opacity: 1;
       transform: translateY(0);
     }
+
+    /* Staggered card animations */
+    .project-card {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.4s ease;
+    }
+    .project-card.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Floating animation for highlights */
+    .highlight {
+      animation: float 6s ease-in-out infinite;
+    }
+    .highlight:nth-child(1) { animation-delay: 0s; }
+    .highlight:nth-child(2) { animation-delay: 2s; }
+    .highlight:nth-child(3) { animation-delay: 4s; }
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+    .highlight:hover {
+      animation-play-state: paused;
+      transform: translateY(-4px) scale(1.02);
+    }
+
+    /* Cursor glow effect */
+    .cursor-glow {
+      position: fixed;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(240, 136, 62, 0.08) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 0;
+      transform: translate(-50%, -50%);
+      transition: opacity 0.3s;
+      opacity: 0;
+    }
+    .cursor-glow.active {
+      opacity: 1;
+    }
+
+    /* Typing animation for hero name */
+    .hero h1 span {
+      display: inline-block;
+    }
+    .typing-effect {
+      overflow: hidden;
+      border-right: 2px solid var(--accent);
+      white-space: nowrap;
+      animation: typing 1.5s steps(20, end), blink-caret 0.75s step-end infinite;
+    }
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 100%; }
+    }
+    @keyframes blink-caret {
+      from, to { border-color: transparent; }
+      50% { border-color: var(--accent); }
+    }
+
+    /* Glowing border on focus for playground input */
+    .terminal-input input:focus {
+      box-shadow: 0 0 0 2px var(--accent-soft);
+    }
+
+    /* Easter egg hint */
+    .easter-egg-hint {
+      position: fixed;
+      bottom: 1rem;
+      left: 1rem;
+      font-size: 0.7rem;
+      color: var(--text-subtle);
+      opacity: 0;
+      transition: opacity 0.3s;
+      font-family: 'JetBrains Mono', monospace;
+      z-index: 50;
+    }
+    .easter-egg-hint.visible {
+      opacity: 0.5;
+    }
+
+    /* Easter egg modal */
+    .easter-egg-modal {
+      position: fixed;
+      inset: 0;
+      background: rgba(13, 17, 23, 0.95);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.4s ease;
+    }
+    .easter-egg-modal.active {
+      opacity: 1;
+      visibility: visible;
+    }
+    .easter-egg-modal h2 {
+      font-size: 2rem;
+      color: var(--accent);
+      margin-bottom: 1rem;
+      animation: pulse-glow 2s ease-in-out infinite;
+    }
+    @keyframes pulse-glow {
+      0%, 100% { text-shadow: 0 0 20px rgba(240, 136, 62, 0.5); }
+      50% { text-shadow: 0 0 40px rgba(240, 136, 62, 0.8), 0 0 60px rgba(240, 136, 62, 0.4); }
+    }
+    .easter-egg-modal p {
+      color: var(--text-muted);
+      margin-bottom: 2rem;
+      text-align: center;
+      max-width: 400px;
+    }
+    .easter-egg-modal .close-btn {
+      padding: 0.5rem 1rem;
+      background: var(--bg-elevated);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      color: var(--text-muted);
+      cursor: pointer;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.85rem;
+      transition: all 0.2s;
+    }
+    .easter-egg-modal .close-btn:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    /* Confetti animation */
+    .confetti {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background: var(--accent);
+      animation: confetti-fall 3s ease-out forwards;
+    }
+    @keyframes confetti-fall {
+      0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+      100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
+    }
+
+    /* Link hover effect */
+    .panel li a, footer a {
+      position: relative;
+    }
+    .panel li a::after, footer a::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background: var(--accent);
+      transition: width 0.3s;
+    }
+    .panel li a:hover::after, footer a:hover::after {
+      width: 100%;
+    }
+
+    /* Project card glow on hover */
+    .project-card:hover {
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(240, 136, 62, 0.1);
+    }
+
+    /* Skill item pulse on hover */
+    .skill-item:hover .skill-fill {
+      animation: skill-pulse 1s ease-in-out;
+    }
+    @keyframes skill-pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.7; }
+    }
   </style>
 </head>
 <body>
   <div class="bg-gradient"></div>
+  <div class="cursor-glow" id="cursorGlow"></div>
+
+  <!-- Easter Egg Modal -->
+  <div class="easter-egg-modal" id="easterEggModal">
+    <h2>You found it!</h2>
+    <p>You're clearly someone who likes to explore. I appreciate that. Here's to the curious minds who look for the hidden things.</p>
+    <button class="close-btn" onclick="document.getElementById('easterEggModal').classList.remove('active')">Nice, thanks!</button>
+  </div>
+
+  <div class="easter-egg-hint" id="easterHint">try the konami code</div>
 
   <header>
     <nav>
@@ -1238,14 +1427,15 @@
     const terminalBody = document.getElementById('terminalBody');
 
     const commands = {
-      help: 'Available commands: help, about, skills, projects, hi, clear, date',
+      help: 'Available commands: help, about, skills, projects, hi, clear, date, secret',
       about: 'Christopher Tavolazzi — Builder, creator, maker. I turn ideas into things.',
       skills: 'Design · Development · AI · Craft · Writing · Systems',
       projects: 'Porchroot · Dino Details · Teleport Massive · NovaSystem · CFL Wiki',
       hi: 'Hey there! Thanks for exploring. 👋',
       hello: 'Hello! Nice to meet you. Try "help" to see more commands.',
       date: new Date().toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }),
-      clear: 'CLEAR'
+      clear: 'CLEAR',
+      secret: 'Hint: ↑↑↓↓←→←→BA'
     };
 
     terminalInput.addEventListener('keypress', (e) => {
@@ -1272,6 +1462,81 @@
           terminalInput.value = '';
           terminalBody.scrollTop = terminalBody.scrollHeight;
         }
+      }
+    });
+
+    // Cursor glow effect
+    const cursorGlow = document.getElementById('cursorGlow');
+    let glowTimeout;
+    document.addEventListener('mousemove', (e) => {
+      cursorGlow.style.left = e.clientX + 'px';
+      cursorGlow.style.top = e.clientY + 'px';
+      cursorGlow.classList.add('active');
+
+      clearTimeout(glowTimeout);
+      glowTimeout = setTimeout(() => {
+        cursorGlow.classList.remove('active');
+      }, 1000);
+    });
+
+    // Staggered card animations
+    const projectCards = document.querySelectorAll('.project-card');
+    const cardObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => {
+            entry.target.classList.add('visible');
+          }, index * 100);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    projectCards.forEach(card => cardObserver.observe(card));
+
+    // Konami code easter egg
+    const konamiCode = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'KeyB', 'KeyA'];
+    let konamiIndex = 0;
+
+    document.addEventListener('keydown', (e) => {
+      if (e.code === konamiCode[konamiIndex]) {
+        konamiIndex++;
+        if (konamiIndex === konamiCode.length) {
+          document.getElementById('easterEggModal').classList.add('active');
+          createConfetti();
+          konamiIndex = 0;
+        }
+      } else {
+        konamiIndex = 0;
+      }
+    });
+
+    // Create confetti
+    function createConfetti() {
+      const colors = ['#f0883e', '#a371f7', '#3fb950', '#58a6ff', '#f7c873'];
+      const modal = document.getElementById('easterEggModal');
+
+      for (let i = 0; i < 50; i++) {
+        const confetti = document.createElement('div');
+        confetti.className = 'confetti';
+        confetti.style.left = Math.random() * 100 + '%';
+        confetti.style.background = colors[Math.floor(Math.random() * colors.length)];
+        confetti.style.animationDelay = Math.random() * 0.5 + 's';
+        confetti.style.animationDuration = (Math.random() * 2 + 2) + 's';
+        modal.appendChild(confetti);
+
+        setTimeout(() => confetti.remove(), 4000);
+      }
+    }
+
+    // Show easter egg hint after scrolling
+    let hintShown = false;
+    window.addEventListener('scroll', () => {
+      if (!hintShown && window.scrollY > 1000) {
+        document.getElementById('easterHint').classList.add('visible');
+        hintShown = true;
+        setTimeout(() => {
+          document.getElementById('easterHint').classList.remove('visible');
+        }, 5000);
       }
     });
   </script>
