@@ -4,6 +4,27 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CHRISTOPHER TAVOLAZZI — PORTFOLIO</title>
+
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Christopher Tavolazzi - Sales Professional, Marketer, Creator. Building things that matter from custom knives to AI video systems.">
+  <meta name="keywords" content="Christopher Tavolazzi, portfolio, creator, developer, AI, woodworking, design">
+  <meta name="author" content="Christopher Tavolazzi">
+
+  <!-- Open Graph / Social -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ctavolazzi.github.io/">
+  <meta property="og:title" content="CHRISTOPHER TAVOLAZZI — PORTFOLIO">
+  <meta property="og:description" content="I build things that matter. From custom knives to AI video systems.">
+  <meta property="og:image" content="https://ctavolazzi.github.io/og-image.png">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="CHRISTOPHER TAVOLAZZI — PORTFOLIO">
+  <meta name="twitter:description" content="I build things that matter. From custom knives to AI video systems.">
+
+  <!-- Favicon - Pixel Art Style -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><rect fill='%23000' width='16' height='16'/><rect fill='%2300ff41' x='2' y='2' width='4' height='4'/><rect fill='%2300ff41' x='10' y='2' width='4' height='4'/><rect fill='%2300ff41' x='2' y='10' width='12' height='4'/><rect fill='%23ffb000' x='6' y='6' width='4' height='4'/></svg>">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -21,8 +42,69 @@
       --muted: #808080;
       --muted-bright: #b0b0b0;
       --shadow: 0 0 20px rgba(0, 255, 65, 0.2);
+      --glitch-1: #ff0040;
+      --glitch-2: #00ffff;
     }
     * { box-sizing: border-box; }
+
+    /* Boot Sequence Overlay */
+    .boot-screen {
+      position: fixed;
+      inset: 0;
+      background: #000;
+      z-index: 9999;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-family: "IBM Plex Mono", monospace;
+      color: var(--accent);
+      transition: opacity 0.5s ease, visibility 0.5s ease;
+    }
+    .boot-screen.hidden {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+    .boot-text {
+      font-size: 0.9rem;
+      text-align: left;
+      max-width: 600px;
+      padding: 2rem;
+    }
+    .boot-line {
+      opacity: 0;
+      animation: bootFadeIn 0.1s forwards;
+      margin-bottom: 0.25rem;
+    }
+    .boot-line.success { color: var(--accent); }
+    .boot-line.warning { color: var(--accent-2); }
+    .boot-line.info { color: var(--accent-3); }
+    .boot-progress {
+      width: 300px;
+      height: 4px;
+      background: var(--stroke-dim);
+      margin-top: 2rem;
+      overflow: hidden;
+    }
+    .boot-progress-bar {
+      height: 100%;
+      background: var(--accent);
+      width: 0%;
+      animation: bootProgress 2s ease-out forwards;
+      box-shadow: 0 0 10px var(--accent);
+    }
+    @keyframes bootFadeIn {
+      to { opacity: 1; }
+    }
+    @keyframes bootProgress {
+      0% { width: 0%; }
+      20% { width: 25%; }
+      50% { width: 60%; }
+      80% { width: 85%; }
+      100% { width: 100%; }
+    }
+
     body {
       margin: 0;
       background: #000000;
@@ -37,6 +119,71 @@
       image-rendering: -moz-crisp-edges;
       image-rendering: crisp-edges;
     }
+
+    /* CRT Screen Effect */
+    .crt {
+      animation: crtFlicker 0.15s infinite;
+    }
+    @keyframes crtFlicker {
+      0% { opacity: 0.97; }
+      50% { opacity: 1; }
+      100% { opacity: 0.98; }
+    }
+
+    /* Glitch Effect */
+    .glitch {
+      position: relative;
+    }
+    .glitch:hover {
+      animation: glitch 0.3s cubic-bezier(.25,.46,.45,.94) both infinite;
+    }
+    .glitch::before,
+    .glitch::after {
+      content: attr(data-text);
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+    }
+    .glitch:hover::before {
+      animation: glitchTop 0.3s cubic-bezier(.25,.46,.45,.94) both infinite;
+      color: var(--glitch-1);
+      z-index: -1;
+      opacity: 0.8;
+    }
+    .glitch:hover::after {
+      animation: glitchBottom 0.3s cubic-bezier(.25,.46,.45,.94) both infinite;
+      color: var(--glitch-2);
+      z-index: -2;
+      opacity: 0.8;
+    }
+    @keyframes glitch {
+      0% { transform: translate(0); }
+      20% { transform: translate(-2px, 2px); }
+      40% { transform: translate(-2px, -2px); }
+      60% { transform: translate(2px, 2px); }
+      80% { transform: translate(2px, -2px); }
+      100% { transform: translate(0); }
+    }
+    @keyframes glitchTop {
+      0% { transform: translate(0); }
+      20% { transform: translate(2px, -2px); clip-path: inset(20% 0 60% 0); }
+      40% { transform: translate(-2px, 2px); clip-path: inset(40% 0 40% 0); }
+      60% { transform: translate(2px, 2px); clip-path: inset(60% 0 20% 0); }
+      80% { transform: translate(-2px, -2px); clip-path: inset(80% 0 0% 0); }
+      100% { transform: translate(0); clip-path: inset(0% 0 80% 0); }
+    }
+    @keyframes glitchBottom {
+      0% { transform: translate(0); }
+      20% { transform: translate(-2px, 2px); clip-path: inset(60% 0 20% 0); }
+      40% { transform: translate(2px, -2px); clip-path: inset(40% 0 40% 0); }
+      60% { transform: translate(-2px, -2px); clip-path: inset(20% 0 60% 0); }
+      80% { transform: translate(2px, 2px); clip-path: inset(0% 0 80% 0); }
+      100% { transform: translate(0); clip-path: inset(80% 0 0% 0); }
+    }
+
     /* Dithering Pattern */
     .dither {
       position: fixed;
@@ -73,6 +220,16 @@
       mix-blend-mode: screen;
       opacity: 0.4;
     }
+
+    /* Vignette Effect */
+    .vignette {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background: radial-gradient(ellipse at center, transparent 0%, transparent 60%, rgba(0,0,0,0.8) 100%);
+      z-index: 3;
+    }
+
     header {
       position: sticky;
       top: 0;
@@ -100,12 +257,22 @@
       font-family: "IBM Plex Mono", monospace;
       text-transform: uppercase;
       color: var(--accent);
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .logo:hover {
+      text-shadow: 0 0 20px var(--accent);
     }
     .logo .dot {
       width: 8px;
       height: 8px;
       background: var(--accent);
       box-shadow: 0 0 8px var(--accent);
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { box-shadow: 0 0 8px var(--accent); }
+      50% { box-shadow: 0 0 20px var(--accent), 0 0 30px var(--accent); }
     }
     .nav-links {
       display: flex;
@@ -118,14 +285,50 @@
     .nav-links a {
       color: var(--muted);
       text-decoration: none;
-      transition: color 0.2s ease;
+      transition: all 0.2s ease;
       border-bottom: 1px solid transparent;
+      position: relative;
+    }
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background: var(--accent);
+      transition: width 0.3s ease;
+    }
+    .nav-links a:hover::after {
+      width: 100%;
     }
     .nav-links a:hover {
       color: var(--accent);
-      border-bottom-color: var(--accent);
       text-shadow: 0 0 8px var(--accent);
     }
+    .nav-links a.active {
+      color: var(--accent);
+    }
+
+    /* Version Badge */
+    .version-badge {
+      position: fixed;
+      bottom: 1rem;
+      right: 1rem;
+      background: var(--panel);
+      border: 1px solid var(--stroke-dim);
+      padding: 0.25rem 0.5rem;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.7rem;
+      color: var(--muted);
+      z-index: 100;
+      cursor: help;
+    }
+    .version-badge:hover {
+      color: var(--accent);
+      border-color: var(--accent);
+    }
+
     main {
       max-width: 1200px;
       margin: 0 auto;
@@ -140,6 +343,7 @@
       padding: 2.5rem;
       margin-bottom: 2rem;
       position: relative;
+      overflow: hidden;
     }
     .hero::before {
       content: ">";
@@ -150,6 +354,20 @@
       font-family: "IBM Plex Mono", monospace;
       font-size: 1.2rem;
       animation: blink 1s infinite;
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 50%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(0, 255, 65, 0.05), transparent);
+      animation: heroShine 4s infinite;
+    }
+    @keyframes heroShine {
+      0% { left: -100%; }
+      50%, 100% { left: 200%; }
     }
     @keyframes blink {
       0%, 49% { opacity: 1; }
@@ -185,6 +403,20 @@
       font-weight: 400;
       letter-spacing: 0.2em;
     }
+    /* Typing cursor */
+    .typing-cursor {
+      display: inline-block;
+      width: 0.6em;
+      height: 1em;
+      background: var(--accent);
+      margin-left: 2px;
+      animation: cursorBlink 0.7s infinite;
+      vertical-align: text-bottom;
+    }
+    @keyframes cursorBlink {
+      0%, 49% { opacity: 1; }
+      50%, 100% { opacity: 0; }
+    }
     .hero p {
       color: var(--muted-bright);
       font-size: 1rem;
@@ -212,6 +444,21 @@
       text-transform: uppercase;
       letter-spacing: 0.1em;
       background: transparent;
+      cursor: pointer;
+      overflow: hidden;
+    }
+    .btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+      transition: left 0.5s ease;
+    }
+    .btn:hover::before {
+      left: 100%;
     }
     .btn.primary {
       background: var(--accent);
@@ -224,6 +471,7 @@
       border-color: var(--accent-2);
       box-shadow: 0 0 30px rgba(255, 176, 0, 0.6);
       color: #000000;
+      transform: translateY(-2px);
     }
     .btn.secondary {
       background: transparent;
@@ -234,6 +482,7 @@
       border-color: var(--accent);
       color: var(--accent);
       text-shadow: 0 0 8px var(--accent);
+      transform: translateY(-2px);
     }
     .btn svg { width: 14px; height: 14px; }
     .callouts {
@@ -249,6 +498,11 @@
       color: var(--muted-bright);
       font-size: 0.9rem;
       border-left: 3px solid var(--accent);
+      transition: all 0.3s ease;
+    }
+    .callout:hover {
+      border-color: var(--accent);
+      transform: translateX(4px);
     }
     .callout strong {
       color: var(--accent);
@@ -292,8 +546,9 @@
       padding: 1.5rem;
       border: 2px solid var(--stroke-dim);
       background: var(--panel);
-      transition: all 0.2s ease;
+      transition: all 0.3s ease;
       overflow: hidden;
+      cursor: pointer;
     }
     .card::before {
       content: "";
@@ -306,12 +561,30 @@
       opacity: 0;
       transition: opacity 0.2s ease;
     }
+    .card::after {
+      content: "[ CLICK TO EXPAND ]";
+      position: absolute;
+      bottom: 0.5rem;
+      right: 0.5rem;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.6rem;
+      color: var(--muted);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    .card:hover::after {
+      opacity: 1;
+    }
     .card:hover {
       border-color: var(--accent);
-      box-shadow: 0 0 20px rgba(0, 255, 65, 0.3);
+      box-shadow: 0 0 30px rgba(0, 255, 65, 0.3);
+      transform: translateY(-4px);
     }
     .card:hover::before {
       opacity: 1;
+    }
+    .card.expanded {
+      grid-column: 1 / -1;
     }
     .card .tag {
       display: inline-block;
@@ -340,6 +613,44 @@
       font-size: 0.95rem;
       line-height: 1.6;
     }
+    .card-expanded-content {
+      display: none;
+      margin-top: 1.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--stroke-dim);
+    }
+    .card.expanded .card-expanded-content {
+      display: block;
+      animation: expandIn 0.3s ease;
+    }
+    @keyframes expandIn {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .card-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+    .stat {
+      text-align: center;
+      padding: 0.75rem;
+      background: rgba(0, 255, 65, 0.05);
+      border: 1px solid var(--stroke-dim);
+    }
+    .stat-value {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--accent);
+      font-family: "IBM Plex Mono", monospace;
+    }
+    .stat-label {
+      font-size: 0.7rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
     .chip-row {
       display: flex;
       flex-wrap: wrap;
@@ -355,6 +666,11 @@
       font-family: "IBM Plex Mono", monospace;
       text-transform: uppercase;
       letter-spacing: 0.05em;
+      transition: all 0.2s ease;
+    }
+    .chip:hover {
+      border-color: var(--accent);
+      color: var(--accent);
     }
     .split {
       display: grid;
@@ -367,6 +683,11 @@
       border: 2px solid var(--stroke-dim);
       background: var(--panel);
       border-left: 3px solid var(--accent);
+      transition: all 0.3s ease;
+    }
+    .panel:hover {
+      border-color: var(--accent);
+      box-shadow: 0 0 20px rgba(0, 255, 65, 0.2);
     }
     .panel h3 {
       margin: 0 0 1rem;
@@ -424,6 +745,38 @@
       color: var(--muted-bright);
       line-height: 1.6;
     }
+
+    /* Skills Matrix */
+    .skills-matrix {
+      margin: 3rem 0;
+    }
+    .skill-bar {
+      margin-bottom: 1rem;
+    }
+    .skill-header {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 0.5rem;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .skill-name { color: var(--text); }
+    .skill-level { color: var(--accent); }
+    .skill-track {
+      height: 8px;
+      background: var(--stroke-dim);
+      position: relative;
+      overflow: hidden;
+    }
+    .skill-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--accent), var(--accent-2));
+      box-shadow: 0 0 10px var(--accent);
+      transition: width 1s ease;
+    }
+
     #docs {
       margin-top: 4rem;
       padding: 2rem;
@@ -478,6 +831,129 @@
       white-space: pre-wrap;
       font-family: inherit;
     }
+
+    /* Terminal / Command Line */
+    .terminal {
+      margin: 3rem 0;
+      border: 2px solid var(--stroke);
+      background: #000;
+    }
+    .terminal-header {
+      background: var(--stroke);
+      color: #000;
+      padding: 0.5rem 1rem;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .terminal-dots {
+      display: flex;
+      gap: 0.5rem;
+    }
+    .terminal-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #000;
+    }
+    .terminal-body {
+      padding: 1rem;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.85rem;
+      min-height: 100px;
+    }
+    .terminal-line {
+      margin-bottom: 0.5rem;
+    }
+    .terminal-prompt {
+      color: var(--accent);
+    }
+    .terminal-command {
+      color: var(--text);
+    }
+    .terminal-output {
+      color: var(--muted-bright);
+      padding-left: 1rem;
+    }
+    .terminal-input {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .terminal-input input {
+      flex: 1;
+      background: transparent;
+      border: none;
+      color: var(--text);
+      font-family: inherit;
+      font-size: inherit;
+      outline: none;
+    }
+
+    /* Easter Egg - Konami */
+    .easter-egg {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.95);
+      z-index: 9998;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+    .easter-egg.active {
+      display: flex;
+      animation: easterEggIn 0.5s ease;
+    }
+    @keyframes easterEggIn {
+      from { opacity: 0; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1); }
+    }
+    .easter-egg h2 {
+      color: var(--accent);
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 2rem;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      margin-bottom: 1rem;
+      text-shadow: 0 0 30px var(--accent);
+    }
+    .easter-egg p {
+      color: var(--muted-bright);
+      font-size: 1rem;
+      margin-bottom: 2rem;
+    }
+    .easter-egg .close-egg {
+      cursor: pointer;
+      color: var(--accent-2);
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+    .matrix-rain {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      z-index: -1;
+    }
+    .matrix-column {
+      position: absolute;
+      top: -100%;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 14px;
+      color: var(--accent);
+      text-shadow: 0 0 5px var(--accent);
+      animation: matrixFall linear infinite;
+      opacity: 0.7;
+    }
+    @keyframes matrixFall {
+      to { top: 100%; }
+    }
+
     footer {
       margin: 3rem 0 1rem;
       color: var(--muted);
@@ -489,6 +965,36 @@
       border-top: 1px solid var(--stroke-dim);
       padding-top: 1.5rem;
     }
+
+    /* Scroll to top button */
+    .scroll-top {
+      position: fixed;
+      bottom: 3rem;
+      right: 1rem;
+      width: 40px;
+      height: 40px;
+      background: var(--panel);
+      border: 2px solid var(--stroke);
+      color: var(--accent);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+      z-index: 100;
+    }
+    .scroll-top.visible {
+      opacity: 1;
+      visibility: visible;
+    }
+    .scroll-top:hover {
+      background: var(--accent);
+      color: #000;
+      box-shadow: 0 0 20px var(--accent);
+    }
+
     @media (max-width: 800px) {
       nav {
         padding: 0.75rem 1rem;
@@ -512,24 +1018,55 @@
       .grid {
         grid-template-columns: 1fr;
       }
+      .card-stats {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
-<body>
+<body class="crt">
+  <!-- Boot Sequence -->
+  <div class="boot-screen" id="bootScreen">
+    <div class="boot-text">
+      <div class="boot-line success" style="animation-delay: 0.0s">CTAVOLAZZI OS v0.0.1</div>
+      <div class="boot-line info" style="animation-delay: 0.2s">Initializing system...</div>
+      <div class="boot-line" style="animation-delay: 0.4s">Loading kernel modules... [OK]</div>
+      <div class="boot-line" style="animation-delay: 0.6s">Mounting file systems... [OK]</div>
+      <div class="boot-line" style="animation-delay: 0.8s">Starting network services... [OK]</div>
+      <div class="boot-line warning" style="animation-delay: 1.0s">Loading portfolio data...</div>
+      <div class="boot-line success" style="animation-delay: 1.2s">All systems operational.</div>
+      <div class="boot-line info" style="animation-delay: 1.4s">Welcome, visitor.</div>
+    </div>
+    <div class="boot-progress">
+      <div class="boot-progress-bar"></div>
+    </div>
+  </div>
+
+  <!-- Easter Egg -->
+  <div class="easter-egg" id="easterEgg">
+    <div class="matrix-rain" id="matrixRain"></div>
+    <h2>SECRET UNLOCKED</h2>
+    <p>You found the Konami code easter egg. You're clearly a person of culture.</p>
+    <p style="color: var(--accent-2); font-size: 0.9rem;">↑ ↑ ↓ ↓ ← → ← → B A</p>
+    <span class="close-egg" onclick="document.getElementById('easterEgg').classList.remove('active')">[CLOSE]</span>
+  </div>
+
   <div class="dither"></div>
   <div class="scanlines"></div>
   <div class="noise"></div>
+  <div class="vignette"></div>
 
   <header>
     <nav>
-      <div class="logo">
+      <div class="logo glitch" data-text="CTAVOLAZZI" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
         <div class="dot"></div>
         CTAVOLAZZI
       </div>
       <div class="nav-links">
         <a href="#projects">PROJECTS</a>
+        <a href="#skills">SKILLS</a>
         <a href="#approach">APPROACH</a>
-        <a href="#docs">ARCHIVE</a>
+        <a href="#terminal">TERMINAL</a>
         <a href="https://github.com/ctavolazzi" target="_blank" rel="noreferrer">GITHUB</a>
       </div>
     </nav>
@@ -539,8 +1076,8 @@
     <section class="hero">
       <div class="eyebrow">CHARACTER SELECT</div>
       <h1>
-        <span class="name">CHRISTOPHER TAVOLAZZI</span>
-        <span class="tagline">SALES PROFESSIONAL | MARKETER | CREATOR</span>
+        <span class="name" id="typingName"></span><span class="typing-cursor" id="typingCursor"></span>
+        <span class="tagline" id="typingTagline"></span>
       </h1>
       <p>I build things that matter. From custom knives to AI video systems, from headlight restoration to sci-fi narratives—I don't just ship products, I craft experiences that make people stop and pay attention. If you want someone who moves fast, thinks deeper, and gives zero fucks about playing it safe, you're in the right place.</p>
       <div class="cta-row">
@@ -570,72 +1107,220 @@
         <span class="badge">PROJECTS</span>
         <h2>THE EMPIRE</h2>
       </div>
-      <div class="grid">
-        <div class="card">
+      <div class="grid" id="projectGrid">
+        <div class="card" onclick="toggleCard(this)">
           <div class="tag">PORCHROOT</div>
-          <h3>WOODWORKING & CRAFT</h3>
-          <p>Custom knives, hand-carved spoons, and tactile creations that remind you what real craft feels like. This is where digital meets analog, where code meets wood grain. Every piece is built to last, designed to be used, and made to tell a story.</p>
+          <h3 class="glitch" data-text="WOODWORKING & CRAFT">WOODWORKING & CRAFT</h3>
+          <p>Custom knives, hand-carved spoons, and tactile creations that remind you what real craft feels like. This is where digital meets analog, where code meets wood grain.</p>
           <div class="chip-row">
             <span class="chip">TACTILE</span>
             <span class="chip">EARTHY</span>
             <span class="chip">CRAFT</span>
           </div>
-          <p style="margin-top:1rem;"><a class="btn secondary" href="#porchroot">EXPLORE</a></p>
+          <div class="card-expanded-content">
+            <div class="card-stats">
+              <div class="stat">
+                <div class="stat-value">50+</div>
+                <div class="stat-label">Pieces Made</div>
+              </div>
+              <div class="stat">
+                <div class="stat-value">3</div>
+                <div class="stat-label">Years Active</div>
+              </div>
+              <div class="stat">
+                <div class="stat-value">∞</div>
+                <div class="stat-label">Satisfaction</div>
+              </div>
+            </div>
+            <p>Every piece is built to last, designed to be used, and made to tell a story. The process is meditative—raw material transformed through patience, skill, and respect for the medium.</p>
+          </div>
         </div>
-        <div class="card">
+        <div class="card" onclick="toggleCard(this)">
           <div class="tag">DINO DETAILS</div>
-          <h3>HEADLIGHT RESTORATION</h3>
-          <p>Precision auto detailing and headlight restoration. Taking what's faded and making it shine again. It's not just about the finish—it's about the process, the attention to detail, and the satisfaction of bringing something back to life.</p>
+          <h3 class="glitch" data-text="HEADLIGHT RESTORATION">HEADLIGHT RESTORATION</h3>
+          <p>Precision auto detailing and headlight restoration. Taking what's faded and making it shine again. It's not just about the finish—it's about the process.</p>
           <div class="chip-row">
             <span class="chip">PRECISION</span>
             <span class="chip">CLARITY</span>
             <span class="chip">RESTORATION</span>
           </div>
-          <p style="margin-top:1rem;"><a class="btn secondary" href="#dino-details">EXPLORE</a></p>
+          <div class="card-expanded-content">
+            <div class="card-stats">
+              <div class="stat">
+                <div class="stat-value">200+</div>
+                <div class="stat-label">Cars Detailed</div>
+              </div>
+              <div class="stat">
+                <div class="stat-value">98%</div>
+                <div class="stat-label">Clarity Restored</div>
+              </div>
+              <div class="stat">
+                <div class="stat-value">5★</div>
+                <div class="stat-label">Rating</div>
+              </div>
+            </div>
+            <p>The satisfaction of bringing something back to life, of seeing the before and after, of knowing that attention to detail makes all the difference.</p>
+          </div>
         </div>
-        <div class="card">
+        <div class="card" onclick="toggleCard(this)">
           <div class="tag">TELEPORT MASSIVE</div>
-          <h3>SCI-FI SERIES & AI VIDEO</h3>
-          <p>Building a sci-fi narrative universe powered by AI video generation. This is where storytelling meets cutting-edge tech. Creating worlds, characters, and stories that push the boundaries of what's possible when you combine imagination with execution.</p>
+          <h3 class="glitch" data-text="SCI-FI SERIES & AI VIDEO">SCI-FI SERIES & AI VIDEO</h3>
+          <p>Building a sci-fi narrative universe powered by AI video generation. Creating worlds, characters, and stories that push the boundaries of what's possible.</p>
           <div class="chip-row">
             <span class="chip">FUTURISTIC</span>
             <span class="chip">NARRATIVE</span>
             <span class="chip">AI</span>
           </div>
-          <p style="margin-top:1rem;"><a class="btn secondary" href="#teleport-massive">EXPLORE</a></p>
+          <div class="card-expanded-content">
+            <div class="card-stats">
+              <div class="stat">
+                <div class="stat-value">12</div>
+                <div class="stat-label">Episodes Planned</div>
+              </div>
+              <div class="stat">
+                <div class="stat-value">AI</div>
+                <div class="stat-label">Powered</div>
+              </div>
+              <div class="stat">
+                <div class="stat-value">2025</div>
+                <div class="stat-label">Launch</div>
+              </div>
+            </div>
+            <p>Where storytelling meets cutting-edge tech. Combining imagination with execution to create something that's never been done before.</p>
+          </div>
         </div>
-        <div class="card">
+        <div class="card" onclick="toggleCard(this)">
           <div class="tag">WRITING & SUBSTACK</div>
-          <h3>AMATEUR HERMIT PHILOSOPHY</h3>
-          <p>Writing about nostalgia for practical skills, the value of doing things yourself, and what it means to live intentionally in a world that wants you to consume. This is where I think out loud about craft, philosophy, and the things that actually matter.</p>
+          <h3 class="glitch" data-text="AMATEUR HERMIT PHILOSOPHY">AMATEUR HERMIT PHILOSOPHY</h3>
+          <p>Writing about nostalgia for practical skills, the value of doing things yourself, and what it means to live intentionally in a world that wants you to consume.</p>
           <div class="chip-row">
             <span class="chip">WRITING</span>
             <span class="chip">PHILOSOPHY</span>
             <span class="chip">NOSTALGIA</span>
           </div>
-          <p style="margin-top:1rem;"><a class="btn secondary" href="#writing">EXPLORE</a></p>
+          <div class="card-expanded-content">
+            <div class="card-stats">
+              <div class="stat">
+                <div class="stat-value">50+</div>
+                <div class="stat-label">Articles</div>
+              </div>
+              <div class="stat">
+                <div class="stat-value">1K+</div>
+                <div class="stat-label">Subscribers</div>
+              </div>
+              <div class="stat">
+                <div class="stat-value">WEEKLY</div>
+                <div class="stat-label">Posts</div>
+              </div>
+            </div>
+            <p>Thinking out loud about craft, philosophy, and the things that actually matter. Raw, unfiltered, honest.</p>
+          </div>
         </div>
-        <div class="card">
+        <div class="card" onclick="toggleCard(this)">
           <div class="tag">TECH & AI</div>
-          <h3>NOVASYSTEM & EXPERIMENTS</h3>
-          <p>NovaSystem experiments, "How to Win Capitalism" project, and rapid prototyping of ideas that might change how we think about work, systems, and the future. This is where I break things, build things, and figure out what's next.</p>
+          <h3 class="glitch" data-text="NOVASYSTEM & EXPERIMENTS">NOVASYSTEM & EXPERIMENTS</h3>
+          <p>NovaSystem experiments, "How to Win Capitalism" project, and rapid prototyping of ideas that might change how we think about work, systems, and the future.</p>
           <div class="chip-row">
             <span class="chip">AI</span>
             <span class="chip">SYSTEMS</span>
             <span class="chip">EXPERIMENTS</span>
           </div>
-          <p style="margin-top:1rem;"><a class="btn secondary" href="#tech">EXPLORE</a></p>
+          <div class="card-expanded-content">
+            <div class="card-stats">
+              <div class="stat">
+                <div class="stat-value">15+</div>
+                <div class="stat-label">Prototypes</div>
+              </div>
+              <div class="stat">
+                <div class="stat-value">ACTIVE</div>
+                <div class="stat-label">Development</div>
+              </div>
+              <div class="stat">
+                <div class="stat-value">OSS</div>
+                <div class="stat-label">Open Source</div>
+              </div>
+            </div>
+            <p>Breaking things, building things, and figuring out what's next. The lab where ideas go to be tested.</p>
+          </div>
         </div>
-        <div class="card">
+        <div class="card" onclick="toggleCard(this)">
           <div class="tag">CHICO FAB LAB</div>
-          <h3>COMPONENT LIBRARY V0.0.1</h3>
-          <p>Launched a focused wiki for Chico FabLab to codify components, patterns, and team rituals. Clear hierarchy, instant navigation, and documentation that people actually use. This is systems thinking in action.</p>
+          <h3 class="glitch" data-text="COMPONENT LIBRARY V0.0.1">COMPONENT LIBRARY V0.0.1</h3>
+          <p>Launched a focused wiki for Chico FabLab to codify components, patterns, and team rituals. Clear hierarchy, instant navigation, and documentation that people actually use.</p>
           <div class="chip-row">
             <span class="chip">DESIGN SYSTEMS</span>
             <span class="chip">DOC-DRIVEN</span>
             <span class="chip">FAST ROLLOUT</span>
           </div>
-          <p style="margin-top:1rem;"><a class="btn secondary" href="https://ctavolazzi.github.io/chicofablab.github.io/" target="_blank" rel="noreferrer">OPEN WIKI</a></p>
+          <div class="card-expanded-content">
+            <div class="card-stats">
+              <div class="stat">
+                <div class="stat-value">40+</div>
+                <div class="stat-label">Components</div>
+              </div>
+              <div class="stat">
+                <div class="stat-value">100%</div>
+                <div class="stat-label">Documented</div>
+              </div>
+              <div class="stat">
+                <div class="stat-value">LIVE</div>
+                <div class="stat-label">Status</div>
+              </div>
+            </div>
+            <p>Systems thinking in action. <a href="https://ctavolazzi.github.io/chicofablab.github.io/" target="_blank" rel="noreferrer" style="color: var(--accent);">→ Open Wiki</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="skills-matrix">
+      <div class="section-title">
+        <span class="badge">STATS</span>
+        <h2>SKILL MATRIX</h2>
+      </div>
+      <div class="skill-bar">
+        <div class="skill-header">
+          <span class="skill-name">Product Design & UX</span>
+          <span class="skill-level">95%</span>
+        </div>
+        <div class="skill-track">
+          <div class="skill-fill" style="width: 95%"></div>
+        </div>
+      </div>
+      <div class="skill-bar">
+        <div class="skill-header">
+          <span class="skill-name">Frontend Development</span>
+          <span class="skill-level">90%</span>
+        </div>
+        <div class="skill-track">
+          <div class="skill-fill" style="width: 90%"></div>
+        </div>
+      </div>
+      <div class="skill-bar">
+        <div class="skill-header">
+          <span class="skill-name">AI & Automation</span>
+          <span class="skill-level">85%</span>
+        </div>
+        <div class="skill-track">
+          <div class="skill-fill" style="width: 85%"></div>
+        </div>
+      </div>
+      <div class="skill-bar">
+        <div class="skill-header">
+          <span class="skill-name">Content & Copywriting</span>
+          <span class="skill-level">92%</span>
+        </div>
+        <div class="skill-track">
+          <div class="skill-fill" style="width: 92%"></div>
+        </div>
+      </div>
+      <div class="skill-bar">
+        <div class="skill-header">
+          <span class="skill-name">Physical Craft</span>
+          <span class="skill-level">88%</span>
+        </div>
+        <div class="skill-track">
+          <div class="skill-fill" style="width: 88%"></div>
         </div>
       </div>
     </section>
@@ -645,19 +1330,46 @@
         <h3>HOW I OPERATE</h3>
         <ul>
           <li><strong>DESIGN TO DEPLOY:</strong> I own the story, the visuals, and the code. Less ceremony, more shipping. Less talk, more action.</li>
-          <li><strong>SYSTEMS, NOT SCRAPS:</strong> I build repeatable patterns—tokens, components, and docs that scale without dead weight. Everything I make is designed to be reused, remixed, and built upon.</li>
-          <li><strong>VISIBLE MOMENTUM:</strong> Tight demos, quick clips, and written context so collaborators always know where we are. No black boxes. No mystery. Just clear communication and forward motion.</li>
-          <li><strong>BIAS FOR CLARITY:</strong> I cut features that don't sing. The narrative stays sharp, the experience stays fast, and the message stays clear. If it doesn't serve the story, it doesn't make the cut.</li>
+          <li><strong>SYSTEMS, NOT SCRAPS:</strong> I build repeatable patterns—tokens, components, and docs that scale without dead weight.</li>
+          <li><strong>VISIBLE MOMENTUM:</strong> Tight demos, quick clips, and written context so collaborators always know where we are.</li>
+          <li><strong>BIAS FOR CLARITY:</strong> I cut features that don't sing. The narrative stays sharp, the experience stays fast.</li>
         </ul>
       </div>
       <div class="panel">
         <h3>WHAT YOU GET</h3>
         <ul>
-          <li><strong>PRODUCT DESIGN:</strong> UX flows, visual systems, interaction patterns, launch visuals. The whole package, not just the pretty parts.</li>
-          <li><strong>FRONTEND CRAFT:</strong> HTML/CSS/JS with a focus on performance and polish. Code that works, looks good, and doesn't break when you need it most.</li>
-          <li><strong>DOCS & ENABLEMENT:</strong> Playbooks, component guidelines, and onboarding that people actually read. Documentation that helps, not hinders.</li>
-          <li><strong>WORKSHOP ENERGY:</strong> Facilitation, critiques, and live-build sessions to keep the room electric. I don't just build—I teach, I share, I elevate the whole team.</li>
+          <li><strong>PRODUCT DESIGN:</strong> UX flows, visual systems, interaction patterns, launch visuals. The whole package.</li>
+          <li><strong>FRONTEND CRAFT:</strong> HTML/CSS/JS with a focus on performance and polish. Code that works.</li>
+          <li><strong>DOCS & ENABLEMENT:</strong> Playbooks, component guidelines, and onboarding that people actually read.</li>
+          <li><strong>WORKSHOP ENERGY:</strong> Facilitation, critiques, and live-build sessions to keep the room electric.</li>
         </ul>
+      </div>
+    </section>
+
+    <section id="terminal" class="terminal">
+      <div class="terminal-header">
+        <span>CTAVOLAZZI TERMINAL</span>
+        <div class="terminal-dots">
+          <div class="terminal-dot"></div>
+          <div class="terminal-dot"></div>
+          <div class="terminal-dot"></div>
+        </div>
+      </div>
+      <div class="terminal-body" id="terminalBody">
+        <div class="terminal-line">
+          <span class="terminal-prompt">visitor@ctavolazzi:~$</span>
+          <span class="terminal-command"> whoami</span>
+        </div>
+        <div class="terminal-line terminal-output">A curious human exploring this portfolio.</div>
+        <div class="terminal-line">
+          <span class="terminal-prompt">visitor@ctavolazzi:~$</span>
+          <span class="terminal-command"> cat skills.txt</span>
+        </div>
+        <div class="terminal-line terminal-output">Design | Development | AI | Craft | Writing | Systems</div>
+        <div class="terminal-input">
+          <span class="terminal-prompt">visitor@ctavolazzi:~$</span>
+          <input type="text" id="terminalInput" placeholder="Type a command..." autocomplete="off">
+        </div>
       </div>
     </section>
 
@@ -718,5 +1430,207 @@ Having trouble with Pages? Check out our [documentation](https://docs.github.com
   <footer>
     BUILT BOLDLY BY CTAVOLAZZI. STAY SHARP, KEEP SHIPPING.
   </footer>
+
+  <div class="version-badge" title="Version 0.0.1 - VGA-Cinematic Portfolio">v0.0.1</div>
+
+  <button class="scroll-top" id="scrollTop" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M18 15l-6-6-6 6"/>
+    </svg>
+  </button>
+
+  <script>
+    // Boot sequence
+    setTimeout(() => {
+      document.getElementById('bootScreen').classList.add('hidden');
+    }, 2500);
+
+    // Typing animation
+    const name = 'CHRISTOPHER TAVOLAZZI';
+    const tagline = 'SALES PROFESSIONAL | MARKETER | CREATOR';
+    let nameIndex = 0;
+    let taglineIndex = 0;
+
+    function typeName() {
+      if (nameIndex < name.length) {
+        document.getElementById('typingName').textContent += name.charAt(nameIndex);
+        nameIndex++;
+        setTimeout(typeName, 50);
+      } else {
+        setTimeout(typeTagline, 300);
+      }
+    }
+
+    function typeTagline() {
+      document.getElementById('typingCursor').style.display = 'none';
+      if (taglineIndex < tagline.length) {
+        document.getElementById('typingTagline').textContent += tagline.charAt(taglineIndex);
+        taglineIndex++;
+        setTimeout(typeTagline, 30);
+      }
+    }
+
+    setTimeout(typeName, 2800);
+
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+
+    // Active nav link
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
+
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        if (scrollY >= sectionTop - 200) {
+          current = section.getAttribute('id');
+        }
+      });
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === '#' + current) {
+          link.classList.add('active');
+        }
+      });
+
+      // Scroll to top button
+      const scrollTop = document.getElementById('scrollTop');
+      if (window.scrollY > 500) {
+        scrollTop.classList.add('visible');
+      } else {
+        scrollTop.classList.remove('visible');
+      }
+    });
+
+    // Expandable cards
+    function toggleCard(card) {
+      const wasExpanded = card.classList.contains('expanded');
+      document.querySelectorAll('.card').forEach(c => c.classList.remove('expanded'));
+      if (!wasExpanded) {
+        card.classList.add('expanded');
+        card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+    }
+
+    // Terminal commands
+    const terminalInput = document.getElementById('terminalInput');
+    const terminalBody = document.getElementById('terminalBody');
+
+    const commands = {
+      help: 'Available commands: help, about, skills, projects, contact, clear, konami',
+      about: 'Christopher Tavolazzi - Builder of things that matter.',
+      skills: 'Design | Development | AI | Craft | Writing | Systems Thinking',
+      projects: 'Porchroot | Dino Details | Teleport Massive | NovaSystem | CFL Wiki',
+      contact: 'GitHub: @ctavolazzi | Portfolio: ctavolazzi.github.io',
+      clear: 'CLEAR',
+      konami: 'Try: ↑ ↑ ↓ ↓ ← → ← → B A',
+      hello: 'Hello, human. Welcome to my digital domain.',
+      date: new Date().toLocaleString(),
+      version: 'CTAVOLAZZI OS v0.0.1'
+    };
+
+    terminalInput.addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') {
+        const cmd = terminalInput.value.trim().toLowerCase();
+        if (cmd) {
+          // Add command to terminal
+          const cmdLine = document.createElement('div');
+          cmdLine.className = 'terminal-line';
+          cmdLine.innerHTML = `<span class="terminal-prompt">visitor@ctavolazzi:~$</span><span class="terminal-command"> ${cmd}</span>`;
+          terminalBody.insertBefore(cmdLine, terminalBody.lastElementChild);
+
+          // Add response
+          if (cmd === 'clear') {
+            const lines = terminalBody.querySelectorAll('.terminal-line');
+            lines.forEach(l => l.remove());
+          } else {
+            const response = commands[cmd] || `Command not found: ${cmd}. Type 'help' for available commands.`;
+            const responseLine = document.createElement('div');
+            responseLine.className = 'terminal-line terminal-output';
+            responseLine.textContent = response;
+            terminalBody.insertBefore(responseLine, terminalBody.lastElementChild);
+          }
+
+          terminalInput.value = '';
+          terminalBody.scrollTop = terminalBody.scrollHeight;
+        }
+      }
+    });
+
+    // Konami code easter egg
+    const konamiCode = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'KeyB', 'KeyA'];
+    let konamiIndex = 0;
+
+    document.addEventListener('keydown', (e) => {
+      if (e.code === konamiCode[konamiIndex]) {
+        konamiIndex++;
+        if (konamiIndex === konamiCode.length) {
+          activateEasterEgg();
+          konamiIndex = 0;
+        }
+      } else {
+        konamiIndex = 0;
+      }
+    });
+
+    function activateEasterEgg() {
+      const easterEgg = document.getElementById('easterEgg');
+      easterEgg.classList.add('active');
+      createMatrixRain();
+    }
+
+    function createMatrixRain() {
+      const container = document.getElementById('matrixRain');
+      container.innerHTML = '';
+      const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%^&*';
+
+      for (let i = 0; i < 50; i++) {
+        const column = document.createElement('div');
+        column.className = 'matrix-column';
+        column.style.left = Math.random() * 100 + '%';
+        column.style.animationDuration = (Math.random() * 3 + 2) + 's';
+        column.style.animationDelay = Math.random() * 2 + 's';
+
+        let text = '';
+        for (let j = 0; j < 20; j++) {
+          text += chars.charAt(Math.floor(Math.random() * chars.length)) + '<br>';
+        }
+        column.innerHTML = text;
+        container.appendChild(column);
+      }
+    }
+
+    // Skill bars animation on scroll
+    const skillBars = document.querySelectorAll('.skill-fill');
+    const skillsSection = document.getElementById('skills');
+    let skillsAnimated = false;
+
+    const observerOptions = { threshold: 0.5 };
+    const skillsObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && !skillsAnimated) {
+          skillBars.forEach(bar => {
+            const width = bar.style.width;
+            bar.style.width = '0%';
+            setTimeout(() => {
+              bar.style.width = width;
+            }, 100);
+          });
+          skillsAnimated = true;
+        }
+      });
+    }, observerOptions);
+
+    skillsObserver.observe(skillsSection);
+  </script>
 </body>
 </html>
