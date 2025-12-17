@@ -1,68 +1,541 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ctavolazzi - Projects</title>
-    <meta http-equiv="refresh" content="3;url=https://ctavolazzi.github.io/chicofablab.github.io/">
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #fff;
-        }
-        .container {
-            text-align: center;
-            padding: 2rem;
-        }
-        h1 { font-size: 2.5rem; margin-bottom: 1rem; }
-        p { color: #aaa; margin-bottom: 2rem; }
-        .links {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-            max-width: 400px;
-            margin: 0 auto;
-        }
-        a {
-            display: block;
-            padding: 1rem 2rem;
-            background: rgba(255,255,255,0.1);
-            border: 1px solid rgba(255,255,255,0.2);
-            border-radius: 8px;
-            color: #fff;
-            text-decoration: none;
-            transition: all 0.2s;
-        }
-        a:hover {
-            background: rgba(255,255,255,0.2);
-            transform: translateY(-2px);
-        }
-        .redirect-notice {
-            margin-top: 2rem;
-            font-size: 0.9rem;
-            color: #666;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ctavolazzi — Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #050608;
+      --panel: rgba(12, 15, 24, 0.7);
+      --stroke: rgba(255, 255, 255, 0.08);
+      --accent: #8cf0c8;
+      --accent-2: #ffe29f;
+      --text: #e9edf7;
+      --muted: #9aa3b5;
+      --shadow: 0 25px 80px rgba(0, 0, 0, 0.45);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: radial-gradient(circle at 10% 20%, rgba(140, 240, 200, 0.12), transparent 22%),
+                  radial-gradient(circle at 80% 10%, rgba(255, 226, 159, 0.16), transparent 22%),
+                  radial-gradient(120% 120% at 50% 10%, #0b1024, #050608 50%);
+      color: var(--text);
+      font-family: "Space Grotesk", "DM Sans", "Inter", system-ui, -apple-system, sans-serif;
+      min-height: 100vh;
+      padding: 0 1.25rem 4rem;
+      position: relative;
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+    .noise {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 160 160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.08'/%3E%3C/svg%3E");
+      mix-blend-mode: soft-light;
+      z-index: 0;
+    }
+    .orbit {
+      position: fixed;
+      width: 52vw;
+      height: 52vw;
+      border: 1px solid rgba(140, 240, 200, 0.1);
+      border-radius: 50%;
+      top: -12vw;
+      right: -6vw;
+      filter: drop-shadow(0 0 24px rgba(140, 240, 200, 0.15));
+      animation: drift 18s ease-in-out infinite alternate;
+      z-index: 0;
+    }
+    @keyframes drift {
+      to { transform: translateY(18px) rotate(3deg); opacity: 0.8; }
+    }
+    header {
+      position: sticky;
+      top: 0;
+      backdrop-filter: blur(14px);
+      background: linear-gradient(180deg, rgba(5,6,8,0.75), rgba(5,6,8,0.35));
+      z-index: 5;
+      border-bottom: 1px solid var(--stroke);
+    }
+    nav {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1rem 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      letter-spacing: -0.02em;
+      font-weight: 700;
+      font-size: 1.05rem;
+    }
+    .logo .dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      box-shadow: 0 0 24px rgba(140, 240, 200, 0.6);
+    }
+    .nav-links a {
+      color: var(--muted);
+      text-decoration: none;
+      margin-left: 1.1rem;
+      font-size: 0.95rem;
+      transition: color 0.2s ease, transform 0.2s ease;
+    }
+    .nav-links a:hover { color: var(--accent); transform: translateY(-1px); }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.35rem 0.7rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      background: rgba(140, 240, 200, 0.12);
+      border: 1px solid rgba(140, 240, 200, 0.4);
+      color: var(--accent);
+      box-shadow: 0 10px 30px rgba(140, 240, 200, 0.16);
+    }
+    main {
+      max-width: 1200px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+    .hero {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2.2rem;
+      padding: 2.5rem 0 1rem;
+      align-items: center;
+    }
+    .hero h1 {
+      font-size: clamp(2.5rem, 5vw, 3.9rem);
+      letter-spacing: -0.02em;
+      margin: 0.25rem 0 1rem;
+      line-height: 1.1;
+      text-shadow: 0 10px 35px rgba(0,0,0,0.35);
+    }
+    .hero h1 span { color: var(--accent-2); }
+    .eyebrow {
+      font-family: "DM Mono", "Space Grotesk", monospace;
+      font-size: 0.9rem;
+      color: var(--muted);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+    .hero p {
+      color: var(--muted);
+      font-size: 1.05rem;
+      margin-bottom: 1.4rem;
+      max-width: 560px;
+    }
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      padding: 0.9rem 1.3rem;
+      border-radius: 14px;
+      border: 1px solid var(--stroke);
+      text-decoration: none;
+      color: var(--text);
+      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .btn.primary {
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      color: #0a0c10;
+      border-color: rgba(255,255,255,0.12);
+      box-shadow: 0 20px 50px rgba(140, 240, 200, 0.35);
+    }
+    .btn.secondary {
+      background: rgba(255,255,255,0.05);
+    }
+    .btn:hover { transform: translateY(-2px); border-color: rgba(255,255,255,0.2); }
+    .btn svg { width: 16px; height: 16px; }
+    .callouts {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+    .callout {
+      border: 1px solid var(--stroke);
+      padding: 1rem 1.2rem;
+      border-radius: 14px;
+      background: rgba(255,255,255,0.03);
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+    .callout strong { color: var(--text); }
+    .metric-strip {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 0.9rem;
+      margin: 2.2rem 0;
+    }
+    .metric {
+      padding: 1rem 1.3rem;
+      border-radius: 16px;
+      border: 1px solid var(--stroke);
+      background: linear-gradient(145deg, rgba(140,240,200,0.14), rgba(255,255,255,0.02));
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+    }
+    .metric h3 {
+      margin: 0;
+      font-size: 1.3rem;
+      color: var(--accent);
+    }
+    .metric p {
+      margin: 0.4rem 0 0;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+    .section-title {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      margin: 0.5rem 0 1rem;
+      letter-spacing: -0.01em;
+    }
+    .section-title h2 {
+      margin: 0;
+      font-size: 1.4rem;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.2rem;
+    }
+    .card {
+      position: relative;
+      padding: 1.4rem;
+      border-radius: 16px;
+      border: 1px solid var(--stroke);
+      background: var(--panel);
+      box-shadow: var(--shadow);
+      transition: transform 0.28s ease, border-color 0.28s ease, box-shadow 0.28s ease;
+      overflow: hidden;
+    }
+    .card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(140, 240, 200, 0.4);
+      box-shadow: 0 30px 70px rgba(0,0,0,0.35);
+    }
+    .card .tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.35rem 0.65rem;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.04);
+      color: var(--accent);
+      border: 1px solid rgba(140, 240, 200, 0.3);
+      font-size: 0.85rem;
+      margin-bottom: 0.8rem;
+    }
+    .card h3 {
+      margin: 0 0 0.5rem;
+      font-size: 1.2rem;
+      letter-spacing: -0.01em;
+    }
+    .card p {
+      margin: 0 0 0.7rem;
+      color: var(--muted);
+      font-size: 0.98rem;
+    }
+    .chip-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+    .chip {
+      padding: 0.35rem 0.7rem;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid var(--stroke);
+      font-size: 0.85rem;
+      color: var(--text);
+    }
+    .split {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1rem;
+      margin: 1.6rem 0 2.4rem;
+    }
+    .panel {
+      padding: 1.4rem;
+      border: 1px solid var(--stroke);
+      border-radius: 16px;
+      background: linear-gradient(165deg, rgba(255,255,255,0.03), rgba(140,240,200,0.04));
+      box-shadow: var(--shadow);
+    }
+    .panel h3 { margin: 0 0 0.6rem; }
+    .panel ul {
+      margin: 0;
+      padding-left: 1.1rem;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+    .panel li strong { color: var(--text); }
+    .contact {
+      margin: 2.5rem 0;
+      padding: 1.7rem;
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,0.1);
+      background: linear-gradient(135deg, rgba(140,240,200,0.16), rgba(255,255,255,0.08));
+      box-shadow: 0 30px 80px rgba(0,0,0,0.35);
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 1rem;
+      align-items: center;
+    }
+    .contact h2 { margin: 0 0 0.4rem; }
+    .contact p { margin: 0 0 0.8rem; color: #0b1024; }
+    .contact .cta-row .btn { border-color: rgba(11,16,36,0.15); }
+    #docs {
+      margin-top: 2.8rem;
+      padding: 1.6rem;
+      border: 1px solid var(--stroke);
+      border-radius: 18px;
+      background: rgba(255,255,255,0.04);
+      box-shadow: var(--shadow);
+    }
+    #docs h2 { margin: 0 0 0.6rem; }
+    #docs p { margin: 0 0 1.2rem; color: var(--muted); }
+    .doc-block {
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 12px;
+      padding: 1rem;
+      background: rgba(0,0,0,0.35);
+      max-height: 320px;
+      overflow: auto;
+      font-family: "DM Mono", "Space Grotesk", monospace;
+      font-size: 0.9rem;
+      color: #dbe3f5;
+      line-height: 1.5;
+    }
+    footer {
+      margin: 2rem 0 0.5rem;
+      color: var(--muted);
+      font-size: 0.9rem;
+      text-align: center;
+    }
+    @media (max-width: 800px) {
+      nav { padding: 0.9rem 0; }
+      .contact { grid-template-columns: 1fr; }
+      body { padding: 0 1rem 3rem; }
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <h1>👋 ctavolazzi</h1>
-        <p>Projects & Experiments</p>
-        <div class="links">
-            <a href="https://ctavolazzi.github.io/chicofablab.github.io/">
-                🏭 CFL Wiki (Component Library v0.0.1)
-            </a>
-            <a href="https://github.com/ctavolazzi">
-                🐙 GitHub Profile
-            </a>
+  <div class="noise"></div>
+  <div class="orbit"></div>
+  <header>
+    <nav>
+      <div class="logo">
+        <div class="dot"></div>
+        ctavolazzi — build studio
+      </div>
+      <div class="nav-links">
+        <a href="#projects">Projects</a>
+        <a href="#approach">Approach</a>
+        <a href="#docs">Docs</a>
+        <a href="https://github.com/ctavolazzi" target="_blank" rel="noreferrer">GitHub</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div>
+        <div class="eyebrow">High-velocity builder</div>
+        <h1>Designing and shipping products that make me look like the <span>superstar</span> I am.</h1>
+        <p>I blend systems thinking with unapologetic craft—rapid prototypes, crisp components, and narrative-driven experiences that feel inevitable. If it needs to be shipped yesterday and still look iconic, I’m your person.</p>
+        <div class="cta-row">
+          <a class="btn primary" href="#projects">
+            View the work
+            <svg viewBox="0 0 24 24" fill="none" stroke="#0a0c10" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14"></path>
+              <path d="M13 5l7 7-7 7"></path>
+            </svg>
+          </a>
+          <a class="btn secondary" href="https://github.com/ctavolazzi" target="_blank" rel="noreferrer">
+            GitHub profile
+            <svg viewBox="0 0 24 24" fill="none" stroke="#e9edf7" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14"></path>
+              <path d="M13 5l7 7-7 7"></path>
+            </svg>
+          </a>
         </div>
-        <p class="redirect-notice">Redirecting to CFL Wiki in 3 seconds...</p>
-    </div>
+        <div class="callouts">
+          <div class="callout"><strong>Zero-to-one kits:</strong> I move from napkin sketch to reusable systems fast—then polish until it feels bespoke.</div>
+          <div class="callout"><strong>Signal, not noise:</strong> Every UI is built to tell a story. No filler, just intentional moves that drive outcomes.</div>
+        </div>
+      </div>
+      <div>
+        <span class="badge">Shipping in public</span>
+        <div class="metric-strip">
+          <div class="metric">
+            <h3>Product Systems</h3>
+            <p>Designing libraries, patterns, and docs that keep teams aligned while moving fast.</p>
+          </div>
+          <div class="metric">
+            <h3>Rapid Experiments</h3>
+            <p>Build-first mindset: prototype, validate, iterate—days not weeks.</p>
+          </div>
+          <div class="metric">
+            <h3>Storytelling</h3>
+            <p>Clear narratives for demos, launches, and docs so the work lands.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="section-title">
+        <span class="badge">Projects</span>
+        <h2>Case studies built with speed and intention</h2>
+      </div>
+      <div class="grid">
+        <div class="card">
+          <div class="tag">CFL Wiki</div>
+          <h3>Component Library v0.0.1</h3>
+          <p>Launched a focused wiki for Chico FabLab to codify components, patterns, and team rituals. Clear hierarchy, tasteful gradients, and instant navigation.</p>
+          <div class="chip-row">
+            <span class="chip">Design Systems</span>
+            <span class="chip">Doc-Driven</span>
+            <span class="chip">Fast rollout</span>
+          </div>
+          <p style="margin-top:0.9rem;"><a class="btn secondary" href="https://ctavolazzi.github.io/chicofablab.github.io/" target="_blank" rel="noreferrer">Open wiki</a></p>
+        </div>
+        <div class="card">
+          <div class="tag">Live Experiments</div>
+          <h3>Visual R&D drops</h3>
+          <p>Series of experimental microsites exploring motion, layout systems, and expressive typography. Built to test ideas in the open and gather fast feedback.</p>
+          <div class="chip-row">
+            <span class="chip">Motion</span>
+            <span class="chip">Grotesk Type</span>
+            <span class="chip">A/B ready</span>
+          </div>
+        </div>
+        <div class="card">
+          <div class="tag">Portfolio Engine</div>
+          <h3>Story-first experience</h3>
+          <p>This very page: a high-contrast, cinematic narrative that trades safe layouts for bold gradients, crisp microcopy, and clarity of craft.</p>
+          <div class="chip-row">
+            <span class="chip">Expressive UI</span>
+            <span class="chip">Narrative</span>
+            <span class="chip">Hand-tuned</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="approach" class="split">
+      <div class="panel">
+        <div class="section-title" style="margin-top:0;">
+          <span class="badge">Approach</span>
+          <h2>How I operate</h2>
+        </div>
+        <ul>
+          <li><strong>Design to deploy:</strong> I own the story, the visuals, and the code. Less ceremony, more shipping.</li>
+          <li><strong>Systems, not scraps:</strong> I build repeatable patterns—tokens, components, and docs that scale without dead weight.</li>
+          <li><strong>Visible momentum:</strong> Tight demos, quick clips, and written context so collaborators always know where we are.</li>
+          <li><strong>Bias for clarity:</strong> I cut features that don’t sing. The narrative stays sharp and the experience stays fast.</li>
+        </ul>
+      </div>
+      <div class="panel">
+        <div class="section-title" style="margin-top:0;">
+          <span class="badge">Capabilities</span>
+          <h2>What you get</h2>
+        </div>
+        <ul>
+          <li><strong>Product design:</strong> UX flows, visual systems, interaction patterns, launch visuals.</li>
+          <li><strong>Frontend craft:</strong> HTML/CSS/JS with a focus on performance and polish.</li>
+          <li><strong>Docs & enablement:</strong> Playbooks, component guidelines, and onboarding that people actually read.</li>
+          <li><strong>Workshop energy:</strong> Facilitation, critiques, and live-build sessions to keep the room electric.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="contact">
+      <div>
+        <h2>Ready for the next drop?</h2>
+        <p>I ship fast, I document as I go, and I make sure the work feels like it belongs on stage. Let’s build something worth talking about.</p>
+      </div>
+      <div class="cta-row" style="justify-content:flex-end;">
+        <a class="btn primary" href="https://github.com/ctavolazzi" target="_blank" rel="noreferrer">Collaborate</a>
+        <a class="btn secondary" href="#docs">See docs</a>
+      </div>
+    </section>
+
+    <section id="docs">
+      <h2>Reference / Docs (kept intact)</h2>
+      <p>This section keeps the original GitHub Pages documentation from the prior site for quick reference.</p>
+      <div class="doc-block">
+## Welcome to GitHub Pages
+
+You can use the [editor on GitHub](https://github.com/ctavolazzi/ctavolazzi.github.io/edit/main/README.md) to maintain and preview the content for your website in Markdown files.
+
+Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+
+### Markdown
+
+Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+
+```markdown
+Syntax highlighted code block
+
+# Header 1
+## Header 2
+### Header 3
+
+- Bulleted
+- List
+
+1. Numbered
+2. List
+
+**Bold** and _Italic_ and `Code` text
+
+[Link](url) and ![Image](src)
+```
+
+For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+
+### Jekyll Themes
+
+Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/ctavolazzi/ctavolazzi.github.io/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+
+### Support or Contact
+
+Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    Built boldly by ctavolazzi. Stay sharp, keep shipping.
+  </footer>
 </body>
 </html>
