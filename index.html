@@ -3,243 +3,84 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CHRISTOPHER TAVOLAZZI — PORTFOLIO</title>
+  <title>Christopher Tavolazzi — Builder & Creator</title>
 
   <!-- SEO Meta Tags -->
-  <meta name="description" content="Christopher Tavolazzi - Sales Professional, Marketer, Creator. Building things that matter from custom knives to AI video systems.">
+  <meta name="description" content="Christopher Tavolazzi - Builder, Creator, Maker. Exploring the intersection of craft, technology, and storytelling.">
   <meta name="keywords" content="Christopher Tavolazzi, portfolio, creator, developer, AI, woodworking, design">
   <meta name="author" content="Christopher Tavolazzi">
 
   <!-- Open Graph / Social -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://ctavolazzi.github.io/">
-  <meta property="og:title" content="CHRISTOPHER TAVOLAZZI — PORTFOLIO">
-  <meta property="og:description" content="I build things that matter. From custom knives to AI video systems.">
-  <meta property="og:image" content="https://ctavolazzi.github.io/og-image.png">
+  <meta property="og:title" content="Christopher Tavolazzi — Builder & Creator">
+  <meta property="og:description" content="Exploring the intersection of craft, technology, and storytelling.">
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="CHRISTOPHER TAVOLAZZI — PORTFOLIO">
-  <meta name="twitter:description" content="I build things that matter. From custom knives to AI video systems.">
+  <meta name="twitter:title" content="Christopher Tavolazzi — Builder & Creator">
+  <meta name="twitter:description" content="Exploring the intersection of craft, technology, and storytelling.">
 
-  <!-- Favicon - Pixel Art Style -->
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><rect fill='%23000' width='16' height='16'/><rect fill='%2300ff41' x='2' y='2' width='4' height='4'/><rect fill='%2300ff41' x='10' y='2' width='4' height='4'/><rect fill='%2300ff41' x='2' y='10' width='12' height='4'/><rect fill='%23ffb000' x='6' y='6' width='4' height='4'/></svg>">
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛠️</text></svg>">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
   <style>
     :root {
-      --bg: #000000;
-      --bg-alt: #0a0a0a;
-      --panel: rgba(0, 0, 0, 0.9);
-      --stroke: #00ff41;
-      --stroke-dim: rgba(0, 255, 65, 0.3);
-      --accent: #00ff41;
-      --accent-2: #ffb000;
-      --accent-3: #00d9ff;
-      --text: #ffffff;
-      --muted: #808080;
-      --muted-bright: #b0b0b0;
-      --shadow: 0 0 20px rgba(0, 255, 65, 0.2);
-      --glitch-1: #ff0040;
-      --glitch-2: #00ffff;
+      --bg: #0d1117;
+      --bg-elevated: #161b22;
+      --bg-card: #1c2128;
+      --border: #30363d;
+      --border-hover: #484f58;
+      --text: #e6edf3;
+      --text-muted: #8b949e;
+      --text-subtle: #6e7681;
+      --accent: #f0883e;
+      --accent-soft: rgba(240, 136, 62, 0.15);
+      --link: #58a6ff;
+      --green: #3fb950;
+      --purple: #a371f7;
+      --radius: 12px;
+      --radius-sm: 8px;
     }
-    * { box-sizing: border-box; }
 
-    /* Boot Sequence Overlay */
-    .boot-screen {
-      position: fixed;
-      inset: 0;
-      background: #000;
-      z-index: 9999;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      font-family: "IBM Plex Mono", monospace;
-      color: var(--accent);
-      transition: opacity 0.5s ease, visibility 0.5s ease;
-    }
-    .boot-screen.hidden {
-      opacity: 0;
-      visibility: hidden;
-      pointer-events: none;
-    }
-    .boot-text {
-      font-size: 0.9rem;
-      text-align: left;
-      max-width: 600px;
-      padding: 2rem;
-    }
-    .boot-line {
-      opacity: 0;
-      animation: bootFadeIn 0.1s forwards;
-      margin-bottom: 0.25rem;
-    }
-    .boot-line.success { color: var(--accent); }
-    .boot-line.warning { color: var(--accent-2); }
-    .boot-line.info { color: var(--accent-3); }
-    .boot-progress {
-      width: 300px;
-      height: 4px;
-      background: var(--stroke-dim);
-      margin-top: 2rem;
-      overflow: hidden;
-    }
-    .boot-progress-bar {
-      height: 100%;
-      background: var(--accent);
-      width: 0%;
-      animation: bootProgress 2s ease-out forwards;
-      box-shadow: 0 0 10px var(--accent);
-    }
-    @keyframes bootFadeIn {
-      to { opacity: 1; }
-    }
-    @keyframes bootProgress {
-      0% { width: 0%; }
-      20% { width: 25%; }
-      50% { width: 60%; }
-      80% { width: 85%; }
-      100% { width: 100%; }
-    }
+    * { box-sizing: border-box; }
 
     body {
       margin: 0;
-      background: #000000;
+      background: var(--bg);
       color: var(--text);
-      font-family: "DM Mono", "IBM Plex Mono", "Courier New", monospace;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
       min-height: 100vh;
-      padding: 0;
-      position: relative;
-      overflow-x: hidden;
-      line-height: 1.5;
-      image-rendering: pixelated;
-      image-rendering: -moz-crisp-edges;
-      image-rendering: crisp-edges;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
     }
 
-    /* CRT Screen Effect */
-    .crt {
-      animation: crtFlicker 0.15s infinite;
-    }
-    @keyframes crtFlicker {
-      0% { opacity: 0.97; }
-      50% { opacity: 1; }
-      100% { opacity: 0.98; }
-    }
-
-    /* Glitch Effect */
-    .glitch {
-      position: relative;
-    }
-    .glitch:hover {
-      animation: glitch 0.3s cubic-bezier(.25,.46,.45,.94) both infinite;
-    }
-    .glitch::before,
-    .glitch::after {
-      content: attr(data-text);
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      opacity: 0;
-    }
-    .glitch:hover::before {
-      animation: glitchTop 0.3s cubic-bezier(.25,.46,.45,.94) both infinite;
-      color: var(--glitch-1);
-      z-index: -1;
-      opacity: 0.8;
-    }
-    .glitch:hover::after {
-      animation: glitchBottom 0.3s cubic-bezier(.25,.46,.45,.94) both infinite;
-      color: var(--glitch-2);
-      z-index: -2;
-      opacity: 0.8;
-    }
-    @keyframes glitch {
-      0% { transform: translate(0); }
-      20% { transform: translate(-2px, 2px); }
-      40% { transform: translate(-2px, -2px); }
-      60% { transform: translate(2px, 2px); }
-      80% { transform: translate(2px, -2px); }
-      100% { transform: translate(0); }
-    }
-    @keyframes glitchTop {
-      0% { transform: translate(0); }
-      20% { transform: translate(2px, -2px); clip-path: inset(20% 0 60% 0); }
-      40% { transform: translate(-2px, 2px); clip-path: inset(40% 0 40% 0); }
-      60% { transform: translate(2px, 2px); clip-path: inset(60% 0 20% 0); }
-      80% { transform: translate(-2px, -2px); clip-path: inset(80% 0 0% 0); }
-      100% { transform: translate(0); clip-path: inset(0% 0 80% 0); }
-    }
-    @keyframes glitchBottom {
-      0% { transform: translate(0); }
-      20% { transform: translate(-2px, 2px); clip-path: inset(60% 0 20% 0); }
-      40% { transform: translate(2px, -2px); clip-path: inset(40% 0 40% 0); }
-      60% { transform: translate(-2px, -2px); clip-path: inset(20% 0 60% 0); }
-      80% { transform: translate(2px, 2px); clip-path: inset(0% 0 80% 0); }
-      100% { transform: translate(0); clip-path: inset(80% 0 0% 0); }
-    }
-
-    /* Dithering Pattern */
-    .dither {
+    /* Subtle gradient background */
+    .bg-gradient {
       position: fixed;
       inset: 0;
       pointer-events: none;
-      background-image:
-        repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0, 255, 65, 0.03) 2px, rgba(0, 255, 65, 0.03) 4px),
-        repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0, 255, 65, 0.03) 2px, rgba(0, 255, 65, 0.03) 4px);
-      z-index: 1;
-      mix-blend-mode: overlay;
-    }
-    /* Scanlines */
-    .scanlines {
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      background: repeating-linear-gradient(
-        0deg,
-        transparent,
-        transparent 2px,
-        rgba(0, 0, 0, 0.15) 2px,
-        rgba(0, 0, 0, 0.15) 4px
-      );
-      z-index: 2;
-      mix-blend-mode: multiply;
-    }
-    /* Noise Texture */
-    .noise {
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200' viewBox='0 0 200 200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.15'/%3E%3C/svg%3E");
-      z-index: 1;
-      mix-blend-mode: screen;
-      opacity: 0.4;
-    }
-
-    /* Vignette Effect */
-    .vignette {
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      background: radial-gradient(ellipse at center, transparent 0%, transparent 60%, rgba(0,0,0,0.8) 100%);
-      z-index: 3;
+      background:
+        radial-gradient(ellipse 80% 50% at 50% -20%, rgba(240, 136, 62, 0.08), transparent),
+        radial-gradient(ellipse 60% 40% at 100% 100%, rgba(88, 166, 255, 0.05), transparent);
+      z-index: 0;
     }
 
     header {
       position: sticky;
       top: 0;
-      background: rgba(0, 0, 0, 0.95);
-      z-index: 10;
-      border-bottom: 2px solid var(--stroke);
-      backdrop-filter: blur(2px);
+      background: rgba(13, 17, 23, 0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      z-index: 100;
     }
+
     nav {
-      max-width: 1200px;
+      max-width: 1100px;
       margin: 0 auto;
       padding: 1rem 1.5rem;
       display: flex;
@@ -247,387 +88,274 @@
       justify-content: space-between;
       gap: 1rem;
     }
+
     .logo {
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 600;
+      font-size: 1rem;
+      color: var(--text);
+      text-decoration: none;
       display: flex;
       align-items: center;
       gap: 0.5rem;
-      letter-spacing: 0.1em;
-      font-weight: 700;
-      font-size: 0.9rem;
-      font-family: "IBM Plex Mono", monospace;
-      text-transform: uppercase;
-      color: var(--accent);
-      cursor: pointer;
-      transition: all 0.2s ease;
+      transition: color 0.2s;
     }
-    .logo:hover {
-      text-shadow: 0 0 20px var(--accent);
+    .logo:hover { color: var(--accent); }
+    .logo-icon {
+      font-size: 1.2rem;
     }
-    .logo .dot {
-      width: 8px;
-      height: 8px;
-      background: var(--accent);
-      box-shadow: 0 0 8px var(--accent);
-      animation: pulse 2s infinite;
-    }
-    @keyframes pulse {
-      0%, 100% { box-shadow: 0 0 8px var(--accent); }
-      50% { box-shadow: 0 0 20px var(--accent), 0 0 30px var(--accent); }
-    }
+
     .nav-links {
       display: flex;
-      gap: 1.5rem;
-      font-family: "IBM Plex Mono", monospace;
-      font-size: 0.85rem;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
+      gap: 0.25rem;
     }
     .nav-links a {
-      color: var(--muted);
+      color: var(--text-muted);
       text-decoration: none;
-      transition: all 0.2s ease;
-      border-bottom: 1px solid transparent;
-      position: relative;
-    }
-    .nav-links a::after {
-      content: '';
-      position: absolute;
-      bottom: -2px;
-      left: 0;
-      width: 0;
-      height: 1px;
-      background: var(--accent);
-      transition: width 0.3s ease;
-    }
-    .nav-links a:hover::after {
-      width: 100%;
+      padding: 0.5rem 0.75rem;
+      border-radius: var(--radius-sm);
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: all 0.2s;
     }
     .nav-links a:hover {
-      color: var(--accent);
-      text-shadow: 0 0 8px var(--accent);
+      color: var(--text);
+      background: var(--bg-elevated);
     }
     .nav-links a.active {
       color: var(--accent);
     }
 
-    /* Version Badge */
-    .version-badge {
-      position: fixed;
-      bottom: 1rem;
-      right: 1rem;
-      background: var(--panel);
-      border: 1px solid var(--stroke-dim);
-      padding: 0.25rem 0.5rem;
-      font-family: "IBM Plex Mono", monospace;
-      font-size: 0.7rem;
-      color: var(--muted);
-      z-index: 100;
-      cursor: help;
-    }
-    .version-badge:hover {
-      color: var(--accent);
-      border-color: var(--accent);
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem;
+      position: relative;
+      z-index: 1;
     }
 
-    main {
-      max-width: 1200px;
-      margin: 0 auto;
-      position: relative;
-      z-index: 3;
-      padding: 2rem 1.5rem;
-    }
+    /* Hero */
     .hero {
-      padding: 3rem 0 2rem;
-      border: 2px solid var(--stroke);
-      background: var(--panel);
-      padding: 2.5rem;
-      margin-bottom: 2rem;
-      position: relative;
-      overflow: hidden;
+      margin-bottom: 4rem;
     }
-    .hero::before {
-      content: ">";
-      position: absolute;
-      top: 1rem;
-      left: 1rem;
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.8rem;
       color: var(--accent);
-      font-family: "IBM Plex Mono", monospace;
-      font-size: 1.2rem;
-      animation: blink 1s infinite;
-    }
-    .hero::after {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 50%;
-      height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(0, 255, 65, 0.05), transparent);
-      animation: heroShine 4s infinite;
-    }
-    @keyframes heroShine {
-      0% { left: -100%; }
-      50%, 100% { left: 200%; }
-    }
-    @keyframes blink {
-      0%, 49% { opacity: 1; }
-      50%, 100% { opacity: 0.3; }
-    }
-    .eyebrow {
-      font-family: "IBM Plex Mono", monospace;
-      font-size: 0.75rem;
-      color: var(--accent-2);
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      margin-bottom: 1rem;
+      background: var(--accent-soft);
+      padding: 0.4rem 0.8rem;
+      border-radius: 20px;
+      margin-bottom: 1.5rem;
     }
     .hero h1 {
-      font-size: clamp(2rem, 6vw, 4rem);
-      letter-spacing: 0.1em;
-      margin: 0.5rem 0 1.5rem;
-      line-height: 1.2;
-      font-family: "IBM Plex Mono", monospace;
+      font-size: clamp(2.5rem, 6vw, 3.5rem);
       font-weight: 700;
-      text-transform: uppercase;
+      line-height: 1.2;
+      margin: 0 0 1rem;
       color: var(--text);
-      text-shadow: 0 0 20px var(--accent);
     }
-    .hero h1 .name {
-      color: var(--accent);
-      display: block;
-      margin-bottom: 0.5rem;
+    .hero h1 span {
+      background: linear-gradient(135deg, var(--accent) 0%, #f7c873 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
     }
-    .hero h1 .tagline {
-      color: var(--accent-2);
-      font-size: 0.6em;
-      font-weight: 400;
-      letter-spacing: 0.2em;
+    .hero-subtitle {
+      font-size: 1.2rem;
+      color: var(--text-muted);
+      max-width: 600px;
+      margin: 0 0 2rem;
     }
-    /* Typing cursor */
-    .typing-cursor {
-      display: inline-block;
-      width: 0.6em;
-      height: 1em;
-      background: var(--accent);
-      margin-left: 2px;
-      animation: cursorBlink 0.7s infinite;
-      vertical-align: text-bottom;
-    }
-    @keyframes cursorBlink {
-      0%, 49% { opacity: 1; }
-      50%, 100% { opacity: 0; }
-    }
-    .hero p {
-      color: var(--muted-bright);
-      font-size: 1rem;
-      margin-bottom: 2rem;
-      max-width: 700px;
-      line-height: 1.6;
-    }
-    .cta-row {
+    .hero-links {
       display: flex;
       flex-wrap: wrap;
-      gap: 1rem;
+      gap: 0.75rem;
     }
     .btn {
       display: inline-flex;
       align-items: center;
       gap: 0.5rem;
-      padding: 0.75rem 1.5rem;
-      border: 2px solid var(--stroke);
+      padding: 0.75rem 1.25rem;
+      border-radius: var(--radius-sm);
       text-decoration: none;
-      color: var(--text);
-      transition: all 0.2s ease;
-      position: relative;
-      font-family: "IBM Plex Mono", monospace;
-      font-size: 0.85rem;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      background: transparent;
+      font-weight: 500;
+      font-size: 0.95rem;
+      transition: all 0.2s;
+      border: none;
       cursor: pointer;
-      overflow: hidden;
     }
-    .btn::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
-      transition: left 0.5s ease;
-    }
-    .btn:hover::before {
-      left: 100%;
-    }
-    .btn.primary {
+    .btn-primary {
       background: var(--accent);
-      color: #000000;
-      border-color: var(--accent);
-      box-shadow: 0 0 20px rgba(0, 255, 65, 0.5);
+      color: #000;
     }
-    .btn.primary:hover {
-      background: var(--accent-2);
-      border-color: var(--accent-2);
-      box-shadow: 0 0 30px rgba(255, 176, 0, 0.6);
-      color: #000000;
+    .btn-primary:hover {
+      background: #f7a05c;
       transform: translateY(-2px);
     }
-    .btn.secondary {
-      background: transparent;
-      border-color: var(--stroke-dim);
-      color: var(--muted-bright);
+    .btn-secondary {
+      background: var(--bg-elevated);
+      color: var(--text);
+      border: 1px solid var(--border);
     }
-    .btn.secondary:hover {
-      border-color: var(--accent);
-      color: var(--accent);
-      text-shadow: 0 0 8px var(--accent);
-      transform: translateY(-2px);
+    .btn-secondary:hover {
+      background: var(--bg-card);
+      border-color: var(--border-hover);
     }
-    .btn svg { width: 14px; height: 14px; }
-    .callouts {
+    .btn svg {
+      width: 16px;
+      height: 16px;
+    }
+
+    /* Highlights */
+    .highlights {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 1rem;
-      margin-top: 2rem;
+      margin-top: 3rem;
     }
-    .callout {
-      border: 1px solid var(--stroke-dim);
-      padding: 1rem;
-      background: rgba(0, 0, 0, 0.5);
-      color: var(--muted-bright);
-      font-size: 0.9rem;
-      border-left: 3px solid var(--accent);
+    .highlight {
+      background: var(--bg-elevated);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.25rem;
       transition: all 0.3s ease;
     }
-    .callout:hover {
-      border-color: var(--accent);
-      transform: translateX(4px);
+    .highlight:hover {
+      border-color: var(--border-hover);
+      transform: translateY(-2px);
     }
-    .callout strong {
-      color: var(--accent);
-      font-family: "IBM Plex Mono", monospace;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
+    .highlight-icon {
+      font-size: 1.5rem;
+      margin-bottom: 0.75rem;
     }
-    .section-title {
+    .highlight h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      margin: 0 0 0.5rem;
+      color: var(--text);
+    }
+    .highlight p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin: 0;
+      line-height: 1.5;
+    }
+
+    /* Section Headers */
+    .section-header {
       display: flex;
       align-items: center;
       gap: 1rem;
-      margin: 2rem 0 1.5rem;
-      font-family: "IBM Plex Mono", monospace;
+      margin: 0 0 2rem;
     }
-    .section-title h2 {
-      margin: 0;
+    .section-header h2 {
       font-size: 1.5rem;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: var(--accent);
+      font-weight: 600;
+      margin: 0;
+      color: var(--text);
     }
-    .badge {
-      display: inline-block;
-      padding: 0.25rem 0.75rem;
-      border: 1px solid var(--stroke);
-      background: rgba(0, 255, 65, 0.1);
-      color: var(--accent);
-      font-family: "IBM Plex Mono", monospace;
+    .section-badge {
+      font-family: 'JetBrains Mono', monospace;
       font-size: 0.75rem;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
+      padding: 0.3rem 0.6rem;
+      background: var(--accent-soft);
+      color: var(--accent);
+      border-radius: 6px;
     }
-    .grid {
+
+    /* Project Cards */
+    .projects-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 1.5rem;
-      margin-bottom: 3rem;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 1.25rem;
+      margin-bottom: 4rem;
     }
-    .card {
-      position: relative;
+    .project-card {
+      background: var(--bg-elevated);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
       padding: 1.5rem;
-      border: 2px solid var(--stroke-dim);
-      background: var(--panel);
       transition: all 0.3s ease;
-      overflow: hidden;
       cursor: pointer;
+      position: relative;
+      overflow: hidden;
     }
-    .card::before {
-      content: "";
+    .project-card::before {
+      content: '';
       position: absolute;
       top: 0;
       left: 0;
-      width: 3px;
-      height: 100%;
-      background: var(--accent);
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--accent), var(--purple));
       opacity: 0;
-      transition: opacity 0.2s ease;
+      transition: opacity 0.3s;
     }
-    .card::after {
-      content: "[ CLICK TO EXPAND ]";
-      position: absolute;
-      bottom: 0.5rem;
-      right: 0.5rem;
-      font-family: "IBM Plex Mono", monospace;
-      font-size: 0.6rem;
-      color: var(--muted);
-      opacity: 0;
-      transition: opacity 0.3s ease;
-    }
-    .card:hover::after {
-      opacity: 1;
-    }
-    .card:hover {
-      border-color: var(--accent);
-      box-shadow: 0 0 30px rgba(0, 255, 65, 0.3);
+    .project-card:hover {
+      border-color: var(--border-hover);
       transform: translateY(-4px);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
     }
-    .card:hover::before {
+    .project-card:hover::before {
       opacity: 1;
     }
-    .card.expanded {
-      grid-column: 1 / -1;
-    }
-    .card .tag {
+    .project-tag {
       display: inline-block;
-      padding: 0.25rem 0.5rem;
-      background: rgba(0, 255, 65, 0.1);
-      color: var(--accent);
-      border: 1px solid var(--stroke-dim);
-      font-family: "IBM Plex Mono", monospace;
+      font-family: 'JetBrains Mono', monospace;
       font-size: 0.7rem;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
+      padding: 0.25rem 0.5rem;
+      background: var(--bg-card);
+      color: var(--text-muted);
+      border-radius: 4px;
       margin-bottom: 1rem;
-    }
-    .card h3 {
-      margin: 0 0 0.75rem;
-      font-size: 1.3rem;
-      font-family: "IBM Plex Mono", monospace;
-      font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.05em;
+    }
+    .project-card h3 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin: 0 0 0.75rem;
       color: var(--text);
     }
-    .card p {
-      margin: 0 0 1rem;
-      color: var(--muted-bright);
+    .project-card p {
       font-size: 0.95rem;
+      color: var(--text-muted);
+      margin: 0 0 1rem;
       line-height: 1.6;
     }
-    .card-expanded-content {
+    .project-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+    .chip {
+      font-size: 0.75rem;
+      padding: 0.2rem 0.5rem;
+      background: var(--bg-card);
+      color: var(--text-subtle);
+      border-radius: 4px;
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    /* Expanded card content */
+    .project-expanded {
       display: none;
       margin-top: 1.5rem;
       padding-top: 1.5rem;
-      border-top: 1px solid var(--stroke-dim);
+      border-top: 1px solid var(--border);
+      animation: slideDown 0.3s ease;
     }
-    .card.expanded .card-expanded-content {
+    .project-card.expanded .project-expanded {
       display: block;
-      animation: expandIn 0.3s ease;
     }
-    @keyframes expandIn {
+    @keyframes slideDown {
       from { opacity: 0; transform: translateY(-10px); }
       to { opacity: 1; transform: translateY(0); }
     }
-    .card-stats {
+    .project-stats {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 1rem;
@@ -636,253 +364,233 @@
     .stat {
       text-align: center;
       padding: 0.75rem;
-      background: rgba(0, 255, 65, 0.05);
-      border: 1px solid var(--stroke-dim);
+      background: var(--bg-card);
+      border-radius: var(--radius-sm);
     }
     .stat-value {
-      font-size: 1.5rem;
+      font-size: 1.25rem;
       font-weight: 700;
       color: var(--accent);
-      font-family: "IBM Plex Mono", monospace;
+      font-family: 'JetBrains Mono', monospace;
     }
     .stat-label {
       font-size: 0.7rem;
-      color: var(--muted);
+      color: var(--text-subtle);
       text-transform: uppercase;
-      letter-spacing: 0.1em;
+      letter-spacing: 0.05em;
     }
-    .chip-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      margin-bottom: 1rem;
-    }
-    .chip {
-      padding: 0.25rem 0.6rem;
-      background: rgba(0, 0, 0, 0.5);
-      border: 1px solid var(--stroke-dim);
+    .project-expand-hint {
       font-size: 0.75rem;
-      color: var(--muted);
-      font-family: "IBM Plex Mono", monospace;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      transition: all 0.2s ease;
-    }
-    .chip:hover {
-      border-color: var(--accent);
-      color: var(--accent);
-    }
-    .split {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 1.5rem;
-      margin: 2rem 0 3rem;
-    }
-    .panel {
-      padding: 1.5rem;
-      border: 2px solid var(--stroke-dim);
-      background: var(--panel);
-      border-left: 3px solid var(--accent);
-      transition: all 0.3s ease;
-    }
-    .panel:hover {
-      border-color: var(--accent);
-      box-shadow: 0 0 20px rgba(0, 255, 65, 0.2);
-    }
-    .panel h3 {
-      margin: 0 0 1rem;
-      font-family: "IBM Plex Mono", monospace;
-      font-size: 1.1rem;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: var(--accent);
-    }
-    .panel ul {
-      margin: 0;
-      padding-left: 1.5rem;
-      color: var(--muted-bright);
-      line-height: 1.8;
-    }
-    .panel li {
-      margin-bottom: 0.75rem;
-    }
-    .panel li strong {
-      color: var(--accent-2);
-      font-family: "IBM Plex Mono", monospace;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-    }
-    .contact {
-      margin: 3rem 0;
-      padding: 2rem;
-      border: 2px solid var(--stroke);
-      background: var(--panel);
-      position: relative;
-    }
-    .contact::before {
-      content: "SYSTEM MESSAGE";
+      color: var(--text-subtle);
       position: absolute;
-      top: -0.75rem;
-      left: 1rem;
-      background: #000000;
-      padding: 0 0.5rem;
-      font-family: "IBM Plex Mono", monospace;
-      font-size: 0.7rem;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: var(--accent);
+      bottom: 1rem;
+      right: 1rem;
+      opacity: 0;
+      transition: opacity 0.2s;
     }
-    .contact h2 {
-      margin: 0 0 0.75rem;
-      font-family: "IBM Plex Mono", monospace;
-      font-size: 1.3rem;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: var(--accent);
+    .project-card:hover .project-expand-hint {
+      opacity: 1;
     }
-    .contact p {
-      margin: 0 0 1.5rem;
-      color: var(--muted-bright);
-      line-height: 1.6;
+    .project-card.expanded .project-expand-hint {
+      display: none;
     }
 
-    /* Skills Matrix */
-    .skills-matrix {
-      margin: 3rem 0;
+    /* Skills */
+    .skills-section {
+      margin-bottom: 4rem;
     }
-    .skill-bar {
-      margin-bottom: 1rem;
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+    }
+    .skill-item {
+      background: var(--bg-elevated);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1rem 1.25rem;
+      transition: all 0.3s;
+    }
+    .skill-item:hover {
+      border-color: var(--border-hover);
     }
     .skill-header {
       display: flex;
       justify-content: space-between;
       margin-bottom: 0.5rem;
-      font-family: "IBM Plex Mono", monospace;
-      font-size: 0.8rem;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
     }
-    .skill-name { color: var(--text); }
-    .skill-level { color: var(--accent); }
-    .skill-track {
-      height: 8px;
-      background: var(--stroke-dim);
-      position: relative;
+    .skill-name {
+      font-weight: 500;
+      font-size: 0.9rem;
+      color: var(--text);
+    }
+    .skill-level {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.8rem;
+      color: var(--accent);
+    }
+    .skill-bar {
+      height: 4px;
+      background: var(--bg-card);
+      border-radius: 2px;
       overflow: hidden;
     }
     .skill-fill {
       height: 100%;
-      background: linear-gradient(90deg, var(--accent), var(--accent-2));
-      box-shadow: 0 0 10px var(--accent);
+      background: linear-gradient(90deg, var(--accent), var(--purple));
+      border-radius: 2px;
       transition: width 1s ease;
     }
 
-    #docs {
-      margin-top: 4rem;
-      padding: 2rem;
-      border: 2px solid var(--stroke-dim);
-      background: var(--panel);
-      position: relative;
+    /* Gallery */
+    .gallery-section {
+      margin-bottom: 4rem;
     }
-    #docs::before {
-      content: "LEGACY DATA BANK";
-      position: absolute;
-      top: -0.75rem;
-      left: 1rem;
-      background: #000000;
-      padding: 0 0.5rem;
-      font-family: "IBM Plex Mono", monospace;
-      font-size: 0.7rem;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: var(--accent-2);
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+      gap: 1rem;
     }
-    #docs h2 {
-      margin: 0 0 1rem;
-      font-family: "IBM Plex Mono", monospace;
-      font-size: 1.2rem;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: var(--accent-2);
+    .gallery-item {
+      aspect-ratio: 1;
+      background: var(--bg-elevated);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      transition: all 0.3s ease;
+      cursor: pointer;
     }
-    #docs p {
-      margin: 0 0 1rem;
-      color: var(--muted);
+    .gallery-item:hover {
+      border-color: var(--accent);
+      transform: scale(1.05);
+    }
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      image-rendering: pixelated;
+    }
+    .gallery-note {
+      text-align: center;
+      color: var(--text-subtle);
       font-size: 0.85rem;
-    }
-    .doc-block {
-      border: 2px solid var(--stroke-dim);
-      padding: 1.5rem;
-      background: #000000;
-      max-height: 400px;
-      overflow: auto;
-      font-family: "DM Mono", "IBM Plex Mono", monospace;
-      font-size: 0.85rem;
-      color: var(--accent);
-      line-height: 1.6;
-      position: relative;
-    }
-    .doc-block::before {
-      content: "$ ";
-      color: var(--accent-2);
-    }
-    .doc-block pre {
-      margin: 0;
-      white-space: pre-wrap;
-      font-family: inherit;
+      margin-top: 1rem;
+      font-style: italic;
     }
 
-    /* Terminal / Command Line */
-    .terminal {
-      margin: 3rem 0;
-      border: 2px solid var(--stroke);
-      background: #000;
+    /* Two Column Layout */
+    .two-col {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 4rem;
     }
-    .terminal-header {
-      background: var(--stroke);
-      color: #000;
-      padding: 0.5rem 1rem;
-      font-family: "IBM Plex Mono", monospace;
-      font-size: 0.75rem;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
+    .panel {
+      background: var(--bg-elevated);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+    }
+    .panel h3 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin: 0 0 1rem;
+      color: var(--text);
       display: flex;
-      justify-content: space-between;
       align-items: center;
+      gap: 0.5rem;
     }
-    .terminal-dots {
+    .panel h3::before {
+      content: '';
+      width: 4px;
+      height: 1rem;
+      background: var(--accent);
+      border-radius: 2px;
+    }
+    .panel ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    .panel li {
+      padding: 0.75rem 0;
+      border-bottom: 1px solid var(--border);
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+    .panel li:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+    .panel li strong {
+      color: var(--text);
+      font-weight: 500;
+    }
+
+    /* Playground / Terminal */
+    .playground {
+      background: var(--bg-elevated);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      margin-bottom: 4rem;
+    }
+    .playground-header {
+      background: var(--bg-card);
+      padding: 0.75rem 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--border);
+    }
+    .playground-title {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .playground-dots {
       display: flex;
       gap: 0.5rem;
     }
-    .terminal-dot {
-      width: 10px;
-      height: 10px;
+    .playground-dot {
+      width: 12px;
+      height: 12px;
       border-radius: 50%;
-      background: #000;
+      background: var(--border);
     }
-    .terminal-body {
-      padding: 1rem;
-      font-family: "IBM Plex Mono", monospace;
+    .playground-dot:nth-child(1) { background: #ff5f56; }
+    .playground-dot:nth-child(2) { background: #ffbd2e; }
+    .playground-dot:nth-child(3) { background: #27c93f; }
+    .playground-body {
+      padding: 1.25rem;
+      font-family: 'JetBrains Mono', monospace;
       font-size: 0.85rem;
-      min-height: 100px;
+      min-height: 150px;
+      max-height: 300px;
+      overflow-y: auto;
     }
     .terminal-line {
       margin-bottom: 0.5rem;
+      line-height: 1.6;
     }
     .terminal-prompt {
-      color: var(--accent);
+      color: var(--green);
     }
     .terminal-command {
       color: var(--text);
     }
     .terminal-output {
-      color: var(--muted-bright);
+      color: var(--text-muted);
       padding-left: 1rem;
     }
     .terminal-input {
       display: flex;
       align-items: center;
       gap: 0.5rem;
+      margin-top: 0.5rem;
     }
     .terminal-input input {
       flex: 1;
@@ -893,126 +601,74 @@
       font-size: inherit;
       outline: none;
     }
-
-    /* Easter Egg - Konami */
-    .easter-egg {
-      display: none;
-      position: fixed;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.95);
-      z-index: 9998;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
+    .terminal-input input::placeholder {
+      color: var(--text-subtle);
     }
-    .easter-egg.active {
+
+    /* Contact */
+    .contact {
+      background: linear-gradient(135deg, var(--bg-elevated) 0%, var(--bg-card) 100%);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 2.5rem;
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    .contact h2 {
+      font-size: 1.75rem;
+      font-weight: 600;
+      margin: 0 0 0.75rem;
+      color: var(--text);
+    }
+    .contact p {
+      color: var(--text-muted);
+      margin: 0 0 1.5rem;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .contact-links {
       display: flex;
-      animation: easterEggIn 0.5s ease;
-    }
-    @keyframes easterEggIn {
-      from { opacity: 0; transform: scale(0.9); }
-      to { opacity: 1; transform: scale(1); }
-    }
-    .easter-egg h2 {
-      color: var(--accent);
-      font-family: "IBM Plex Mono", monospace;
-      font-size: 2rem;
-      text-transform: uppercase;
-      letter-spacing: 0.2em;
-      margin-bottom: 1rem;
-      text-shadow: 0 0 30px var(--accent);
-    }
-    .easter-egg p {
-      color: var(--muted-bright);
-      font-size: 1rem;
-      margin-bottom: 2rem;
-    }
-    .easter-egg .close-egg {
-      cursor: pointer;
-      color: var(--accent-2);
-      font-size: 0.8rem;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-    }
-    .matrix-rain {
-      position: absolute;
-      inset: 0;
-      overflow: hidden;
-      z-index: -1;
-    }
-    .matrix-column {
-      position: absolute;
-      top: -100%;
-      font-family: "IBM Plex Mono", monospace;
-      font-size: 14px;
-      color: var(--accent);
-      text-shadow: 0 0 5px var(--accent);
-      animation: matrixFall linear infinite;
-      opacity: 0.7;
-    }
-    @keyframes matrixFall {
-      to { top: 100%; }
-    }
-
-    footer {
-      margin: 3rem 0 1rem;
-      color: var(--muted);
-      font-size: 0.85rem;
-      text-align: center;
-      font-family: "IBM Plex Mono", monospace;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      border-top: 1px solid var(--stroke-dim);
-      padding-top: 1.5rem;
-    }
-
-    /* Gallery Section */
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      justify-content: center;
       gap: 1rem;
-      margin-bottom: 1rem;
-    }
-    .gallery-item {
-      position: relative;
-      border: 1px solid rgba(255, 176, 0, 0.2);
-      background: rgba(0, 0, 0, 0.4);
-      padding: 0.5rem;
-      transition: all 0.3s ease;
-      text-align: center;
-    }
-    .gallery-item:hover {
-      border-color: var(--accent-2);
-      box-shadow: 0 0 25px rgba(255, 176, 0, 0.25);
-      transform: scale(1.05);
-    }
-    .gallery-item img {
-      width: 100%;
-      height: auto;
-      image-rendering: pixelated;
-      image-rendering: -moz-crisp-edges;
-      image-rendering: crisp-edges;
-      display: block;
+      flex-wrap: wrap;
     }
 
-    /* Scroll to top button */
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 2rem 1.5rem;
+      color: var(--text-subtle);
+      font-size: 0.85rem;
+      border-top: 1px solid var(--border);
+    }
+    footer a {
+      color: var(--text-muted);
+      text-decoration: none;
+    }
+    footer a:hover {
+      color: var(--accent);
+    }
+
+    /* Scroll to top */
     .scroll-top {
       position: fixed;
-      bottom: 3rem;
-      right: 1rem;
-      width: 40px;
-      height: 40px;
-      background: var(--panel);
-      border: 2px solid var(--stroke);
-      color: var(--accent);
+      bottom: 2rem;
+      right: 2rem;
+      width: 44px;
+      height: 44px;
+      background: var(--bg-elevated);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      color: var(--text-muted);
       display: flex;
-      justify-content: center;
       align-items: center;
+      justify-content: center;
       cursor: pointer;
       opacity: 0;
       visibility: hidden;
-      transition: all 0.3s ease;
-      z-index: 100;
+      transition: all 0.3s;
+      z-index: 50;
     }
     .scroll-top.visible {
       opacity: 1;
@@ -1021,138 +677,128 @@
     .scroll-top:hover {
       background: var(--accent);
       color: #000;
-      box-shadow: 0 0 20px var(--accent);
+      border-color: var(--accent);
     }
 
-    @media (max-width: 800px) {
+    /* Responsive */
+    @media (max-width: 768px) {
       nav {
-        padding: 0.75rem 1rem;
         flex-direction: column;
         align-items: flex-start;
         gap: 0.75rem;
       }
       .nav-links {
         flex-wrap: wrap;
-        gap: 1rem;
       }
-      .hero {
-        padding: 1.5rem;
+      .hero h1 {
+        font-size: 2rem;
+      }
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+      .project-stats {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.5rem;
+      }
+      .two-col {
+        grid-template-columns: 1fr;
       }
       .contact {
         padding: 1.5rem;
       }
-      main {
-        padding: 1rem;
-      }
-      .grid {
-        grid-template-columns: 1fr;
-      }
-      .gallery-grid {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 0.75rem;
-      }
-      .card-stats {
-        grid-template-columns: 1fr;
-      }
+    }
+
+    /* Reveal animations */
+    .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.6s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
     }
   </style>
 </head>
-<body class="crt">
-  <!-- Boot Sequence -->
-  <div class="boot-screen" id="bootScreen">
-    <div class="boot-text">
-      <div class="boot-line success" style="animation-delay: 0.0s">CTAVOLAZZI OS v0.0.1</div>
-      <div class="boot-line info" style="animation-delay: 0.2s">Initializing system...</div>
-      <div class="boot-line" style="animation-delay: 0.4s">Loading kernel modules... [OK]</div>
-      <div class="boot-line" style="animation-delay: 0.6s">Mounting file systems... [OK]</div>
-      <div class="boot-line" style="animation-delay: 0.8s">Starting network services... [OK]</div>
-      <div class="boot-line warning" style="animation-delay: 1.0s">Loading portfolio data...</div>
-      <div class="boot-line success" style="animation-delay: 1.2s">All systems operational.</div>
-      <div class="boot-line info" style="animation-delay: 1.4s">Welcome, visitor.</div>
-    </div>
-    <div class="boot-progress">
-      <div class="boot-progress-bar"></div>
-    </div>
-  </div>
-
-  <!-- Easter Egg -->
-  <div class="easter-egg" id="easterEgg">
-    <div class="matrix-rain" id="matrixRain"></div>
-    <h2>SECRET UNLOCKED</h2>
-    <p>You found the Konami code easter egg. You're clearly a person of culture.</p>
-    <p style="color: var(--accent-2); font-size: 0.9rem;">↑ ↑ ↓ ↓ ← → ← → B A</p>
-    <span class="close-egg" onclick="document.getElementById('easterEgg').classList.remove('active')">[CLOSE]</span>
-  </div>
-
-  <div class="dither"></div>
-  <div class="scanlines"></div>
-  <div class="noise"></div>
-  <div class="vignette"></div>
+<body>
+  <div class="bg-gradient"></div>
 
   <header>
     <nav>
-      <div class="logo glitch" data-text="CTAVOLAZZI" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
-        <div class="dot"></div>
-        CTAVOLAZZI
-      </div>
+      <a href="#" class="logo">
+        <span class="logo-icon">🛠️</span>
+        ctavolazzi
+      </a>
       <div class="nav-links">
-        <a href="#projects">PROJECTS</a>
-        <a href="#skills">SKILLS</a>
-        <a href="#gallery">GALLERY</a>
-        <a href="#approach">APPROACH</a>
-        <a href="#terminal">TERMINAL</a>
-        <a href="https://github.com/ctavolazzi" target="_blank" rel="noreferrer">GITHUB</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#playground">Playground</a>
+        <a href="https://github.com/ctavolazzi" target="_blank" rel="noreferrer">GitHub</a>
       </div>
     </nav>
   </header>
 
   <main>
     <section class="hero">
-      <div class="eyebrow">CHARACTER SELECT</div>
-      <h1>
-        <span class="name" id="typingName"></span><span class="typing-cursor" id="typingCursor"></span>
-        <span class="tagline" id="typingTagline"></span>
-      </h1>
-      <p>I build things that matter. From custom knives to AI video systems, from headlight restoration to sci-fi narratives—I don't just ship products, I craft experiences that make people stop and pay attention. If you want someone who moves fast, thinks deeper, and gives zero fucks about playing it safe, you're in the right place.</p>
-      <div class="cta-row">
-        <a class="btn primary" href="#projects">
-          VIEW THE EMPIRE
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M5 12h14"></path>
-            <path d="M13 5l7 7-7 7"></path>
+      <div class="hero-eyebrow">
+        <span>👋</span> Welcome to my workshop
+      </div>
+      <h1>I'm <span>Christopher Tavolazzi</span></h1>
+      <p class="hero-subtitle">Builder, creator, maker. I explore the intersection of craft, technology, and storytelling—turning ideas into things you can hold, use, and experience.</p>
+      <div class="hero-links">
+        <a href="#projects" class="btn btn-primary">
+          Explore Projects
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M5 12h14M13 5l7 7-7 7"/>
           </svg>
         </a>
-        <a class="btn secondary" href="https://github.com/ctavolazzi" target="_blank" rel="noreferrer">
-          GITHUB PROFILE
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M5 12h14"></path>
-            <path d="M13 5l7 7-7 7"></path>
+        <a href="https://github.com/ctavolazzi" class="btn btn-secondary" target="_blank" rel="noreferrer">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16">
+            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
           </svg>
+          GitHub Profile
         </a>
       </div>
-      <div class="callouts">
-        <div class="callout"><strong>ZERO-TO-ONE:</strong> I move from concept to reality faster than most people move from meeting to meeting. Then I polish until it's fucking perfect.</div>
-        <div class="callout"><strong>SIGNAL, NOT NOISE:</strong> Every pixel, every word, every interaction serves the story. No filler. No bullshit. Just intentional moves that drive outcomes.</div>
+
+      <div class="highlights">
+        <div class="highlight reveal">
+          <div class="highlight-icon">⚡</div>
+          <h3>Fast to Ship</h3>
+          <p>From concept to reality without the endless meetings. I build quickly and polish until it feels right.</p>
+        </div>
+        <div class="highlight reveal">
+          <div class="highlight-icon">🎯</div>
+          <h3>Intentional Design</h3>
+          <p>Every pixel, every word serves a purpose. No filler, no fluff—just thoughtful work that resonates.</p>
+        </div>
+        <div class="highlight reveal">
+          <div class="highlight-icon">🔧</div>
+          <h3>Full Stack Maker</h3>
+          <p>Code meets craft. I'm as comfortable with woodworking as I am with web development.</p>
+        </div>
       </div>
     </section>
 
-    <section id="projects">
-      <div class="section-title">
-        <span class="badge">PROJECTS</span>
-        <h2>THE EMPIRE</h2>
+    <section id="projects" class="reveal">
+      <div class="section-header">
+        <h2>Projects</h2>
+        <span class="section-badge">Building things</span>
       </div>
-      <div class="grid" id="projectGrid">
-        <div class="card" onclick="toggleCard(this)">
-          <div class="tag">PORCHROOT</div>
-          <h3 class="glitch" data-text="WOODWORKING & CRAFT">WOODWORKING & CRAFT</h3>
-          <p>Custom knives, hand-carved spoons, and tactile creations that remind you what real craft feels like. This is where digital meets analog, where code meets wood grain.</p>
-          <div class="chip-row">
-            <span class="chip">TACTILE</span>
-            <span class="chip">EARTHY</span>
-            <span class="chip">CRAFT</span>
+
+      <div class="projects-grid">
+        <div class="project-card" onclick="toggleCard(this)">
+          <span class="project-tag">Porchroot</span>
+          <h3>Woodworking & Craft</h3>
+          <p>Custom knives, hand-carved spoons, and tactile creations. Where digital meets analog and code meets wood grain.</p>
+          <div class="project-chips">
+            <span class="chip">Handmade</span>
+            <span class="chip">Tactile</span>
+            <span class="chip">Craft</span>
           </div>
-          <div class="card-expanded-content">
-            <div class="card-stats">
+          <span class="project-expand-hint">Click to explore →</span>
+          <div class="project-expanded">
+            <div class="project-stats">
               <div class="stat">
                 <div class="stat-value">50+</div>
                 <div class="stat-label">Pieces Made</div>
@@ -1166,50 +812,54 @@
                 <div class="stat-label">Satisfaction</div>
               </div>
             </div>
-            <p>Every piece is built to last, designed to be used, and made to tell a story. The process is meditative—raw material transformed through patience, skill, and respect for the medium.</p>
+            <p style="color: var(--text-muted); margin: 0;">Every piece is built to last—raw material transformed through patience, skill, and respect for the medium.</p>
           </div>
         </div>
-        <div class="card" onclick="toggleCard(this)">
-          <div class="tag">DINO DETAILS</div>
-          <h3 class="glitch" data-text="HEADLIGHT RESTORATION">HEADLIGHT RESTORATION</h3>
-          <p>Precision auto detailing and headlight restoration. Taking what's faded and making it shine again. It's not just about the finish—it's about the process.</p>
-          <div class="chip-row">
-            <span class="chip">PRECISION</span>
-            <span class="chip">CLARITY</span>
-            <span class="chip">RESTORATION</span>
+
+        <div class="project-card" onclick="toggleCard(this)">
+          <span class="project-tag">Dino Details</span>
+          <h3>Headlight Restoration</h3>
+          <p>Precision auto detailing and headlight restoration. Taking what's faded and making it shine again.</p>
+          <div class="project-chips">
+            <span class="chip">Precision</span>
+            <span class="chip">Restoration</span>
+            <span class="chip">Detail</span>
           </div>
-          <div class="card-expanded-content">
-            <div class="card-stats">
+          <span class="project-expand-hint">Click to explore →</span>
+          <div class="project-expanded">
+            <div class="project-stats">
               <div class="stat">
                 <div class="stat-value">200+</div>
                 <div class="stat-label">Cars Detailed</div>
               </div>
               <div class="stat">
                 <div class="stat-value">98%</div>
-                <div class="stat-label">Clarity Restored</div>
+                <div class="stat-label">Clarity</div>
               </div>
               <div class="stat">
                 <div class="stat-value">5★</div>
                 <div class="stat-label">Rating</div>
               </div>
             </div>
-            <p>The satisfaction of bringing something back to life, of seeing the before and after, of knowing that attention to detail makes all the difference.</p>
+            <p style="color: var(--text-muted); margin: 0;">The satisfaction of bringing something back to life, of seeing the before and after transformation.</p>
           </div>
         </div>
-        <div class="card" onclick="toggleCard(this)">
-          <div class="tag">TELEPORT MASSIVE</div>
-          <h3 class="glitch" data-text="SCI-FI SERIES & AI VIDEO">SCI-FI SERIES & AI VIDEO</h3>
-          <p>Building a sci-fi narrative universe powered by AI video generation. Creating worlds, characters, and stories that push the boundaries of what's possible.</p>
-          <div class="chip-row">
-            <span class="chip">FUTURISTIC</span>
-            <span class="chip">NARRATIVE</span>
+
+        <div class="project-card" onclick="toggleCard(this)">
+          <span class="project-tag">Teleport Massive</span>
+          <h3>Sci-Fi Series & AI Video</h3>
+          <p>Building a sci-fi narrative universe powered by AI video generation. Creating worlds and stories that push boundaries.</p>
+          <div class="project-chips">
             <span class="chip">AI</span>
+            <span class="chip">Storytelling</span>
+            <span class="chip">Video</span>
           </div>
-          <div class="card-expanded-content">
-            <div class="card-stats">
+          <span class="project-expand-hint">Click to explore →</span>
+          <div class="project-expanded">
+            <div class="project-stats">
               <div class="stat">
                 <div class="stat-value">12</div>
-                <div class="stat-label">Episodes Planned</div>
+                <div class="stat-label">Episodes</div>
               </div>
               <div class="stat">
                 <div class="stat-value">AI</div>
@@ -1220,74 +870,80 @@
                 <div class="stat-label">Launch</div>
               </div>
             </div>
-            <p>Where storytelling meets cutting-edge tech. Combining imagination with execution to create something that's never been done before.</p>
+            <p style="color: var(--text-muted); margin: 0;">Where storytelling meets cutting-edge tech—creating something that's never been done before.</p>
           </div>
         </div>
-        <div class="card" onclick="toggleCard(this)">
-          <div class="tag">WRITING & SUBSTACK</div>
-          <h3 class="glitch" data-text="AMATEUR HERMIT PHILOSOPHY">AMATEUR HERMIT PHILOSOPHY</h3>
-          <p>Writing about nostalgia for practical skills, the value of doing things yourself, and what it means to live intentionally in a world that wants you to consume.</p>
-          <div class="chip-row">
-            <span class="chip">WRITING</span>
-            <span class="chip">PHILOSOPHY</span>
-            <span class="chip">NOSTALGIA</span>
+
+        <div class="project-card" onclick="toggleCard(this)">
+          <span class="project-tag">Substack</span>
+          <h3>Amateur Hermit Philosophy</h3>
+          <p>Writing about nostalgia for practical skills, DIY culture, and living intentionally in a world that wants you to consume.</p>
+          <div class="project-chips">
+            <span class="chip">Writing</span>
+            <span class="chip">Philosophy</span>
+            <span class="chip">Culture</span>
           </div>
-          <div class="card-expanded-content">
-            <div class="card-stats">
+          <span class="project-expand-hint">Click to explore →</span>
+          <div class="project-expanded">
+            <div class="project-stats">
               <div class="stat">
                 <div class="stat-value">50+</div>
                 <div class="stat-label">Articles</div>
               </div>
               <div class="stat">
                 <div class="stat-value">1K+</div>
-                <div class="stat-label">Subscribers</div>
+                <div class="stat-label">Readers</div>
               </div>
               <div class="stat">
-                <div class="stat-value">WEEKLY</div>
+                <div class="stat-value">Weekly</div>
                 <div class="stat-label">Posts</div>
               </div>
             </div>
-            <p>Thinking out loud about craft, philosophy, and the things that actually matter. Raw, unfiltered, honest.</p>
+            <p style="color: var(--text-muted); margin: 0;">Thinking out loud about craft, philosophy, and the things that actually matter.</p>
           </div>
         </div>
-        <div class="card" onclick="toggleCard(this)">
-          <div class="tag">TECH & AI</div>
-          <h3 class="glitch" data-text="NOVASYSTEM & EXPERIMENTS">NOVASYSTEM & EXPERIMENTS</h3>
-          <p>NovaSystem experiments, "How to Win Capitalism" project, and rapid prototyping of ideas that might change how we think about work, systems, and the future.</p>
-          <div class="chip-row">
+
+        <div class="project-card" onclick="toggleCard(this)">
+          <span class="project-tag">Tech & AI</span>
+          <h3>NovaSystem & Experiments</h3>
+          <p>AI experiments, system prototypes, and rapid iteration on ideas that might change how we think about work.</p>
+          <div class="project-chips">
             <span class="chip">AI</span>
-            <span class="chip">SYSTEMS</span>
-            <span class="chip">EXPERIMENTS</span>
+            <span class="chip">Systems</span>
+            <span class="chip">Open Source</span>
           </div>
-          <div class="card-expanded-content">
-            <div class="card-stats">
+          <span class="project-expand-hint">Click to explore →</span>
+          <div class="project-expanded">
+            <div class="project-stats">
               <div class="stat">
                 <div class="stat-value">15+</div>
                 <div class="stat-label">Prototypes</div>
               </div>
               <div class="stat">
-                <div class="stat-value">ACTIVE</div>
-                <div class="stat-label">Development</div>
+                <div class="stat-value">Active</div>
+                <div class="stat-label">Status</div>
               </div>
               <div class="stat">
                 <div class="stat-value">OSS</div>
-                <div class="stat-label">Open Source</div>
+                <div class="stat-label">License</div>
               </div>
             </div>
-            <p>Breaking things, building things, and figuring out what's next. The lab where ideas go to be tested.</p>
+            <p style="color: var(--text-muted); margin: 0;">The lab where ideas go to be tested—breaking things, building things, figuring out what's next.</p>
           </div>
         </div>
-        <div class="card" onclick="toggleCard(this)">
-          <div class="tag">CHICO FAB LAB</div>
-          <h3 class="glitch" data-text="COMPONENT LIBRARY V0.0.1">COMPONENT LIBRARY V0.0.1</h3>
-          <p>Launched a focused wiki for Chico FabLab to codify components, patterns, and team rituals. Clear hierarchy, instant navigation, and documentation that people actually use.</p>
-          <div class="chip-row">
-            <span class="chip">DESIGN SYSTEMS</span>
-            <span class="chip">DOC-DRIVEN</span>
-            <span class="chip">FAST ROLLOUT</span>
+
+        <div class="project-card" onclick="toggleCard(this)">
+          <span class="project-tag">Chico FabLab</span>
+          <h3>Component Library</h3>
+          <p>A focused wiki to codify components, patterns, and team rituals. Documentation people actually use.</p>
+          <div class="project-chips">
+            <span class="chip">Design Systems</span>
+            <span class="chip">Documentation</span>
+            <span class="chip">Teams</span>
           </div>
-          <div class="card-expanded-content">
-            <div class="card-stats">
+          <span class="project-expand-hint">Click to explore →</span>
+          <div class="project-expanded">
+            <div class="project-stats">
               <div class="stat">
                 <div class="stat-value">40+</div>
                 <div class="stat-label">Components</div>
@@ -1297,206 +953,187 @@
                 <div class="stat-label">Documented</div>
               </div>
               <div class="stat">
-                <div class="stat-value">LIVE</div>
+                <div class="stat-value">Live</div>
                 <div class="stat-label">Status</div>
               </div>
             </div>
-            <p>Systems thinking in action. <a href="https://ctavolazzi.github.io/chicofablab.github.io/" target="_blank" rel="noreferrer" style="color: var(--accent);">→ Open Wiki</a></p>
+            <p style="color: var(--text-muted); margin: 0;">Systems thinking in action. <a href="https://ctavolazzi.github.io/chicofablab.github.io/" target="_blank" rel="noreferrer" style="color: var(--link);">View the Wiki →</a></p>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="skills" class="skills-matrix">
-      <div class="section-title">
-        <span class="badge">STATS</span>
-        <h2>SKILL MATRIX</h2>
+    <section id="skills" class="skills-section reveal">
+      <div class="section-header">
+        <h2>Skills</h2>
+        <span class="section-badge">What I do</span>
       </div>
-      <div class="skill-bar">
-        <div class="skill-header">
-          <span class="skill-name">Product Design & UX</span>
-          <span class="skill-level">95%</span>
+
+      <div class="skills-grid">
+        <div class="skill-item">
+          <div class="skill-header">
+            <span class="skill-name">Product Design & UX</span>
+            <span class="skill-level">95%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-fill" data-width="95%"></div>
+          </div>
         </div>
-        <div class="skill-track">
-          <div class="skill-fill" style="width: 95%"></div>
+        <div class="skill-item">
+          <div class="skill-header">
+            <span class="skill-name">Frontend Development</span>
+            <span class="skill-level">90%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-fill" data-width="90%"></div>
+          </div>
         </div>
-      </div>
-      <div class="skill-bar">
-        <div class="skill-header">
-          <span class="skill-name">Frontend Development</span>
-          <span class="skill-level">90%</span>
+        <div class="skill-item">
+          <div class="skill-header">
+            <span class="skill-name">AI & Automation</span>
+            <span class="skill-level">85%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-fill" data-width="85%"></div>
+          </div>
         </div>
-        <div class="skill-track">
-          <div class="skill-fill" style="width: 90%"></div>
+        <div class="skill-item">
+          <div class="skill-header">
+            <span class="skill-name">Content & Writing</span>
+            <span class="skill-level">92%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-fill" data-width="92%"></div>
+          </div>
         </div>
-      </div>
-      <div class="skill-bar">
-        <div class="skill-header">
-          <span class="skill-name">AI & Automation</span>
-          <span class="skill-level">85%</span>
+        <div class="skill-item">
+          <div class="skill-header">
+            <span class="skill-name">Physical Craft</span>
+            <span class="skill-level">88%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-fill" data-width="88%"></div>
+          </div>
         </div>
-        <div class="skill-track">
-          <div class="skill-fill" style="width: 85%"></div>
-        </div>
-      </div>
-      <div class="skill-bar">
-        <div class="skill-header">
-          <span class="skill-name">Content & Copywriting</span>
-          <span class="skill-level">92%</span>
-        </div>
-        <div class="skill-track">
-          <div class="skill-fill" style="width: 92%"></div>
-        </div>
-      </div>
-      <div class="skill-bar">
-        <div class="skill-header">
-          <span class="skill-name">Physical Craft</span>
-          <span class="skill-level">88%</span>
-        </div>
-        <div class="skill-track">
-          <div class="skill-fill" style="width: 88%"></div>
+        <div class="skill-item">
+          <div class="skill-header">
+            <span class="skill-name">Systems Thinking</span>
+            <span class="skill-level">90%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-fill" data-width="90%"></div>
+          </div>
         </div>
       </div>
     </section>
 
-    <section id="gallery">
-      <div class="section-title">
-        <span class="badge" style="background: rgba(255, 176, 0, 0.1); border-color: var(--accent-2); color: var(--accent-2);">SIDE QUEST</span>
-        <h2 style="color: var(--accent-2);">PIXEL EXPERIMENTS</h2>
+    <section id="gallery" class="gallery-section reveal">
+      <div class="section-header">
+        <h2>Pixel Lab</h2>
+        <span class="section-badge" style="background: rgba(163, 113, 247, 0.15); color: var(--purple);">Side quest</span>
       </div>
-      <p style="color: var(--muted); margin-bottom: 1.5rem; font-size: 0.9rem;">Sometimes I make little pictures for no reason. Here are some of them.</p>
+
       <div class="gallery-grid">
-        <div class="gallery-item" style="border-color: rgba(255, 176, 0, 0.2);">
+        <div class="gallery-item">
           <img src="assets/gallery/images/wizard_128x128.png" alt="Wizard" onerror="this.parentElement.style.display='none';">
         </div>
-        <div class="gallery-item" style="border-color: rgba(255, 176, 0, 0.2);">
+        <div class="gallery-item">
           <img src="assets/gallery/images/knight_128x128.png" alt="Knight" onerror="this.parentElement.style.display='none';">
         </div>
-        <div class="gallery-item" style="border-color: rgba(255, 176, 0, 0.2);">
+        <div class="gallery-item">
           <img src="assets/gallery/images/dragon_128x128.png" alt="Dragon" onerror="this.parentElement.style.display='none';">
         </div>
-        <div class="gallery-item" style="border-color: rgba(255, 176, 0, 0.2);">
+        <div class="gallery-item">
           <img src="assets/gallery/images/spaceship_128x128.png" alt="Spaceship" onerror="this.parentElement.style.display='none';">
         </div>
-        <div class="gallery-item" style="border-color: rgba(255, 176, 0, 0.2);">
+        <div class="gallery-item">
           <img src="assets/gallery/images/robot_128x128.png" alt="Robot" onerror="this.parentElement.style.display='none';">
         </div>
-        <div class="gallery-item" style="border-color: rgba(255, 176, 0, 0.2);">
+        <div class="gallery-item">
           <img src="assets/gallery/images/treasure_128x128.png" alt="Treasure" onerror="this.parentElement.style.display='none';">
         </div>
       </div>
-      <p style="color: var(--muted); font-size: 0.75rem; text-align: center; font-style: italic; margin-top: 1rem;">
-        (yes, I taught a computer to draw better than me)
-      </p>
+      <p class="gallery-note">Sometimes I make little pictures for no reason. These are some of them.</p>
     </section>
 
-    <section id="approach" class="split">
-      <div class="panel">
-        <h3>HOW I OPERATE</h3>
-        <ul>
-          <li><strong>DESIGN TO DEPLOY:</strong> I own the story, the visuals, and the code. Less ceremony, more shipping. Less talk, more action.</li>
-          <li><strong>SYSTEMS, NOT SCRAPS:</strong> I build repeatable patterns—tokens, components, and docs that scale without dead weight.</li>
-          <li><strong>VISIBLE MOMENTUM:</strong> Tight demos, quick clips, and written context so collaborators always know where we are.</li>
-          <li><strong>BIAS FOR CLARITY:</strong> I cut features that don't sing. The narrative stays sharp, the experience stays fast.</li>
-        </ul>
+    <section id="approach" class="reveal">
+      <div class="section-header">
+        <h2>How I Work</h2>
+        <span class="section-badge">Philosophy</span>
       </div>
-      <div class="panel">
-        <h3>WHAT YOU GET</h3>
-        <ul>
-          <li><strong>PRODUCT DESIGN:</strong> UX flows, visual systems, interaction patterns, launch visuals. The whole package.</li>
-          <li><strong>FRONTEND CRAFT:</strong> HTML/CSS/JS with a focus on performance and polish. Code that works.</li>
-          <li><strong>DOCS & ENABLEMENT:</strong> Playbooks, component guidelines, and onboarding that people actually read.</li>
-          <li><strong>WORKSHOP ENERGY:</strong> Facilitation, critiques, and live-build sessions to keep the room electric.</li>
-        </ul>
-      </div>
-    </section>
 
-    <section id="terminal" class="terminal">
-      <div class="terminal-header">
-        <span>CTAVOLAZZI TERMINAL</span>
-        <div class="terminal-dots">
-          <div class="terminal-dot"></div>
-          <div class="terminal-dot"></div>
-          <div class="terminal-dot"></div>
+      <div class="two-col">
+        <div class="panel">
+          <h3>My Approach</h3>
+          <ul>
+            <li><strong>Design to Deploy</strong> — I own the story, visuals, and code. Less ceremony, more shipping.</li>
+            <li><strong>Systems, Not Scraps</strong> — Building repeatable patterns that scale without dead weight.</li>
+            <li><strong>Visible Momentum</strong> — Tight demos, quick clips, written context. Collaborators always know where we are.</li>
+            <li><strong>Bias for Clarity</strong> — Cut features that don't sing. The narrative stays sharp.</li>
+          </ul>
         </div>
-      </div>
-      <div class="terminal-body" id="terminalBody">
-        <div class="terminal-line">
-          <span class="terminal-prompt">visitor@ctavolazzi:~$</span>
-          <span class="terminal-command"> whoami</span>
-        </div>
-        <div class="terminal-line terminal-output">A curious human exploring this portfolio.</div>
-        <div class="terminal-line">
-          <span class="terminal-prompt">visitor@ctavolazzi:~$</span>
-          <span class="terminal-command"> cat skills.txt</span>
-        </div>
-        <div class="terminal-line terminal-output">Design | Development | AI | Craft | Writing | Systems</div>
-        <div class="terminal-input">
-          <span class="terminal-prompt">visitor@ctavolazzi:~$</span>
-          <input type="text" id="terminalInput" placeholder="Type a command..." autocomplete="off">
+        <div class="panel">
+          <h3>What You Get</h3>
+          <ul>
+            <li><strong>Product Design</strong> — UX flows, visual systems, interaction patterns, launch visuals.</li>
+            <li><strong>Frontend Craft</strong> — HTML/CSS/JS with focus on performance and polish.</li>
+            <li><strong>Documentation</strong> — Playbooks and guidelines people actually read.</li>
+            <li><strong>Workshop Energy</strong> — Facilitation, critiques, and live-build sessions.</li>
+          </ul>
         </div>
       </div>
     </section>
 
-    <section class="contact">
-      <h2>READY FOR THE NEXT DROP?</h2>
-      <p>I ship fast, I document as I go, and I make sure the work feels like it belongs on stage. Let's build something worth talking about.</p>
-      <div class="cta-row" style="justify-content:flex-start;">
-        <a class="btn primary" href="https://github.com/ctavolazzi" target="_blank" rel="noreferrer">COLLABORATE</a>
-        <a class="btn secondary" href="#docs">VIEW ARCHIVE</a>
+    <section id="playground" class="reveal">
+      <div class="section-header">
+        <h2>Playground</h2>
+        <span class="section-badge">Interactive</span>
+      </div>
+
+      <div class="playground">
+        <div class="playground-header">
+          <span class="playground-title">
+            <span>🖥️</span> visitor@ctavolazzi
+          </span>
+          <div class="playground-dots">
+            <div class="playground-dot"></div>
+            <div class="playground-dot"></div>
+            <div class="playground-dot"></div>
+          </div>
+        </div>
+        <div class="playground-body" id="terminalBody">
+          <div class="terminal-line">
+            <span class="terminal-prompt">~</span>
+            <span class="terminal-command"> Welcome! Type 'help' to see what you can do here.</span>
+          </div>
+          <div class="terminal-input">
+            <span class="terminal-prompt">~</span>
+            <input type="text" id="terminalInput" placeholder="Try typing something..." autocomplete="off">
+          </div>
+        </div>
       </div>
     </section>
 
-    <section id="docs">
-      <h2>LEGACY DATA BANK</h2>
-      <p>Original GitHub Pages documentation preserved for reference.</p>
-      <div class="doc-block">
-<pre>## Welcome to GitHub Pages
-
-You can use the [editor on GitHub](https://github.com/ctavolazzi/ctavolazzi.github.io/edit/main/README.md) to maintain and preview the content for your website in Markdown files.
-
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
-
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/ctavolazzi/ctavolazzi.github.io/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we'll help you sort it out.</pre>
+    <section class="contact reveal">
+      <h2>Let's Build Something</h2>
+      <p>I ship fast, document as I go, and make sure the work feels like it belongs. Want to collaborate?</p>
+      <div class="contact-links">
+        <a href="https://github.com/ctavolazzi" class="btn btn-primary" target="_blank" rel="noreferrer">
+          Get in Touch
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M5 12h14M13 5l7 7-7 7"/>
+          </svg>
+        </a>
+        <a href="#projects" class="btn btn-secondary">
+          View Projects
+        </a>
       </div>
     </section>
   </main>
 
   <footer>
-    BUILT BOLDLY BY CTAVOLAZZI. STAY SHARP, KEEP SHIPPING.
+    <p>Built with care by Christopher Tavolazzi · <a href="https://github.com/ctavolazzi" target="_blank" rel="noreferrer">GitHub</a></p>
   </footer>
-
-  <div class="version-badge" title="Version 0.0.1 - VGA-Cinematic Portfolio">v0.0.1</div>
 
   <button class="scroll-top" id="scrollTop" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -1505,41 +1142,9 @@ Having trouble with Pages? Check out our [documentation](https://docs.github.com
   </button>
 
   <script>
-    // Boot sequence
-    setTimeout(() => {
-      document.getElementById('bootScreen').classList.add('hidden');
-    }, 2500);
-
-    // Typing animation
-    const name = 'CHRISTOPHER TAVOLAZZI';
-    const tagline = 'SALES PROFESSIONAL | MARKETER | CREATOR';
-    let nameIndex = 0;
-    let taglineIndex = 0;
-
-    function typeName() {
-      if (nameIndex < name.length) {
-        document.getElementById('typingName').textContent += name.charAt(nameIndex);
-        nameIndex++;
-        setTimeout(typeName, 50);
-      } else {
-        setTimeout(typeTagline, 300);
-      }
-    }
-
-    function typeTagline() {
-      document.getElementById('typingCursor').style.display = 'none';
-      if (taglineIndex < tagline.length) {
-        document.getElementById('typingTagline').textContent += tagline.charAt(taglineIndex);
-        taglineIndex++;
-        setTimeout(typeTagline, 30);
-      }
-    }
-
-    setTimeout(typeName, 2800);
-
-    // Smooth scroll
+    // Smooth scroll for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
+      anchor.addEventListener('click', function(e) {
         e.preventDefault();
         const target = document.querySelector(this.getAttribute('href'));
         if (target) {
@@ -1548,15 +1153,15 @@ Having trouble with Pages? Check out our [documentation](https://docs.github.com
       });
     });
 
-    // Active nav link
+    // Active nav highlighting
     const sections = document.querySelectorAll('section[id]');
     const navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
 
-    window.addEventListener('scroll', () => {
+    function updateActiveNav() {
       let current = '';
       sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        if (scrollY >= sectionTop - 200) {
+        const sectionTop = section.offsetTop - 100;
+        if (scrollY >= sectionTop) {
           current = section.getAttribute('id');
         }
       });
@@ -1566,59 +1171,98 @@ Having trouble with Pages? Check out our [documentation](https://docs.github.com
           link.classList.add('active');
         }
       });
+    }
 
-      // Scroll to top button
-      const scrollTop = document.getElementById('scrollTop');
-      if (window.scrollY > 500) {
-        scrollTop.classList.add('visible');
+    // Scroll to top button
+    const scrollTopBtn = document.getElementById('scrollTop');
+    function updateScrollTop() {
+      if (window.scrollY > 400) {
+        scrollTopBtn.classList.add('visible');
       } else {
-        scrollTop.classList.remove('visible');
-      }
-    });
-
-    // Expandable cards
-    function toggleCard(card) {
-      const wasExpanded = card.classList.contains('expanded');
-      document.querySelectorAll('.card').forEach(c => c.classList.remove('expanded'));
-      if (!wasExpanded) {
-        card.classList.add('expanded');
-        card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        scrollTopBtn.classList.remove('visible');
       }
     }
 
-    // Terminal commands
+    // Reveal animations
+    const revealElements = document.querySelectorAll('.reveal');
+    function checkReveal() {
+      revealElements.forEach(el => {
+        const rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 100) {
+          el.classList.add('visible');
+        }
+      });
+    }
+
+    // Skill bar animations
+    const skillFills = document.querySelectorAll('.skill-fill');
+    let skillsAnimated = false;
+    function animateSkills() {
+      const skillsSection = document.getElementById('skills');
+      const rect = skillsSection.getBoundingClientRect();
+      if (rect.top < window.innerHeight - 100 && !skillsAnimated) {
+        skillFills.forEach(fill => {
+          const width = fill.dataset.width;
+          fill.style.width = width;
+        });
+        skillsAnimated = true;
+      }
+    }
+
+    // Combined scroll handler
+    window.addEventListener('scroll', () => {
+      updateActiveNav();
+      updateScrollTop();
+      checkReveal();
+      animateSkills();
+    });
+
+    // Initial check
+    checkReveal();
+    animateSkills();
+
+    // Expandable project cards
+    function toggleCard(card) {
+      const wasExpanded = card.classList.contains('expanded');
+      document.querySelectorAll('.project-card').forEach(c => c.classList.remove('expanded'));
+      if (!wasExpanded) {
+        card.classList.add('expanded');
+        setTimeout(() => {
+          card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }, 50);
+      }
+    }
+
+    // Terminal / Playground
     const terminalInput = document.getElementById('terminalInput');
     const terminalBody = document.getElementById('terminalBody');
 
     const commands = {
-      help: 'Available commands: help, about, skills, projects, contact, clear, konami',
-      about: 'Christopher Tavolazzi - Builder of things that matter.',
-      skills: 'Design | Development | AI | Craft | Writing | Systems Thinking',
-      projects: 'Porchroot | Dino Details | Teleport Massive | NovaSystem | CFL Wiki',
-      contact: 'GitHub: @ctavolazzi | Portfolio: ctavolazzi.github.io',
-      clear: 'CLEAR',
-      konami: 'Try: ↑ ↑ ↓ ↓ ← → ← → B A',
-      hello: 'Hello, human. Welcome to my digital domain.',
-      date: new Date().toLocaleString(),
-      version: 'CTAVOLAZZI OS v0.0.1'
+      help: 'Available commands: help, about, skills, projects, hi, clear, date',
+      about: 'Christopher Tavolazzi — Builder, creator, maker. I turn ideas into things.',
+      skills: 'Design · Development · AI · Craft · Writing · Systems',
+      projects: 'Porchroot · Dino Details · Teleport Massive · NovaSystem · CFL Wiki',
+      hi: 'Hey there! Thanks for exploring. 👋',
+      hello: 'Hello! Nice to meet you. Try "help" to see more commands.',
+      date: new Date().toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }),
+      clear: 'CLEAR'
     };
 
     terminalInput.addEventListener('keypress', (e) => {
       if (e.key === 'Enter') {
         const cmd = terminalInput.value.trim().toLowerCase();
         if (cmd) {
-          // Add command to terminal
+          // Add command
           const cmdLine = document.createElement('div');
           cmdLine.className = 'terminal-line';
-          cmdLine.innerHTML = `<span class="terminal-prompt">visitor@ctavolazzi:~$</span><span class="terminal-command"> ${cmd}</span>`;
+          cmdLine.innerHTML = `<span class="terminal-prompt">~</span><span class="terminal-command"> ${cmd}</span>`;
           terminalBody.insertBefore(cmdLine, terminalBody.lastElementChild);
 
-          // Add response
           if (cmd === 'clear') {
             const lines = terminalBody.querySelectorAll('.terminal-line');
             lines.forEach(l => l.remove());
           } else {
-            const response = commands[cmd] || `Command not found: ${cmd}. Type 'help' for available commands.`;
+            const response = commands[cmd] || `Command not found: ${cmd}. Try 'help'`;
             const responseLine = document.createElement('div');
             responseLine.className = 'terminal-line terminal-output';
             responseLine.textContent = response;
@@ -1630,72 +1274,6 @@ Having trouble with Pages? Check out our [documentation](https://docs.github.com
         }
       }
     });
-
-    // Konami code easter egg
-    const konamiCode = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'KeyB', 'KeyA'];
-    let konamiIndex = 0;
-
-    document.addEventListener('keydown', (e) => {
-      if (e.code === konamiCode[konamiIndex]) {
-        konamiIndex++;
-        if (konamiIndex === konamiCode.length) {
-          activateEasterEgg();
-          konamiIndex = 0;
-        }
-      } else {
-        konamiIndex = 0;
-      }
-    });
-
-    function activateEasterEgg() {
-      const easterEgg = document.getElementById('easterEgg');
-      easterEgg.classList.add('active');
-      createMatrixRain();
-    }
-
-    function createMatrixRain() {
-      const container = document.getElementById('matrixRain');
-      container.innerHTML = '';
-      const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%^&*';
-
-      for (let i = 0; i < 50; i++) {
-        const column = document.createElement('div');
-        column.className = 'matrix-column';
-        column.style.left = Math.random() * 100 + '%';
-        column.style.animationDuration = (Math.random() * 3 + 2) + 's';
-        column.style.animationDelay = Math.random() * 2 + 's';
-
-        let text = '';
-        for (let j = 0; j < 20; j++) {
-          text += chars.charAt(Math.floor(Math.random() * chars.length)) + '<br>';
-        }
-        column.innerHTML = text;
-        container.appendChild(column);
-      }
-    }
-
-    // Skill bars animation on scroll
-    const skillBars = document.querySelectorAll('.skill-fill');
-    const skillsSection = document.getElementById('skills');
-    let skillsAnimated = false;
-
-    const observerOptions = { threshold: 0.5 };
-    const skillsObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting && !skillsAnimated) {
-          skillBars.forEach(bar => {
-            const width = bar.style.width;
-            bar.style.width = '0%';
-            setTimeout(() => {
-              bar.style.width = width;
-            }, 100);
-          });
-          skillsAnimated = true;
-        }
-      });
-    }, observerOptions);
-
-    skillsObserver.observe(skillsSection);
   </script>
 </body>
 </html>
