@@ -24,7 +24,7 @@
   <meta name="twitter:image" content="https://avatars.githubusercontent.com/u/61925030?v=4">
 
   <!-- Favicon -->
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛠️</text></svg>">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>◈</text></svg>">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -572,42 +572,6 @@
       transition: width 1s ease;
     }
 
-    /* Gallery */
-    .gallery-section {
-      margin-bottom: 4rem;
-    }
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-      gap: 1rem;
-    }
-    .gallery-item {
-      aspect-ratio: 1;
-      background: var(--bg-elevated);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-sm);
-      overflow: hidden;
-      transition: all 0.3s ease;
-      cursor: pointer;
-    }
-    .gallery-item:hover {
-      border-color: var(--accent);
-      transform: scale(1.05);
-    }
-    .gallery-item img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      image-rendering: pixelated;
-    }
-    .gallery-note {
-      text-align: center;
-      color: var(--text-subtle);
-      font-size: 0.85rem;
-      margin-top: 1rem;
-      font-style: italic;
-    }
-
     /* Two Column Layout */
     .two-col {
       display: grid;
@@ -1045,7 +1009,7 @@
   <header>
     <nav>
       <a href="#" class="logo">
-        <span class="logo-icon">🛠️</span>
+        <span class="logo-icon">◈</span>
         ctavolazzi
       </a>
       <div class="nav-links">
@@ -1133,7 +1097,7 @@
             <ul>
               <li><strong>Education:</strong> B.A. Journalism, CSU Chico (2013)</li>
               <li><strong>Languages:</strong> English, Spanish (studied in Spain)</li>
-              <li><strong>Location:</strong> Northern California</li>
+              <li><strong>Location:</strong> Redding, CA (Northern California)</li>
               <li><strong>Values:</strong> Eagle Scout ethics—transparency, reliability, civic duty</li>
             </ul>
           </div>
@@ -1406,35 +1370,6 @@
           </div>
         </div>
       </div>
-    </section>
-
-    <section id="gallery" class="gallery-section reveal">
-      <div class="section-header">
-        <h2>Pixel Lab</h2>
-        <span class="section-badge" style="background: rgba(163, 113, 247, 0.15); color: var(--purple);">Side quest</span>
-      </div>
-
-      <div class="gallery-grid">
-        <div class="gallery-item">
-          <img src="assets/gallery/images/wizard_128x128.png" alt="Wizard" onerror="this.parentElement.style.display='none';">
-        </div>
-        <div class="gallery-item">
-          <img src="assets/gallery/images/knight_128x128.png" alt="Knight" onerror="this.parentElement.style.display='none';">
-        </div>
-        <div class="gallery-item">
-          <img src="assets/gallery/images/dragon_128x128.png" alt="Dragon" onerror="this.parentElement.style.display='none';">
-        </div>
-        <div class="gallery-item">
-          <img src="assets/gallery/images/spaceship_128x128.png" alt="Spaceship" onerror="this.parentElement.style.display='none';">
-        </div>
-        <div class="gallery-item">
-          <img src="assets/gallery/images/robot_128x128.png" alt="Robot" onerror="this.parentElement.style.display='none';">
-        </div>
-        <div class="gallery-item">
-          <img src="assets/gallery/images/treasure_128x128.png" alt="Treasure" onerror="this.parentElement.style.display='none';">
-        </div>
-      </div>
-      <p class="gallery-note">Sometimes I make little pictures for no reason. These are some of them.</p>
     </section>
 
     <section id="approach" class="reveal">
