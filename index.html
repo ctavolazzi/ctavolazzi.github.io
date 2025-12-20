@@ -3,25 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Christopher Tavolazzi — AI Builder · Technical Writer · Researcher</title>
+  <title>Christopher Tavolazzi — Builder · Writer · Creator</title>
 
   <!-- SEO Meta Tags -->
-  <meta name="description" content="Christopher Tavolazzi - AI tools builder, technical writer, researcher. 460+ GitHub repos. Looking for AI/ML roles, technical writing, and consulting opportunities.">
-  <meta name="keywords" content="Christopher Tavolazzi, AI developer, Python, LLM, technical writer, researcher, NovaSystem, consultant">
+  <meta name="description" content="Christopher Tavolazzi - Building tools, writing about AI, and creating across multiple projects. Check out what I'm working on.">
   <meta name="author" content="Christopher Tavolazzi">
 
   <!-- Open Graph / Social -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://ctavolazzi.github.io/">
-  <meta property="og:title" content="Christopher Tavolazzi — AI Builder · Technical Writer · Researcher">
-  <meta property="og:description" content="Building AI tools. 460+ public repos. Open to AI/ML roles, technical writing, and consulting.">
-  <meta property="og:image" content="https://avatars.githubusercontent.com/u/61925030?v=4">
-
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Christopher Tavolazzi — AI Builder · Technical Writer · Researcher">
-  <meta name="twitter:description" content="Building AI tools. 460+ public repos. Open to AI/ML roles, technical writing, and consulting.">
-  <meta name="twitter:image" content="https://avatars.githubusercontent.com/u/61925030?v=4">
+  <meta property="og:title" content="Christopher Tavolazzi — Builder · Writer · Creator">
+  <meta property="og:description" content="Building tools, writing about AI, and creating across multiple projects.">
 
   <!-- Favicon -->
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>◈</text></svg>">
@@ -82,7 +74,7 @@
     }
 
     nav {
-      max-width: 1100px;
+      max-width: 900px;
       margin: 0 auto;
       padding: 1rem 1.5rem;
       display: flex;
@@ -103,9 +95,7 @@
       transition: color 0.2s;
     }
     .logo:hover { color: var(--accent); }
-    .logo-icon {
-      font-size: 1.2rem;
-    }
+    .logo-icon { font-size: 1.2rem; }
 
     .nav-links {
       display: flex;
@@ -124,12 +114,9 @@
       color: var(--text);
       background: var(--bg-elevated);
     }
-    .nav-links a.active {
-      color: var(--accent);
-    }
 
     main {
-      max-width: 1100px;
+      max-width: 900px;
       margin: 0 auto;
       padding: 3rem 1.5rem;
       position: relative;
@@ -138,47 +125,15 @@
 
     /* Hero */
     .hero {
+      text-align: center;
       margin-bottom: 4rem;
-    }
-    .hero-header {
-      display: flex;
-      align-items: flex-start;
-      gap: 2rem;
-      margin-bottom: 2rem;
-    }
-    .hero-avatar {
-      width: 140px;
-      height: 140px;
-      border-radius: 50%;
-      border: 3px solid var(--accent);
-      box-shadow: 0 0 30px rgba(240, 136, 62, 0.2);
-      flex-shrink: 0;
-      transition: all 0.3s ease;
-    }
-    .hero-avatar:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 40px rgba(240, 136, 62, 0.3);
-    }
-    .hero-content {
-      flex: 1;
-    }
-    .hero-eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.8rem;
-      color: var(--accent);
-      background: var(--accent-soft);
-      padding: 0.4rem 0.8rem;
-      border-radius: 20px;
-      margin-bottom: 1rem;
+      padding: 2rem 0;
     }
     .hero h1 {
-      font-size: clamp(2rem, 5vw, 2.75rem);
+      font-size: clamp(2rem, 5vw, 2.5rem);
       font-weight: 700;
       line-height: 1.2;
-      margin: 0 0 0.5rem;
+      margin: 0 0 1rem;
       color: var(--text);
     }
     .hero h1 span {
@@ -187,35 +142,159 @@
       -webkit-text-fill-color: transparent;
       background-clip: text;
     }
-    .hero-role {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 1rem;
-      color: var(--text-muted);
-      margin: 0 0 1rem;
-      letter-spacing: 0.05em;
-    }
     .hero-subtitle {
-      font-size: 1.1rem;
+      font-size: 1.15rem;
       color: var(--text-muted);
-      max-width: 600px;
-      margin: 0 0 1.5rem;
+      max-width: 550px;
+      margin: 0 auto 2rem;
       line-height: 1.7;
     }
-    @media (max-width: 600px) {
-      .hero-header {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-      }
-      .hero-avatar {
-        width: 120px;
-        height: 120px;
-      }
+    .hero-tagline {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.9rem;
+      color: var(--text-subtle);
+      margin-bottom: 2rem;
     }
-    .hero-links {
+
+    /* Projects Grid */
+    .section-header {
+      margin-bottom: 2rem;
+    }
+    .section-header h2 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin: 0 0 0.5rem;
+      color: var(--text);
+    }
+    .section-header p {
+      color: var(--text-muted);
+      margin: 0;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.25rem;
+      margin-bottom: 4rem;
+    }
+
+    .project-card {
+      background: var(--bg-elevated);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      display: block;
+    }
+    .project-card:hover {
+      border-color: var(--accent);
+      transform: translateY(-4px);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+    }
+    .project-card h3 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin: 0 0 0.5rem;
+      color: var(--text);
       display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .project-card p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin: 0 0 1rem;
+      line-height: 1.6;
+    }
+    .project-url {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.8rem;
+      color: var(--accent);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .project-url svg {
+      width: 14px;
+      height: 14px;
+    }
+
+    /* Status indicator */
+    .status {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.75rem;
+      padding: 0.25rem 0.6rem;
+      border-radius: 20px;
+      font-family: 'JetBrains Mono', monospace;
+    }
+    .status-active {
+      background: rgba(63, 185, 80, 0.15);
+      color: var(--green);
+    }
+    .status-building {
+      background: var(--accent-soft);
+      color: var(--accent);
+    }
+    .status-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: currentColor;
+    }
+    .status-active .status-dot {
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.4; }
+    }
+
+    /* About section */
+    .about-section {
+      background: var(--bg-elevated);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 2rem;
+      margin-bottom: 4rem;
+    }
+    .about-section h2 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin: 0 0 1rem;
+      color: var(--text);
+    }
+    .about-section p {
+      color: var(--text-muted);
+      margin: 0 0 1rem;
+      line-height: 1.8;
+    }
+    .about-section p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Contact */
+    .contact {
+      text-align: center;
+      padding: 2rem 0;
+    }
+    .contact h2 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin: 0 0 0.75rem;
+      color: var(--text);
+    }
+    .contact p {
+      color: var(--text-muted);
+      margin: 0 0 1.5rem;
+    }
+    .contact-links {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
       flex-wrap: wrap;
-      gap: 0.75rem;
     }
     .btn {
       display: inline-flex;
@@ -227,8 +306,6 @@
       font-weight: 500;
       font-size: 0.95rem;
       transition: all 0.2s;
-      border: none;
-      cursor: pointer;
     }
     .btn-primary {
       background: var(--accent);
@@ -247,486 +324,6 @@
       background: var(--bg-card);
       border-color: var(--border-hover);
     }
-    .btn svg {
-      width: 16px;
-      height: 16px;
-    }
-
-    /* Highlights */
-    .highlights {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1rem;
-      margin-top: 3rem;
-    }
-    .highlight {
-      background: var(--bg-elevated);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 1.25rem;
-      transition: all 0.3s ease;
-    }
-    .highlight:hover {
-      border-color: var(--border-hover);
-      transform: translateY(-2px);
-    }
-    .highlight-icon {
-      font-size: 1.5rem;
-      margin-bottom: 0.75rem;
-    }
-    .highlight h3 {
-      font-size: 1rem;
-      font-weight: 600;
-      margin: 0 0 0.5rem;
-      color: var(--text);
-    }
-    .highlight p {
-      font-size: 0.9rem;
-      color: var(--text-muted);
-      margin: 0;
-      line-height: 1.5;
-    }
-
-    /* About Section */
-    .about-section {
-      margin-bottom: 4rem;
-    }
-    .about-grid {
-      display: grid;
-      grid-template-columns: 2fr 1fr;
-      gap: 2rem;
-    }
-    .about-main {
-      background: var(--bg-elevated);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 2rem;
-    }
-    .about-main h3 {
-      font-size: 1.4rem;
-      font-weight: 600;
-      margin: 0 0 1.5rem;
-      color: var(--text);
-    }
-    .about-main p {
-      color: var(--text-muted);
-      margin: 0 0 1.25rem;
-      line-height: 1.8;
-    }
-    .about-main p:last-child {
-      margin-bottom: 0;
-    }
-    .about-main a:hover {
-      text-decoration: underline;
-    }
-    .about-quote {
-      background: var(--bg-card);
-      border-left: 3px solid var(--accent);
-      padding: 1.25rem 1.5rem;
-      margin: 1.5rem 0;
-      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
-    }
-    .about-quote p {
-      font-style: italic;
-      color: var(--text);
-      margin: 0;
-      font-size: 1.05rem;
-    }
-    .about-sidebar {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-    }
-    .about-card {
-      background: var(--bg-elevated);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 1.25rem;
-    }
-    .about-card h4 {
-      font-size: 0.9rem;
-      font-weight: 600;
-      color: var(--accent);
-      margin: 0 0 0.75rem;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-    }
-    .about-card ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-    .about-card li {
-      color: var(--text-muted);
-      font-size: 0.9rem;
-      padding: 0.4rem 0;
-      line-height: 1.5;
-    }
-    .about-card li strong {
-      color: var(--text);
-    }
-    .about-card a:hover {
-      text-decoration: underline;
-    }
-    @media (max-width: 768px) {
-      .about-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    /* Section Headers */
-    .section-header {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      margin: 0 0 2rem;
-    }
-    .section-header h2 {
-      font-size: 1.5rem;
-      font-weight: 600;
-      margin: 0;
-      color: var(--text);
-    }
-    .section-badge {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.75rem;
-      padding: 0.3rem 0.6rem;
-      background: var(--accent-soft);
-      color: var(--accent);
-      border-radius: 6px;
-    }
-
-    /* Project Cards */
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-      gap: 1.25rem;
-      margin-bottom: 4rem;
-    }
-    .project-card {
-      background: var(--bg-elevated);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 1.5rem;
-      transition: all 0.3s ease;
-      cursor: pointer;
-      position: relative;
-      overflow: hidden;
-    }
-    .project-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 3px;
-      background: linear-gradient(90deg, var(--accent), var(--purple));
-      opacity: 0;
-      transition: opacity 0.3s;
-    }
-    .project-card:hover {
-      border-color: var(--border-hover);
-      transform: translateY(-4px);
-      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
-    }
-    .project-card:hover::before {
-      opacity: 1;
-    }
-    .project-tag {
-      display: inline-block;
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.7rem;
-      padding: 0.25rem 0.5rem;
-      background: var(--bg-card);
-      color: var(--text-muted);
-      border-radius: 4px;
-      margin-bottom: 1rem;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-    }
-    .project-card h3 {
-      font-size: 1.2rem;
-      font-weight: 600;
-      margin: 0 0 0.75rem;
-      color: var(--text);
-    }
-    .project-card p {
-      font-size: 0.95rem;
-      color: var(--text-muted);
-      margin: 0 0 1rem;
-      line-height: 1.6;
-    }
-    .project-chips {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.4rem;
-    }
-    .chip {
-      font-size: 0.75rem;
-      padding: 0.2rem 0.5rem;
-      background: var(--bg-card);
-      color: var(--text-subtle);
-      border-radius: 4px;
-      font-family: 'JetBrains Mono', monospace;
-    }
-
-    /* Expanded card content */
-    .project-expanded {
-      display: none;
-      margin-top: 1.5rem;
-      padding-top: 1.5rem;
-      border-top: 1px solid var(--border);
-      animation: slideDown 0.3s ease;
-    }
-    .project-card.expanded .project-expanded {
-      display: block;
-    }
-    @keyframes slideDown {
-      from { opacity: 0; transform: translateY(-10px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    .project-stats {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1rem;
-      margin-bottom: 1rem;
-    }
-    .stat {
-      text-align: center;
-      padding: 0.75rem;
-      background: var(--bg-card);
-      border-radius: var(--radius-sm);
-    }
-    .stat-value {
-      font-size: 1.25rem;
-      font-weight: 700;
-      color: var(--accent);
-      font-family: 'JetBrains Mono', monospace;
-    }
-    .stat-label {
-      font-size: 0.7rem;
-      color: var(--text-subtle);
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-    }
-    .project-expand-hint {
-      font-size: 0.75rem;
-      color: var(--text-subtle);
-      position: absolute;
-      bottom: 1rem;
-      right: 1rem;
-      opacity: 0;
-      transition: opacity 0.2s;
-    }
-    .project-card:hover .project-expand-hint {
-      opacity: 1;
-    }
-    .project-card.expanded .project-expand-hint {
-      display: none;
-    }
-
-    /* Skills */
-    .skills-section {
-      margin-bottom: 4rem;
-    }
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 1rem;
-    }
-    .skill-item {
-      background: var(--bg-elevated);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 1rem 1.25rem;
-      transition: all 0.3s;
-    }
-    .skill-item:hover {
-      border-color: var(--border-hover);
-    }
-    .skill-header {
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 0.5rem;
-    }
-    .skill-name {
-      font-weight: 500;
-      font-size: 0.9rem;
-      color: var(--text);
-    }
-    .skill-level {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.8rem;
-      color: var(--accent);
-    }
-    .skill-bar {
-      height: 4px;
-      background: var(--bg-card);
-      border-radius: 2px;
-      overflow: hidden;
-    }
-    .skill-fill {
-      height: 100%;
-      background: linear-gradient(90deg, var(--accent), var(--purple));
-      border-radius: 2px;
-      transition: width 1s ease;
-    }
-
-    /* Two Column Layout */
-    .two-col {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 1.5rem;
-      margin-bottom: 4rem;
-    }
-    .panel {
-      background: var(--bg-elevated);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 1.5rem;
-    }
-    .panel h3 {
-      font-size: 1.1rem;
-      font-weight: 600;
-      margin: 0 0 1rem;
-      color: var(--text);
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-    .panel h3::before {
-      content: '';
-      width: 4px;
-      height: 1rem;
-      background: var(--accent);
-      border-radius: 2px;
-    }
-    .panel ul {
-      margin: 0;
-      padding: 0;
-      list-style: none;
-    }
-    .panel li {
-      padding: 0.75rem 0;
-      border-bottom: 1px solid var(--border);
-      color: var(--text-muted);
-      font-size: 0.95rem;
-    }
-    .panel li:last-child {
-      border-bottom: none;
-      padding-bottom: 0;
-    }
-    .panel li strong {
-      color: var(--text);
-      font-weight: 500;
-    }
-
-    /* Playground / Terminal */
-    .playground {
-      background: var(--bg-elevated);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      overflow: hidden;
-      margin-bottom: 4rem;
-    }
-    .playground-header {
-      background: var(--bg-card);
-      padding: 0.75rem 1rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      border-bottom: 1px solid var(--border);
-    }
-    .playground-title {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.85rem;
-      color: var(--text-muted);
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-    .playground-dots {
-      display: flex;
-      gap: 0.5rem;
-    }
-    .playground-dot {
-      width: 12px;
-      height: 12px;
-      border-radius: 50%;
-      background: var(--border);
-    }
-    .playground-dot:nth-child(1) { background: #ff5f56; }
-    .playground-dot:nth-child(2) { background: #ffbd2e; }
-    .playground-dot:nth-child(3) { background: #27c93f; }
-    .playground-body {
-      padding: 1.25rem;
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.85rem;
-      min-height: 150px;
-      max-height: 300px;
-      overflow-y: auto;
-    }
-    .terminal-line {
-      margin-bottom: 0.5rem;
-      line-height: 1.6;
-    }
-    .terminal-prompt {
-      color: var(--green);
-    }
-    .terminal-command {
-      color: var(--text);
-    }
-    .terminal-output {
-      color: var(--text-muted);
-      padding-left: 1rem;
-    }
-    .terminal-input {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      margin-top: 0.5rem;
-    }
-    .terminal-input input {
-      flex: 1;
-      background: transparent;
-      border: none;
-      color: var(--text);
-      font-family: inherit;
-      font-size: inherit;
-      outline: none;
-    }
-    .terminal-input input::placeholder {
-      color: var(--text-subtle);
-    }
-
-    /* Contact */
-    .contact {
-      background: linear-gradient(135deg, var(--bg-elevated) 0%, var(--bg-card) 100%);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 2.5rem;
-      text-align: center;
-      margin-bottom: 3rem;
-    }
-    .contact h2 {
-      font-size: 1.75rem;
-      font-weight: 600;
-      margin: 0 0 0.75rem;
-      color: var(--text);
-    }
-    .contact p {
-      color: var(--text-muted);
-      margin: 0 0 1.5rem;
-      max-width: 500px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    .contact-links {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
 
     /* Footer */
     footer {
@@ -736,46 +333,9 @@
       font-size: 0.85rem;
       border-top: 1px solid var(--border);
     }
-    footer a {
-      color: var(--text-muted);
-      text-decoration: none;
-    }
-    footer a:hover {
-      color: var(--accent);
-    }
-
-    /* Scroll to top */
-    .scroll-top {
-      position: fixed;
-      bottom: 2rem;
-      right: 2rem;
-      width: 44px;
-      height: 44px;
-      background: var(--bg-elevated);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-sm);
-      color: var(--text-muted);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      opacity: 0;
-      visibility: hidden;
-      transition: all 0.3s;
-      z-index: 50;
-    }
-    .scroll-top.visible {
-      opacity: 1;
-      visibility: visible;
-    }
-    .scroll-top:hover {
-      background: var(--accent);
-      color: #000;
-      border-color: var(--accent);
-    }
 
     /* Responsive */
-    @media (max-width: 768px) {
+    @media (max-width: 600px) {
       nav {
         flex-direction: column;
         align-items: flex-start;
@@ -785,226 +345,35 @@
         flex-wrap: wrap;
       }
       .hero h1 {
-        font-size: 2rem;
+        font-size: 1.75rem;
       }
       .projects-grid {
         grid-template-columns: 1fr;
       }
-      .project-stats {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 0.5rem;
-      }
-      .two-col {
-        grid-template-columns: 1fr;
-      }
-      .contact {
-        padding: 1.5rem;
-      }
     }
 
-    /* Reveal animations */
-    .reveal {
+    /* Animations */
+    .fade-in {
       opacity: 0;
       transform: translateY(20px);
-      transition: all 0.6s ease;
+      animation: fadeIn 0.6s ease forwards;
     }
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
-
-    /* Staggered card animations */
-    .project-card {
-      opacity: 0;
-      transform: translateY(20px);
-      transition: all 0.4s ease;
-    }
-    .project-card.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    /* Floating animation for highlights */
-    .highlight {
-      animation: float 6s ease-in-out infinite;
-    }
-    .highlight:nth-child(1) { animation-delay: 0s; }
-    .highlight:nth-child(2) { animation-delay: 2s; }
-    .highlight:nth-child(3) { animation-delay: 4s; }
-    @keyframes float {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-8px); }
-    }
-    .highlight:hover {
-      animation-play-state: paused;
-      transform: translateY(-4px) scale(1.02);
-    }
-
-    /* Cursor glow effect */
-    .cursor-glow {
-      position: fixed;
-      width: 400px;
-      height: 400px;
-      background: radial-gradient(circle, rgba(240, 136, 62, 0.08) 0%, transparent 70%);
-      border-radius: 50%;
-      pointer-events: none;
-      z-index: 0;
-      transform: translate(-50%, -50%);
-      transition: opacity 0.3s;
-      opacity: 0;
-    }
-    .cursor-glow.active {
-      opacity: 1;
-    }
-
-    /* Typing animation for hero name */
-    .hero h1 span {
-      display: inline-block;
-    }
-    .typing-effect {
-      overflow: hidden;
-      border-right: 2px solid var(--accent);
-      white-space: nowrap;
-      animation: typing 1.5s steps(20, end), blink-caret 0.75s step-end infinite;
-    }
-    @keyframes typing {
-      from { width: 0; }
-      to { width: 100%; }
-    }
-    @keyframes blink-caret {
-      from, to { border-color: transparent; }
-      50% { border-color: var(--accent); }
-    }
-
-    /* Glowing border on focus for playground input */
-    .terminal-input input:focus {
-      box-shadow: 0 0 0 2px var(--accent-soft);
-    }
-
-    /* Easter egg hint */
-    .easter-egg-hint {
-      position: fixed;
-      bottom: 1rem;
-      left: 1rem;
-      font-size: 0.7rem;
-      color: var(--text-subtle);
-      opacity: 0;
-      transition: opacity 0.3s;
-      font-family: 'JetBrains Mono', monospace;
-      z-index: 50;
-    }
-    .easter-egg-hint.visible {
-      opacity: 0.5;
-    }
-
-    /* Easter egg modal */
-    .easter-egg-modal {
-      position: fixed;
-      inset: 0;
-      background: rgba(13, 17, 23, 0.95);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      z-index: 1000;
-      opacity: 0;
-      visibility: hidden;
-      transition: all 0.4s ease;
-    }
-    .easter-egg-modal.active {
-      opacity: 1;
-      visibility: visible;
-    }
-    .easter-egg-modal h2 {
-      font-size: 2rem;
-      color: var(--accent);
-      margin-bottom: 1rem;
-      animation: pulse-glow 2s ease-in-out infinite;
-    }
-    @keyframes pulse-glow {
-      0%, 100% { text-shadow: 0 0 20px rgba(240, 136, 62, 0.5); }
-      50% { text-shadow: 0 0 40px rgba(240, 136, 62, 0.8), 0 0 60px rgba(240, 136, 62, 0.4); }
-    }
-    .easter-egg-modal p {
-      color: var(--text-muted);
-      margin-bottom: 2rem;
-      text-align: center;
-      max-width: 400px;
-    }
-    .easter-egg-modal .close-btn {
-      padding: 0.5rem 1rem;
-      background: var(--bg-elevated);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-sm);
-      color: var(--text-muted);
-      cursor: pointer;
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.85rem;
-      transition: all 0.2s;
-    }
-    .easter-egg-modal .close-btn:hover {
-      border-color: var(--accent);
-      color: var(--accent);
-    }
-
-    /* Confetti animation */
-    .confetti {
-      position: absolute;
-      width: 10px;
-      height: 10px;
-      background: var(--accent);
-      animation: confetti-fall 3s ease-out forwards;
-    }
-    @keyframes confetti-fall {
-      0% { transform: translateY(0) rotate(0deg); opacity: 1; }
-      100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
-    }
-
-    /* Link hover effect */
-    .panel li a, footer a {
-      position: relative;
-    }
-    .panel li a::after, footer a::after {
-      content: '';
-      position: absolute;
-      bottom: -2px;
-      left: 0;
-      width: 0;
-      height: 1px;
-      background: var(--accent);
-      transition: width 0.3s;
-    }
-    .panel li a:hover::after, footer a:hover::after {
-      width: 100%;
-    }
-
-    /* Project card glow on hover */
-    .project-card:hover {
-      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(240, 136, 62, 0.1);
-    }
-
-    /* Skill item pulse on hover */
-    .skill-item:hover .skill-fill {
-      animation: skill-pulse 1s ease-in-out;
-    }
-    @keyframes skill-pulse {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.7; }
-    }
+    .delay-1 { animation-delay: 0.1s; }
+    .delay-2 { animation-delay: 0.2s; }
+    .delay-3 { animation-delay: 0.3s; }
+    .delay-4 { animation-delay: 0.4s; }
+    .delay-5 { animation-delay: 0.5s; }
+    .delay-6 { animation-delay: 0.6s; }
   </style>
 </head>
 <body>
   <div class="bg-gradient"></div>
-  <div class="cursor-glow" id="cursorGlow"></div>
-
-  <!-- Easter Egg Modal -->
-  <div class="easter-egg-modal" id="easterEggModal">
-    <h2>You found it!</h2>
-    <p>You're clearly someone who likes to explore. I appreciate that. Here's to the curious minds who look for the hidden things.</p>
-    <button class="close-btn" onclick="document.getElementById('easterEggModal').classList.remove('active')">Nice, thanks!</button>
-  </div>
-
-  <div class="easter-egg-hint" id="easterHint">try the konami code</div>
 
   <header>
     <nav>
@@ -1013,477 +382,105 @@
         ctavolazzi
       </a>
       <div class="nav-links">
-        <a href="#about">About</a>
         <a href="#projects">Projects</a>
-        <a href="#skills">Skills</a>
-        <a href="#playground">Playground</a>
-        <a href="https://github.com/ctavolazzi" target="_blank" rel="noreferrer">GitHub</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
       </div>
     </nav>
   </header>
 
   <main>
-    <section class="hero">
-      <div class="hero-header">
-        <img src="https://avatars.githubusercontent.com/u/61925030?v=4" alt="Christopher Tavolazzi" class="hero-avatar">
-        <div class="hero-content">
-          <div class="hero-eyebrow">
-            <span>◈</span> Available for consulting
-          </div>
-          <h1><span>Christopher Tavolazzi</span></h1>
-          <p class="hero-role">AI Builder · Technical Writer · Researcher</p>
-          <p class="hero-subtitle">Journalist → musician → real estate → photography → web dev → AI. Unusual path, but it means I can research, write, build, and explain—often in the same project.</p>
-        </div>
-      </div>
-      <div class="hero-links">
-        <a href="#about" class="btn btn-primary">
-          Learn More
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M5 12h14M13 5l7 7-7 7"/>
-          </svg>
-        </a>
-        <a href="https://github.com/ctavolazzi" class="btn btn-secondary" target="_blank" rel="noreferrer">
-          <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16">
-            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-          </svg>
-          GitHub Profile
-        </a>
-      </div>
-
-      <div class="highlights">
-        <div class="highlight reveal">
-          <div class="highlight-icon">◇</div>
-          <h3>Cross-Domain Experience</h3>
-          <p>10 years in real estate. 3 albums released. B.A. in Journalism. Now building AI tools. I connect dots others don't see.</p>
-        </div>
-        <div class="highlight reveal">
-          <div class="highlight-icon">◈</div>
-          <h3>460+ Public Repos</h3>
-          <p>I learn by building. Python, AI tools, automation, web apps. Everything's on GitHub—you can see exactly how I work.</p>
-        </div>
-        <div class="highlight reveal">
-          <div class="highlight-icon">◆</div>
-          <h3>Ships Real Work</h3>
-          <p>Closed real estate deals. Released albums. Built NovaSystem. I finish what I start and know how to navigate when plans change.</p>
-        </div>
-      </div>
+    <section class="hero fade-in">
+      <h1>Hi, I'm <span>Chris</span></h1>
+      <p class="hero-subtitle">I build things on the internet. Here's where you can find what I'm working on and follow along.</p>
+      <p class="hero-tagline">Builder · Writer · Creator</p>
     </section>
 
-    <section id="about" class="about-section reveal">
-      <div class="section-header">
-        <h2>About</h2>
-        <span class="section-badge">The Story</span>
-      </div>
-
-      <div class="about-grid">
-        <div class="about-main">
-          <h3>The Short Version</h3>
-          <p><strong>Now:</strong> Building AI tools (<a href="https://github.com/ctavolazzi/NovaSystem" target="_blank" rel="noreferrer" style="color: var(--link);">NovaSystem</a>, <a href="https://github.com/ctavolazzi/Johnny-Autoseed" target="_blank" rel="noreferrer" style="color: var(--link);">Johnny Autoseed</a>), writing on <a href="https://medium.com/@thecoffeejesus" target="_blank" rel="noreferrer" style="color: var(--link);">Medium</a>, and consulting on AI implementation. 460+ public repos—everything I build is documented and shared.</p>
-
-          <p><strong>Before:</strong> 10 years in California real estate (negotiation, client management, market analysis). 3 albums released (creative direction, production, collaboration). Journalism degree from CSU Chico (research, writing, verification). Photography and video production. Web development.</p>
-
-          <p><strong>What I'm good at:</strong> Breaking down complex problems. Explaining technical concepts to non-technical people. Finding the simple solution hiding in the complicated mess. Building things that work.</p>
-
-          <div class="about-quote">
-            <p>"I'm an overthinker—but sometimes that's exactly what a problem needs."</p>
-          </div>
-
-          <p><strong>Looking for:</strong> Teams building useful AI tools. Roles that need someone who can research, build, write, and communicate. Places where my weird cross-domain background is an asset, not a question mark.</p>
-        </div>
-
-        <div class="about-sidebar">
-          <div class="about-card">
-            <h4>Background</h4>
-            <ul>
-              <li><strong>Education:</strong> B.A. Journalism, CSU Chico (2013)</li>
-              <li><strong>Languages:</strong> English, Spanish (studied in Spain)</li>
-              <li><strong>Location:</strong> Redding, CA (Northern California)</li>
-              <li><strong>Values:</strong> Eagle Scout ethics—transparency, reliability, civic duty</li>
-            </ul>
-          </div>
-
-          <div class="about-card">
-            <h4>Core Skills</h4>
-            <ul>
-              <li>Python, AI/ML tooling, LLM integration</li>
-              <li>Technical writing & documentation</li>
-              <li>Research synthesis & analysis</li>
-              <li>Product thinking & user experience</li>
-              <li>Cross-functional communication</li>
-            </ul>
-          </div>
-
-          <div class="about-card">
-            <h4>Find Me</h4>
-            <ul>
-              <li><a href="https://github.com/ctavolazzi" target="_blank" rel="noreferrer" style="color: var(--link);">GitHub</a> — 460+ repos</li>
-              <li><a href="https://medium.com/@thecoffeejesus" target="_blank" rel="noreferrer" style="color: var(--link);">Medium</a> — Writing & essays</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="projects" class="reveal">
-      <div class="section-header">
-        <h2>Projects</h2>
-        <span class="section-badge">Systems & Research</span>
+    <section id="projects">
+      <div class="section-header fade-in delay-1">
+        <h2>Active Projects</h2>
+        <p>Sites I'm actively building and updating</p>
       </div>
 
       <div class="projects-grid">
-        <div class="project-card" onclick="toggleCard(this)">
-          <span class="project-tag">Main Project</span>
-          <h3>NovaSystem</h3>
-          <p>An open-source tool I built to make AI assistants more useful. It helps structure conversations so you get better, more reliable answers.</p>
-          <div class="project-chips">
-            <span class="chip">Python</span>
-            <span class="chip">AI Tools</span>
-            <span class="chip">Open Source</span>
-          </div>
-          <span class="project-expand-hint">Click to explore →</span>
-          <div class="project-expanded">
-            <div class="project-stats">
-              <div class="stat">
-                <div class="stat-value">460+</div>
-                <div class="stat-label">Repos</div>
-              </div>
-              <div class="stat">
-                <div class="stat-value">71+</div>
-                <div class="stat-label">Stars</div>
-              </div>
-              <div class="stat">
-                <div class="stat-value">Active</div>
-                <div class="stat-label">Status</div>
-              </div>
-            </div>
-            <p style="color: var(--text-muted); margin: 0;">It basically creates a structured way to break down problems and catch mistakes before they snowball. Still a work in progress, but it's been useful. <a href="https://github.com/ctavolazzi/NovaSystem" target="_blank" rel="noreferrer" style="color: var(--link);">Check it out on GitHub →</a></p>
-          </div>
-        </div>
-
-        <div class="project-card" onclick="toggleCard(this)">
-          <span class="project-tag">Creative</span>
-          <h3>Teleport Massive</h3>
-          <p>A sci-fi narrative universe exploring AI, consciousness, and the future of humanity. Leveraging generative AI for world-building.</p>
-          <div class="project-chips">
-            <span class="chip">AI Video</span>
-            <span class="chip">Storytelling</span>
-            <span class="chip">Worldbuilding</span>
-          </div>
-          <span class="project-expand-hint">Click to explore →</span>
-          <div class="project-expanded">
-            <div class="project-stats">
-              <div class="stat">
-                <div class="stat-value">12</div>
-                <div class="stat-label">Episodes</div>
-              </div>
-              <div class="stat">
-                <div class="stat-value">AI</div>
-                <div class="stat-label">Powered</div>
-              </div>
-              <div class="stat">
-                <div class="stat-value">2025</div>
-                <div class="stat-label">Launch</div>
-              </div>
-            </div>
-            <p style="color: var(--text-muted); margin: 0;">Where systems thinking meets narrative design—exploring what it means to be human in an age of artificial minds.</p>
-          </div>
-        </div>
-
-        <div class="project-card" onclick="toggleCard(this)">
-          <span class="project-tag">Writing</span>
-          <h3>Medium & Essays</h3>
-          <p>Long-form writing on AI, technology, philosophy, and the millennial experience. "Learning in public" as methodology.</p>
-          <div class="project-chips">
-            <span class="chip">Essays</span>
-            <span class="chip">Philosophy</span>
-            <span class="chip">Tech</span>
-          </div>
-          <span class="project-expand-hint">Click to explore →</span>
-          <div class="project-expanded">
-            <div class="project-stats">
-              <div class="stat">
-                <div class="stat-value">50+</div>
-                <div class="stat-label">Articles</div>
-              </div>
-              <div class="stat">
-                <div class="stat-value">1K+</div>
-                <div class="stat-label">Readers</div>
-              </div>
-              <div class="stat">
-                <div class="stat-value">Active</div>
-                <div class="stat-label">Status</div>
-              </div>
-            </div>
-            <p style="color: var(--text-muted); margin: 0;">From data science tutorials to existential poetry. Vulnerability as a teaching tool. <a href="https://medium.com/@thecoffeejesus" target="_blank" rel="noreferrer" style="color: var(--link);">Read on Medium →</a></p>
-          </div>
-        </div>
-
-        <div class="project-card" onclick="toggleCard(this)">
-          <span class="project-tag">AI</span>
-          <h3>Johnny Autoseed</h3>
-          <p>Advanced AI project exploring autonomous systems and intelligent automation. Building tools that can work independently.</p>
-          <div class="project-chips">
-            <span class="chip">Python</span>
-            <span class="chip">AI Agents</span>
-            <span class="chip">Automation</span>
-          </div>
-          <span class="project-expand-hint">Click to explore →</span>
-          <div class="project-expanded">
-            <div class="project-stats">
-              <div class="stat">
-                <div class="stat-value">WIP</div>
-                <div class="stat-label">Status</div>
-              </div>
-              <div class="stat">
-                <div class="stat-value">AI</div>
-                <div class="stat-label">Powered</div>
-              </div>
-              <div class="stat">
-                <div class="stat-value">2025</div>
-                <div class="stat-label">Year</div>
-              </div>
-            </div>
-            <p style="color: var(--text-muted); margin: 0;">Pushing the boundaries of what AI agents can do. <a href="https://github.com/ctavolazzi/Johnny-Autoseed" target="_blank" rel="noreferrer" style="color: var(--link);">Check it out on GitHub →</a></p>
-          </div>
-        </div>
-
-        <div class="project-card" onclick="toggleCard(this)">
-          <span class="project-tag">Music</span>
-          <h3>Music & Albums</h3>
-          <p>3 released albums—one solo, two with bands. Songwriting, recording, production, and live performance.</p>
-          <div class="project-chips">
-            <span class="chip">Recording</span>
-            <span class="chip">Production</span>
-            <span class="chip">Performance</span>
-          </div>
-          <span class="project-expand-hint">Click to explore →</span>
-          <div class="project-expanded">
-            <div class="project-stats">
-              <div class="stat">
-                <div class="stat-value">3</div>
-                <div class="stat-label">Albums</div>
-              </div>
-              <div class="stat">
-                <div class="stat-value">2</div>
-                <div class="stat-label">Bands</div>
-              </div>
-              <div class="stat">
-                <div class="stat-value">∞</div>
-                <div class="stat-label">Hours</div>
-              </div>
-            </div>
-            <p style="color: var(--text-muted); margin: 0;">Music was my first creative love. Still play, still write. The creative process transfers to everything else I do.</p>
-          </div>
-        </div>
-
-        <div class="project-card" onclick="toggleCard(this)">
-          <span class="project-tag">Craft</span>
-          <h3>Physical Making</h3>
-          <p>Woodworking, knife-making, and tactile creation. Where the digital mind reconnects with material reality.</p>
-          <div class="project-chips">
-            <span class="chip">Woodworking</span>
-            <span class="chip">Knives</span>
-            <span class="chip">Handcraft</span>
-          </div>
-          <span class="project-expand-hint">Click to explore →</span>
-          <div class="project-expanded">
-            <div class="project-stats">
-              <div class="stat">
-                <div class="stat-value">50+</div>
-                <div class="stat-label">Pieces</div>
-              </div>
-              <div class="stat">
-                <div class="stat-value">3+</div>
-                <div class="stat-label">Years</div>
-              </div>
-              <div class="stat">
-                <div class="stat-value">∞</div>
-                <div class="stat-label">Patience</div>
-              </div>
-            </div>
-            <p style="color: var(--text-muted); margin: 0;">Raw material transformed through patience and respect for the medium. The antidote to pure abstraction.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="skills" class="skills-section reveal">
-      <div class="section-header">
-        <h2>Skills</h2>
-        <span class="section-badge">Capabilities</span>
-      </div>
-
-      <div class="skills-grid">
-        <div class="skill-item">
-          <div class="skill-header">
-            <span class="skill-name">Systems Analysis</span>
-            <span class="skill-level">95%</span>
-          </div>
-          <div class="skill-bar">
-            <div class="skill-fill" data-width="95%"></div>
-          </div>
-        </div>
-        <div class="skill-item">
-          <div class="skill-header">
-            <span class="skill-name">AI/LLM Architecture</span>
-            <span class="skill-level">90%</span>
-          </div>
-          <div class="skill-bar">
-            <div class="skill-fill" data-width="90%"></div>
-          </div>
-        </div>
-        <div class="skill-item">
-          <div class="skill-header">
-            <span class="skill-name">Research & Synthesis</span>
-            <span class="skill-level">92%</span>
-          </div>
-          <div class="skill-bar">
-            <div class="skill-fill" data-width="92%"></div>
-          </div>
-        </div>
-        <div class="skill-item">
-          <div class="skill-header">
-            <span class="skill-name">Technical Writing</span>
-            <span class="skill-level">90%</span>
-          </div>
-          <div class="skill-bar">
-            <div class="skill-fill" data-width="90%"></div>
-          </div>
-        </div>
-        <div class="skill-item">
-          <div class="skill-header">
-            <span class="skill-name">Python Development</span>
-            <span class="skill-level">85%</span>
-          </div>
-          <div class="skill-bar">
-            <div class="skill-fill" data-width="85%"></div>
-          </div>
-        </div>
-        <div class="skill-item">
-          <div class="skill-header">
-            <span class="skill-name">Facilitation & Education</span>
-            <span class="skill-level">88%</span>
-          </div>
-          <div class="skill-bar">
-            <div class="skill-fill" data-width="88%"></div>
-          </div>
-        </div>
-        <div class="skill-item">
-          <div class="skill-header">
-            <span class="skill-name">Photo & Video Production</span>
-            <span class="skill-level">80%</span>
-          </div>
-          <div class="skill-bar">
-            <div class="skill-fill" data-width="80%"></div>
-          </div>
-        </div>
-        <div class="skill-item">
-          <div class="skill-header">
-            <span class="skill-name">Music Production</span>
-            <span class="skill-level">75%</span>
-          </div>
-          <div class="skill-bar">
-            <div class="skill-fill" data-width="75%"></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="approach" class="reveal">
-      <div class="section-header">
-        <h2>How I Work</h2>
-        <span class="section-badge">The basics</span>
-      </div>
-
-      <div class="two-col">
-        <div class="panel">
-          <h3>My Approach</h3>
-          <ul>
-            <li><strong>I ask a lot of questions first</strong> — Usually the real problem isn't what it looks like at first glance.</li>
-            <li><strong>I look for the simple fix</strong> — Sometimes there's an easy win hiding in plain sight. I try to find those first.</li>
-            <li><strong>I'll tell you what I don't know</strong> — I'd rather say "I'm not sure, let me look into it" than pretend.</li>
-            <li><strong>I try to explain as I go</strong> — So you understand what we're doing and why, not just the end result.</li>
-          </ul>
-        </div>
-        <div class="panel">
-          <h3>What I Deliver</h3>
-          <ul>
-            <li><strong>AI implementation</strong> — Tool selection, workflow integration, team training.</li>
-            <li><strong>Technical research</strong> — Deep dives with clear, actionable summaries.</li>
-            <li><strong>Content & documentation</strong> — Writing that explains complex topics simply.</li>
-            <li><strong>Project audits</strong> — Fresh perspective on what's stuck and why.</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="section-header" style="margin-top: 2rem;">
-        <h2>Open To</h2>
-        <span class="section-badge">Opportunities</span>
-      </div>
-
-      <div class="two-col">
-        <div class="panel">
-          <h3>Interested In</h3>
-          <ul>
-            <li><strong>AI/ML roles</strong> — Research, implementation, product development.</li>
-            <li><strong>Technical writing</strong> — Documentation, tutorials, developer relations.</li>
-            <li><strong>Consulting</strong> — AI strategy, workflow optimization, team enablement.</li>
-            <li><strong>Startups</strong> — Early-stage teams building useful things.</li>
-          </ul>
-        </div>
-        <div class="panel">
-          <h3>Work Style</h3>
-          <ul>
-            <li><strong>Remote-first</strong> — Based in Northern California, flexible on timezone overlap.</li>
-            <li><strong>Contract or full-time</strong> — Open to both, depends on fit.</li>
-            <li><strong>Collaborative</strong> — I work best with direct feedback and clear goals.</li>
-            <li><strong>Transparent</strong> — I'll tell you what I don't know upfront.</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <section id="playground" class="reveal">
-      <div class="section-header">
-        <h2>Playground</h2>
-        <span class="section-badge">Interactive</span>
-      </div>
-
-      <div class="playground">
-        <div class="playground-header">
-          <span class="playground-title">
-            <span>🖥️</span> visitor@ctavolazzi
+        <a href="https://johnnyautoseed.com" target="_blank" rel="noreferrer" class="project-card fade-in delay-2">
+          <h3>
+            Johnny Autoseed
+            <span class="status status-active"><span class="status-dot"></span> Active</span>
+          </h3>
+          <p>AI tools and automation experiments. Building systems that work smarter.</p>
+          <span class="project-url">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+              <polyline points="15 3 21 3 21 9"/>
+              <line x1="10" y1="14" x2="21" y2="3"/>
+            </svg>
+            johnnyautoseed.com
           </span>
-          <div class="playground-dots">
-            <div class="playground-dot"></div>
-            <div class="playground-dot"></div>
-            <div class="playground-dot"></div>
-          </div>
-        </div>
-        <div class="playground-body" id="terminalBody">
-          <div class="terminal-line">
-            <span class="terminal-prompt">~</span>
-            <span class="terminal-command"> Welcome! Type 'help' to see what you can do here.</span>
-          </div>
-          <div class="terminal-input">
-            <span class="terminal-prompt">~</span>
-            <input type="text" id="terminalInput" placeholder="Try typing something..." autocomplete="off">
-          </div>
-        </div>
+        </a>
+
+        <a href="https://chicofl.org" target="_blank" rel="noreferrer" class="project-card fade-in delay-3">
+          <h3>
+            Chico FL
+            <span class="status status-active"><span class="status-dot"></span> Active</span>
+          </h3>
+          <p>Community project focused on local initiatives and connection.</p>
+          <span class="project-url">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+              <polyline points="15 3 21 3 21 9"/>
+              <line x1="10" y1="14" x2="21" y2="3"/>
+            </svg>
+            chicofl.org
+          </span>
+        </a>
+
+        <a href="https://autoseed.systems" target="_blank" rel="noreferrer" class="project-card fade-in delay-4">
+          <h3>
+            Autoseed Systems
+            <span class="status status-building"><span class="status-dot"></span> Building</span>
+          </h3>
+          <p>The technical foundation. Systems and infrastructure for automated workflows.</p>
+          <span class="project-url">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+              <polyline points="15 3 21 3 21 9"/>
+              <line x1="10" y1="14" x2="21" y2="3"/>
+            </svg>
+            autoseed.systems
+          </span>
+        </a>
+
+        <a href="https://porchroot.com" target="_blank" rel="noreferrer" class="project-card fade-in delay-5">
+          <h3>
+            Porchroot
+            <span class="status status-active"><span class="status-dot"></span> Active</span>
+          </h3>
+          <p>Gardening, growing, and getting back to basics. From seed to harvest.</p>
+          <span class="project-url">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+              <polyline points="15 3 21 3 21 9"/>
+              <line x1="10" y1="14" x2="21" y2="3"/>
+            </svg>
+            porchroot.com
+          </span>
+        </a>
       </div>
     </section>
 
-    <section class="contact reveal">
-      <h2>Let's Talk</h2>
-      <p>Looking for AI implementation help, technical writing, or someone who can bridge the gap between technical and non-technical teams. Open to consulting, contract, or full-time roles.</p>
+    <section id="about" class="about-section fade-in delay-6">
+      <h2>About Me</h2>
+      <p>I've worn a lot of hats—journalist, musician, real estate agent, photographer, developer. Now I spend most of my time building AI tools and writing about technology.</p>
+      <p>I like making things that work. These days that means a lot of Python, a lot of writing, and a lot of experimenting with what's possible when you combine the two.</p>
+      <p>If you want to follow along with what I'm building, the sites above are where things happen. Pick one that interests you and say hi.</p>
+    </section>
+
+    <section id="contact" class="contact">
+      <h2>Get in Touch</h2>
+      <p>Best way to reach me is through one of my active projects.</p>
       <div class="contact-links">
-        <a href="https://github.com/ctavolazzi" class="btn btn-primary" target="_blank" rel="noreferrer">
-          GitHub
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M5 12h14M13 5l7 7-7 7"/>
-          </svg>
-        </a>
-        <a href="https://medium.com/@thecoffeejesus" class="btn btn-secondary" target="_blank" rel="noreferrer">
+        <a href="https://medium.com/@thecoffeejesus" class="btn btn-primary" target="_blank" rel="noreferrer">
           Read My Writing
         </a>
         <a href="https://www.linkedin.com/in/christopher-tavolazzi/" class="btn btn-secondary" target="_blank" rel="noreferrer">
@@ -1494,226 +491,7 @@
   </main>
 
   <footer>
-    <p>Built with care by Christopher Tavolazzi · <a href="https://github.com/ctavolazzi" target="_blank" rel="noreferrer">GitHub</a></p>
+    <p>Christopher Tavolazzi · Building in public</p>
   </footer>
-
-  <button class="scroll-top" id="scrollTop" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-      <path d="M18 15l-6-6-6 6"/>
-    </svg>
-  </button>
-
-  <script>
-    // Smooth scroll for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-      });
-    });
-
-    // Active nav highlighting
-    const sections = document.querySelectorAll('section[id]');
-    const navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
-
-    function updateActiveNav() {
-      let current = '';
-      sections.forEach(section => {
-        const sectionTop = section.offsetTop - 100;
-        if (scrollY >= sectionTop) {
-          current = section.getAttribute('id');
-        }
-      });
-      navLinks.forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href') === '#' + current) {
-          link.classList.add('active');
-        }
-      });
-    }
-
-    // Scroll to top button
-    const scrollTopBtn = document.getElementById('scrollTop');
-    function updateScrollTop() {
-      if (window.scrollY > 400) {
-        scrollTopBtn.classList.add('visible');
-      } else {
-        scrollTopBtn.classList.remove('visible');
-      }
-    }
-
-    // Reveal animations
-    const revealElements = document.querySelectorAll('.reveal');
-    function checkReveal() {
-      revealElements.forEach(el => {
-        const rect = el.getBoundingClientRect();
-        if (rect.top < window.innerHeight - 100) {
-          el.classList.add('visible');
-        }
-      });
-    }
-
-    // Skill bar animations
-    const skillFills = document.querySelectorAll('.skill-fill');
-    let skillsAnimated = false;
-    function animateSkills() {
-      const skillsSection = document.getElementById('skills');
-      const rect = skillsSection.getBoundingClientRect();
-      if (rect.top < window.innerHeight - 100 && !skillsAnimated) {
-        skillFills.forEach(fill => {
-          const width = fill.dataset.width;
-          fill.style.width = width;
-        });
-        skillsAnimated = true;
-      }
-    }
-
-    // Combined scroll handler
-    window.addEventListener('scroll', () => {
-      updateActiveNav();
-      updateScrollTop();
-      checkReveal();
-      animateSkills();
-    });
-
-    // Initial check
-    checkReveal();
-    animateSkills();
-
-    // Expandable project cards
-    function toggleCard(card) {
-      const wasExpanded = card.classList.contains('expanded');
-      document.querySelectorAll('.project-card').forEach(c => c.classList.remove('expanded'));
-      if (!wasExpanded) {
-        card.classList.add('expanded');
-        setTimeout(() => {
-          card.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        }, 50);
-      }
-    }
-
-    // Terminal / Playground
-    const terminalInput = document.getElementById('terminalInput');
-    const terminalBody = document.getElementById('terminalBody');
-
-    const commands = {
-      help: 'Commands: help, about, skills, projects, nova, music, hi, clear, date, secret',
-      about: 'Hey! I\'m Chris. Journalist turned musician turned delivery driver turned phone tech turned realtor turned photographer turned developer turned AI builder. I like figuring things out.',
-      skills: 'Research · Writing · Python · AI tools · Photo/Video · Music · Explaining things · Asking good questions',
-      projects: 'NovaSystem · Johnny Autoseed · Teleport Massive · 3 albums · Medium writing',
-      nova: 'NovaSystem is a tool I built to get better answers out of AI assistants. Still working on it. Check GitHub if curious.',
-      music: '3 albums released—one solo, two with bands. Music was my first creative outlet. Still play.',
-      hi: 'Hey! Thanks for poking around.',
-      hello: 'Hi there! Try "about" or "projects" to learn more.',
-      date: new Date().toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }),
-      clear: 'CLEAR',
-      secret: 'Hint: ↑↑↓↓←→←→BA'
-    };
-
-    terminalInput.addEventListener('keypress', (e) => {
-      if (e.key === 'Enter') {
-        const cmd = terminalInput.value.trim().toLowerCase();
-        if (cmd) {
-          // Add command
-          const cmdLine = document.createElement('div');
-          cmdLine.className = 'terminal-line';
-          cmdLine.innerHTML = `<span class="terminal-prompt">~</span><span class="terminal-command"> ${cmd}</span>`;
-          terminalBody.insertBefore(cmdLine, terminalBody.lastElementChild);
-
-          if (cmd === 'clear') {
-            const lines = terminalBody.querySelectorAll('.terminal-line');
-            lines.forEach(l => l.remove());
-          } else {
-            const response = commands[cmd] || `Command not found: ${cmd}. Try 'help'`;
-            const responseLine = document.createElement('div');
-            responseLine.className = 'terminal-line terminal-output';
-            responseLine.textContent = response;
-            terminalBody.insertBefore(responseLine, terminalBody.lastElementChild);
-          }
-
-          terminalInput.value = '';
-          terminalBody.scrollTop = terminalBody.scrollHeight;
-        }
-      }
-    });
-
-    // Cursor glow effect
-    const cursorGlow = document.getElementById('cursorGlow');
-    let glowTimeout;
-    document.addEventListener('mousemove', (e) => {
-      cursorGlow.style.left = e.clientX + 'px';
-      cursorGlow.style.top = e.clientY + 'px';
-      cursorGlow.classList.add('active');
-
-      clearTimeout(glowTimeout);
-      glowTimeout = setTimeout(() => {
-        cursorGlow.classList.remove('active');
-      }, 1000);
-    });
-
-    // Staggered card animations
-    const projectCards = document.querySelectorAll('.project-card');
-    const cardObserver = new IntersectionObserver((entries) => {
-      entries.forEach((entry, index) => {
-        if (entry.isIntersecting) {
-          setTimeout(() => {
-            entry.target.classList.add('visible');
-          }, index * 100);
-        }
-      });
-    }, { threshold: 0.1 });
-
-    projectCards.forEach(card => cardObserver.observe(card));
-
-    // Konami code easter egg
-    const konamiCode = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'KeyB', 'KeyA'];
-    let konamiIndex = 0;
-
-    document.addEventListener('keydown', (e) => {
-      if (e.code === konamiCode[konamiIndex]) {
-        konamiIndex++;
-        if (konamiIndex === konamiCode.length) {
-          document.getElementById('easterEggModal').classList.add('active');
-          createConfetti();
-          konamiIndex = 0;
-        }
-      } else {
-        konamiIndex = 0;
-      }
-    });
-
-    // Create confetti
-    function createConfetti() {
-      const colors = ['#f0883e', '#a371f7', '#3fb950', '#58a6ff', '#f7c873'];
-      const modal = document.getElementById('easterEggModal');
-
-      for (let i = 0; i < 50; i++) {
-        const confetti = document.createElement('div');
-        confetti.className = 'confetti';
-        confetti.style.left = Math.random() * 100 + '%';
-        confetti.style.background = colors[Math.floor(Math.random() * colors.length)];
-        confetti.style.animationDelay = Math.random() * 0.5 + 's';
-        confetti.style.animationDuration = (Math.random() * 2 + 2) + 's';
-        modal.appendChild(confetti);
-
-        setTimeout(() => confetti.remove(), 4000);
-      }
-    }
-
-    // Show easter egg hint after scrolling
-    let hintShown = false;
-    window.addEventListener('scroll', () => {
-      if (!hintShown && window.scrollY > 1000) {
-        document.getElementById('easterHint').classList.add('visible');
-        hintShown = true;
-        setTimeout(() => {
-          document.getElementById('easterHint').classList.remove('visible');
-        }, 5000);
-      }
-    });
-  </script>
 </body>
 </html>
