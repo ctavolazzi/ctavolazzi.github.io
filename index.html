@@ -3,23 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Christopher Tavolazzi — Builder & Creator</title>
+  <title>Christopher Tavolazzi — Analyst · Researcher · Facilitator</title>
 
   <!-- SEO Meta Tags -->
-  <meta name="description" content="Christopher Tavolazzi - Builder, Creator, Maker. Exploring the intersection of craft, technology, and storytelling.">
-  <meta name="keywords" content="Christopher Tavolazzi, portfolio, creator, developer, AI, woodworking, design">
+  <meta name="description" content="Christopher Tavolazzi - Analyst, Researcher, Facilitator. A polymorphic professor helping organizations and individuals navigate complexity, optimize systems, and prepare for an AI-transformed future.">
+  <meta name="keywords" content="Christopher Tavolazzi, consultant, advisor, AI, AGI, systems thinking, analyst, researcher, facilitator, NovaSystem">
   <meta name="author" content="Christopher Tavolazzi">
 
   <!-- Open Graph / Social -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://ctavolazzi.github.io/">
-  <meta property="og:title" content="Christopher Tavolazzi — Builder & Creator">
-  <meta property="og:description" content="Exploring the intersection of craft, technology, and storytelling.">
+  <meta property="og:title" content="Christopher Tavolazzi — Analyst · Researcher · Facilitator">
+  <meta property="og:description" content="A polymorphic professor helping navigate complexity and prepare for an AI-transformed future.">
+  <meta property="og:image" content="https://avatars.githubusercontent.com/u/61925030?v=4">
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Christopher Tavolazzi — Builder & Creator">
-  <meta name="twitter:description" content="Exploring the intersection of craft, technology, and storytelling.">
+  <meta name="twitter:title" content="Christopher Tavolazzi — Analyst · Researcher · Facilitator">
+  <meta name="twitter:description" content="A polymorphic professor helping navigate complexity and prepare for an AI-transformed future.">
+  <meta name="twitter:image" content="https://avatars.githubusercontent.com/u/61925030?v=4">
 
   <!-- Favicon -->
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛠️</text></svg>">
@@ -138,6 +140,28 @@
     .hero {
       margin-bottom: 4rem;
     }
+    .hero-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+    .hero-avatar {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      border: 3px solid var(--accent);
+      box-shadow: 0 0 30px rgba(240, 136, 62, 0.2);
+      flex-shrink: 0;
+      transition: all 0.3s ease;
+    }
+    .hero-avatar:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 40px rgba(240, 136, 62, 0.3);
+    }
+    .hero-content {
+      flex: 1;
+    }
     .hero-eyebrow {
       display: inline-flex;
       align-items: center;
@@ -148,13 +172,13 @@
       background: var(--accent-soft);
       padding: 0.4rem 0.8rem;
       border-radius: 20px;
-      margin-bottom: 1.5rem;
+      margin-bottom: 1rem;
     }
     .hero h1 {
-      font-size: clamp(2.5rem, 6vw, 3.5rem);
+      font-size: clamp(2rem, 5vw, 2.75rem);
       font-weight: 700;
       line-height: 1.2;
-      margin: 0 0 1rem;
+      margin: 0 0 0.5rem;
       color: var(--text);
     }
     .hero h1 span {
@@ -163,11 +187,30 @@
       -webkit-text-fill-color: transparent;
       background-clip: text;
     }
+    .hero-role {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 1rem;
+      color: var(--text-muted);
+      margin: 0 0 1rem;
+      letter-spacing: 0.05em;
+    }
     .hero-subtitle {
-      font-size: 1.2rem;
+      font-size: 1.1rem;
       color: var(--text-muted);
       max-width: 600px;
-      margin: 0 0 2rem;
+      margin: 0 0 1.5rem;
+      line-height: 1.7;
+    }
+    @media (max-width: 600px) {
+      .hero-header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+      .hero-avatar {
+        width: 120px;
+        height: 120px;
+      }
     }
     .hero-links {
       display: flex;
@@ -242,6 +285,93 @@
       color: var(--text-muted);
       margin: 0;
       line-height: 1.5;
+    }
+
+    /* About Section */
+    .about-section {
+      margin-bottom: 4rem;
+    }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 2rem;
+    }
+    .about-main {
+      background: var(--bg-elevated);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 2rem;
+    }
+    .about-main h3 {
+      font-size: 1.4rem;
+      font-weight: 600;
+      margin: 0 0 1.5rem;
+      color: var(--text);
+    }
+    .about-main p {
+      color: var(--text-muted);
+      margin: 0 0 1.25rem;
+      line-height: 1.8;
+    }
+    .about-main p:last-child {
+      margin-bottom: 0;
+    }
+    .about-main a:hover {
+      text-decoration: underline;
+    }
+    .about-quote {
+      background: var(--bg-card);
+      border-left: 3px solid var(--accent);
+      padding: 1.25rem 1.5rem;
+      margin: 1.5rem 0;
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    }
+    .about-quote p {
+      font-style: italic;
+      color: var(--text);
+      margin: 0;
+      font-size: 1.05rem;
+    }
+    .about-sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .about-card {
+      background: var(--bg-elevated);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.25rem;
+    }
+    .about-card h4 {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--accent);
+      margin: 0 0 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .about-card ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .about-card li {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      padding: 0.4rem 0;
+      line-height: 1.5;
+    }
+    .about-card li strong {
+      color: var(--text);
+    }
+    .about-card a:hover {
+      text-decoration: underline;
+    }
+    @media (max-width: 768px) {
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
     }
 
     /* Section Headers */
@@ -919,9 +1049,9 @@
         ctavolazzi
       </a>
       <div class="nav-links">
+        <a href="#about">About</a>
         <a href="#projects">Projects</a>
         <a href="#skills">Skills</a>
-        <a href="#gallery">Gallery</a>
         <a href="#playground">Playground</a>
         <a href="https://github.com/ctavolazzi" target="_blank" rel="noreferrer">GitHub</a>
       </div>
@@ -930,14 +1060,20 @@
 
   <main>
     <section class="hero">
-      <div class="hero-eyebrow">
-        <span>👋</span> Welcome to my workshop
+      <div class="hero-header">
+        <img src="https://avatars.githubusercontent.com/u/61925030?v=4" alt="Christopher Tavolazzi" class="hero-avatar">
+        <div class="hero-content">
+          <div class="hero-eyebrow">
+            <span>◈</span> Available for consulting
+          </div>
+          <h1><span>Christopher Tavolazzi</span></h1>
+          <p class="hero-role">Analyst · Researcher · Facilitator</p>
+          <p class="hero-subtitle">I'm a polymorphic professor—a medium through which ideas flow more easily than most. I transmute complexity into clarity, identify how to enhance any system, and help others navigate an AI-transformed future.</p>
+        </div>
       </div>
-      <h1>I'm <span>Christopher Tavolazzi</span></h1>
-      <p class="hero-subtitle">Builder, creator, maker. I explore the intersection of craft, technology, and storytelling—turning ideas into things you can hold, use, and experience.</p>
       <div class="hero-links">
-        <a href="#projects" class="btn btn-primary">
-          Explore Projects
+        <a href="#about" class="btn btn-primary">
+          Learn More
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M5 12h14M13 5l7 7-7 7"/>
           </svg>
@@ -952,19 +1088,75 @@
 
       <div class="highlights">
         <div class="highlight reveal">
-          <div class="highlight-icon">⚡</div>
-          <h3>Fast to Ship</h3>
-          <p>From concept to reality without the endless meetings. I build quickly and polish until it feels right.</p>
+          <div class="highlight-icon">◇</div>
+          <h3>Systems Analyst</h3>
+          <p>I see the patterns others miss. Whether it's a workflow, an organization, or an AI architecture—I find the leverage points.</p>
         </div>
         <div class="highlight reveal">
-          <div class="highlight-icon">🎯</div>
-          <h3>Intentional Design</h3>
-          <p>Every pixel, every word serves a purpose. No filler, no fluff—just thoughtful work that resonates.</p>
+          <div class="highlight-icon">◈</div>
+          <h3>Transmuter</h3>
+          <p>Complex ideas flow through me and emerge clearer. I translate between domains, disciplines, and mindsets.</p>
         </div>
         <div class="highlight reveal">
-          <div class="highlight-icon">🔧</div>
-          <h3>Full Stack Maker</h3>
-          <p>Code meets craft. I'm as comfortable with woodworking as I am with web development.</p>
+          <div class="highlight-icon">◆</div>
+          <h3>AGI Educator</h3>
+          <p>Helping professionals survive and thrive in an AI-transformed world. 460+ GitHub repos. Building the future in public.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="about-section reveal">
+      <div class="section-header">
+        <h2>About</h2>
+        <span class="section-badge">The Story</span>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-main">
+          <h3>The Conductor's Arc</h3>
+          <p>My career has been a series of deliberate transformations—from journalist to real estate professional, from web developer to AGI educator. Each pivot added new tools to my toolkit while preserving a constant: <strong>I orchestrate complexity into coherence.</strong></p>
+
+          <p>I earned my journalism degree from CSU Chico in 2013, where I learned that clear communication is the foundation of everything. My Eagle Scout training gave me an ethical framework: transparency, authenticity, being true to your word. These values have followed me through ten years in real estate, into web development, and now into the frontier of artificial intelligence.</p>
+
+          <p>Today I run <a href="https://www.skool.com/@christopher-tavolazzi-7455" target="_blank" rel="noreferrer" style="color: var(--link);">Surviving the Singularity</a>, a community helping professionals navigate the AI transformation. I maintain 460+ repositories on GitHub, including the <a href="https://github.com/ctavolazzi/NovaSystem" target="_blank" rel="noreferrer" style="color: var(--link);">NovaSystem</a>—a polymorphic, self-modifying intelligence layer that augments large language models through structured problem-solving.</p>
+
+          <div class="about-quote">
+            <p>"I think of myself as a version of Icarus, but also maybe Job, and also maybe a bit of an overthinker."</p>
+          </div>
+
+          <p>Ambition that reaches too high. Suffering that builds resilience. A mind that won't stop turning things over. I've learned to transmute these qualities into something useful—the ability to see systems as they are and as they could be.</p>
+        </div>
+
+        <div class="about-sidebar">
+          <div class="about-card">
+            <h4>Background</h4>
+            <ul>
+              <li><strong>Education:</strong> B.A. Journalism, CSU Chico (2013)</li>
+              <li><strong>Languages:</strong> English, Spanish (studied in Spain)</li>
+              <li><strong>Location:</strong> Northern California</li>
+              <li><strong>Values:</strong> Eagle Scout ethics—transparency, reliability, civic duty</li>
+            </ul>
+          </div>
+
+          <div class="about-card">
+            <h4>What I Do</h4>
+            <ul>
+              <li><strong>Analyze</strong> systems and find leverage points</li>
+              <li><strong>Research</strong> emerging technologies and their implications</li>
+              <li><strong>Facilitate</strong> understanding across domains</li>
+              <li><strong>Educate</strong> on AI/AGI survival strategies</li>
+              <li><strong>Consult</strong> on systems optimization</li>
+            </ul>
+          </div>
+
+          <div class="about-card">
+            <h4>Find Me</h4>
+            <ul>
+              <li><a href="https://github.com/ctavolazzi" target="_blank" rel="noreferrer" style="color: var(--link);">GitHub</a> — 460+ repos</li>
+              <li><a href="https://medium.com/@thecoffeejesus" target="_blank" rel="noreferrer" style="color: var(--link);">Medium</a> — Writing & essays</li>
+              <li><a href="https://www.skool.com/@christopher-tavolazzi-7455" target="_blank" rel="noreferrer" style="color: var(--link);">Skool</a> — Surviving the Singularity</li>
+            </ul>
+          </div>
         </div>
       </div>
     </section>
