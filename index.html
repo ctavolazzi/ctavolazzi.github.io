@@ -3,26 +3,28 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Christopher Tavolazzi — Builder & Creator</title>
+  <title>Christopher Tavolazzi — Analyst · Researcher · Facilitator</title>
 
   <!-- SEO Meta Tags -->
-  <meta name="description" content="Christopher Tavolazzi - Builder, Creator, Maker. Exploring the intersection of craft, technology, and storytelling.">
-  <meta name="keywords" content="Christopher Tavolazzi, portfolio, creator, developer, AI, woodworking, design">
+  <meta name="description" content="Christopher Tavolazzi - Analyst, Researcher, Facilitator. A polymorphic professor helping organizations and individuals navigate complexity, optimize systems, and prepare for an AI-transformed future.">
+  <meta name="keywords" content="Christopher Tavolazzi, consultant, advisor, AI, AGI, systems thinking, analyst, researcher, facilitator, NovaSystem">
   <meta name="author" content="Christopher Tavolazzi">
 
   <!-- Open Graph / Social -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://ctavolazzi.github.io/">
-  <meta property="og:title" content="Christopher Tavolazzi — Builder & Creator">
-  <meta property="og:description" content="Exploring the intersection of craft, technology, and storytelling.">
+  <meta property="og:title" content="Christopher Tavolazzi — Analyst · Researcher · Facilitator">
+  <meta property="og:description" content="A polymorphic professor helping navigate complexity and prepare for an AI-transformed future.">
+  <meta property="og:image" content="https://avatars.githubusercontent.com/u/61925030?v=4">
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Christopher Tavolazzi — Builder & Creator">
-  <meta name="twitter:description" content="Exploring the intersection of craft, technology, and storytelling.">
+  <meta name="twitter:title" content="Christopher Tavolazzi — Analyst · Researcher · Facilitator">
+  <meta name="twitter:description" content="A polymorphic professor helping navigate complexity and prepare for an AI-transformed future.">
+  <meta name="twitter:image" content="https://avatars.githubusercontent.com/u/61925030?v=4">
 
   <!-- Favicon -->
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛠️</text></svg>">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>◈</text></svg>">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -138,6 +140,28 @@
     .hero {
       margin-bottom: 4rem;
     }
+    .hero-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+    .hero-avatar {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      border: 3px solid var(--accent);
+      box-shadow: 0 0 30px rgba(240, 136, 62, 0.2);
+      flex-shrink: 0;
+      transition: all 0.3s ease;
+    }
+    .hero-avatar:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 40px rgba(240, 136, 62, 0.3);
+    }
+    .hero-content {
+      flex: 1;
+    }
     .hero-eyebrow {
       display: inline-flex;
       align-items: center;
@@ -148,13 +172,13 @@
       background: var(--accent-soft);
       padding: 0.4rem 0.8rem;
       border-radius: 20px;
-      margin-bottom: 1.5rem;
+      margin-bottom: 1rem;
     }
     .hero h1 {
-      font-size: clamp(2.5rem, 6vw, 3.5rem);
+      font-size: clamp(2rem, 5vw, 2.75rem);
       font-weight: 700;
       line-height: 1.2;
-      margin: 0 0 1rem;
+      margin: 0 0 0.5rem;
       color: var(--text);
     }
     .hero h1 span {
@@ -163,11 +187,30 @@
       -webkit-text-fill-color: transparent;
       background-clip: text;
     }
+    .hero-role {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 1rem;
+      color: var(--text-muted);
+      margin: 0 0 1rem;
+      letter-spacing: 0.05em;
+    }
     .hero-subtitle {
-      font-size: 1.2rem;
+      font-size: 1.1rem;
       color: var(--text-muted);
       max-width: 600px;
-      margin: 0 0 2rem;
+      margin: 0 0 1.5rem;
+      line-height: 1.7;
+    }
+    @media (max-width: 600px) {
+      .hero-header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+      .hero-avatar {
+        width: 120px;
+        height: 120px;
+      }
     }
     .hero-links {
       display: flex;
@@ -242,6 +285,93 @@
       color: var(--text-muted);
       margin: 0;
       line-height: 1.5;
+    }
+
+    /* About Section */
+    .about-section {
+      margin-bottom: 4rem;
+    }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 2rem;
+    }
+    .about-main {
+      background: var(--bg-elevated);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 2rem;
+    }
+    .about-main h3 {
+      font-size: 1.4rem;
+      font-weight: 600;
+      margin: 0 0 1.5rem;
+      color: var(--text);
+    }
+    .about-main p {
+      color: var(--text-muted);
+      margin: 0 0 1.25rem;
+      line-height: 1.8;
+    }
+    .about-main p:last-child {
+      margin-bottom: 0;
+    }
+    .about-main a:hover {
+      text-decoration: underline;
+    }
+    .about-quote {
+      background: var(--bg-card);
+      border-left: 3px solid var(--accent);
+      padding: 1.25rem 1.5rem;
+      margin: 1.5rem 0;
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    }
+    .about-quote p {
+      font-style: italic;
+      color: var(--text);
+      margin: 0;
+      font-size: 1.05rem;
+    }
+    .about-sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .about-card {
+      background: var(--bg-elevated);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.25rem;
+    }
+    .about-card h4 {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--accent);
+      margin: 0 0 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .about-card ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .about-card li {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      padding: 0.4rem 0;
+      line-height: 1.5;
+    }
+    .about-card li strong {
+      color: var(--text);
+    }
+    .about-card a:hover {
+      text-decoration: underline;
+    }
+    @media (max-width: 768px) {
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
     }
 
     /* Section Headers */
@@ -440,42 +570,6 @@
       background: linear-gradient(90deg, var(--accent), var(--purple));
       border-radius: 2px;
       transition: width 1s ease;
-    }
-
-    /* Gallery */
-    .gallery-section {
-      margin-bottom: 4rem;
-    }
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-      gap: 1rem;
-    }
-    .gallery-item {
-      aspect-ratio: 1;
-      background: var(--bg-elevated);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-sm);
-      overflow: hidden;
-      transition: all 0.3s ease;
-      cursor: pointer;
-    }
-    .gallery-item:hover {
-      border-color: var(--accent);
-      transform: scale(1.05);
-    }
-    .gallery-item img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      image-rendering: pixelated;
-    }
-    .gallery-note {
-      text-align: center;
-      color: var(--text-subtle);
-      font-size: 0.85rem;
-      margin-top: 1rem;
-      font-style: italic;
     }
 
     /* Two Column Layout */
@@ -915,13 +1009,13 @@
   <header>
     <nav>
       <a href="#" class="logo">
-        <span class="logo-icon">🛠️</span>
+        <span class="logo-icon">◈</span>
         ctavolazzi
       </a>
       <div class="nav-links">
+        <a href="#about">About</a>
         <a href="#projects">Projects</a>
         <a href="#skills">Skills</a>
-        <a href="#gallery">Gallery</a>
         <a href="#playground">Playground</a>
         <a href="https://github.com/ctavolazzi" target="_blank" rel="noreferrer">GitHub</a>
       </div>
@@ -930,14 +1024,20 @@
 
   <main>
     <section class="hero">
-      <div class="hero-eyebrow">
-        <span>👋</span> Welcome to my workshop
+      <div class="hero-header">
+        <img src="https://avatars.githubusercontent.com/u/61925030?v=4" alt="Christopher Tavolazzi" class="hero-avatar">
+        <div class="hero-content">
+          <div class="hero-eyebrow">
+            <span>◈</span> Available for consulting
+          </div>
+          <h1><span>Christopher Tavolazzi</span></h1>
+          <p class="hero-role">Analyst · Researcher · Facilitator</p>
+          <p class="hero-subtitle">I've worn a lot of hats—journalist, real estate agent, web developer, AI builder. That unusual mix means I can usually find an angle others miss. I like digging into hard problems with good people.</p>
+        </div>
       </div>
-      <h1>I'm <span>Christopher Tavolazzi</span></h1>
-      <p class="hero-subtitle">Builder, creator, maker. I explore the intersection of craft, technology, and storytelling—turning ideas into things you can hold, use, and experience.</p>
       <div class="hero-links">
-        <a href="#projects" class="btn btn-primary">
-          Explore Projects
+        <a href="#about" class="btn btn-primary">
+          Learn More
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M5 12h14M13 5l7 7-7 7"/>
           </svg>
@@ -952,19 +1052,74 @@
 
       <div class="highlights">
         <div class="highlight reveal">
-          <div class="highlight-icon">⚡</div>
-          <h3>Fast to Ship</h3>
-          <p>From concept to reality without the endless meetings. I build quickly and polish until it feels right.</p>
+          <div class="highlight-icon">◇</div>
+          <h3>Multidisciplinary Background</h3>
+          <p>Journalism taught me to ask the right questions. Real estate taught me negotiation. Tech taught me systems. I bring all of it.</p>
         </div>
         <div class="highlight reveal">
-          <div class="highlight-icon">🎯</div>
-          <h3>Intentional Design</h3>
-          <p>Every pixel, every word serves a purpose. No filler, no fluff—just thoughtful work that resonates.</p>
+          <div class="highlight-icon">◈</div>
+          <h3>Deep & Wide</h3>
+          <p>460+ GitHub repos. Years of writing. I go deep on topics but also connect dots across domains that don't usually talk to each other.</p>
         </div>
         <div class="highlight reveal">
-          <div class="highlight-icon">🔧</div>
-          <h3>Full Stack Maker</h3>
-          <p>Code meets craft. I'm as comfortable with woodworking as I am with web development.</p>
+          <div class="highlight-icon">◆</div>
+          <h3>Practical, Not Theoretical</h3>
+          <p>I've actually done the things—sold houses, built software, shipped projects. I know what it's like when things don't go to plan.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="about-section reveal">
+      <div class="section-header">
+        <h2>About</h2>
+        <span class="section-badge">The Story</span>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-main">
+          <h3>The Short Version</h3>
+          <p>Most people specialize. I've taken a weirder path—journalism, then real estate, then web development, now deep into AI and systems thinking. It wasn't planned, but it turns out that combination is surprisingly useful. I can talk to developers and executives in the same meeting. I notice patterns that specialists sometimes miss.</p>
+
+          <p>I studied journalism at CSU Chico (class of 2013), which gave me the fundamentals: ask good questions, write clearly, verify before you publish. Eagle Scout background, so I default to being straightforward. Lived in Spain for a bit. Now I'm based in Redding, CA.</p>
+
+          <p>These days I'm building AI tools like <a href="https://github.com/ctavolazzi/NovaSystem" target="_blank" rel="noreferrer" style="color: var(--link);">NovaSystem</a>, writing about technology on <a href="https://medium.com/@thecoffeejesus" target="_blank" rel="noreferrer" style="color: var(--link);">Medium</a>, and helping people figure out how to actually use these new tools productively. I've got 460+ public repos on GitHub—I learn by building and I share what I figure out.</p>
+
+          <div class="about-quote">
+            <p>"I'm probably an overthinker. But sometimes that's exactly what a problem needs."</p>
+          </div>
+
+          <p>I'm at my best with hard problems and good people. If you've got something thorny you're working through, I'd be happy to take a look.</p>
+        </div>
+
+        <div class="about-sidebar">
+          <div class="about-card">
+            <h4>Background</h4>
+            <ul>
+              <li><strong>Education:</strong> B.A. Journalism, CSU Chico (2013)</li>
+              <li><strong>Languages:</strong> English, Spanish (studied in Spain)</li>
+              <li><strong>Location:</strong> Redding, CA (Northern California)</li>
+              <li><strong>Values:</strong> Eagle Scout ethics—transparency, reliability, civic duty</li>
+            </ul>
+          </div>
+
+          <div class="about-card">
+            <h4>How I Can Help</h4>
+            <ul>
+              <li>Figure out why something isn't working</li>
+              <li>Explain new tech in plain English</li>
+              <li>Help you get started with AI tools</li>
+              <li>Research and summarize complex topics</li>
+              <li>Just think through a problem with you</li>
+            </ul>
+          </div>
+
+          <div class="about-card">
+            <h4>Find Me</h4>
+            <ul>
+              <li><a href="https://github.com/ctavolazzi" target="_blank" rel="noreferrer" style="color: var(--link);">GitHub</a> — 460+ repos</li>
+              <li><a href="https://medium.com/@thecoffeejesus" target="_blank" rel="noreferrer" style="color: var(--link);">Medium</a> — Writing & essays</li>
+            </ul>
+          </div>
         </div>
       </div>
     </section>
@@ -972,76 +1127,47 @@
     <section id="projects" class="reveal">
       <div class="section-header">
         <h2>Projects</h2>
-        <span class="section-badge">Building things</span>
+        <span class="section-badge">Systems & Research</span>
       </div>
 
       <div class="projects-grid">
         <div class="project-card" onclick="toggleCard(this)">
-          <span class="project-tag">Porchroot</span>
-          <h3>Woodworking & Craft</h3>
-          <p>Custom knives, hand-carved spoons, and tactile creations. Where digital meets analog and code meets wood grain.</p>
+          <span class="project-tag">Main Project</span>
+          <h3>NovaSystem</h3>
+          <p>An open-source tool I built to make AI assistants more useful. It helps structure conversations so you get better, more reliable answers.</p>
           <div class="project-chips">
-            <span class="chip">Handmade</span>
-            <span class="chip">Tactile</span>
-            <span class="chip">Craft</span>
+            <span class="chip">Python</span>
+            <span class="chip">AI Tools</span>
+            <span class="chip">Open Source</span>
           </div>
           <span class="project-expand-hint">Click to explore →</span>
           <div class="project-expanded">
             <div class="project-stats">
               <div class="stat">
-                <div class="stat-value">50+</div>
-                <div class="stat-label">Pieces Made</div>
+                <div class="stat-value">460+</div>
+                <div class="stat-label">Repos</div>
               </div>
               <div class="stat">
-                <div class="stat-value">3</div>
-                <div class="stat-label">Years Active</div>
+                <div class="stat-value">71+</div>
+                <div class="stat-label">Stars</div>
               </div>
               <div class="stat">
-                <div class="stat-value">∞</div>
-                <div class="stat-label">Satisfaction</div>
+                <div class="stat-value">Active</div>
+                <div class="stat-label">Status</div>
               </div>
             </div>
-            <p style="color: var(--text-muted); margin: 0;">Every piece is built to last—raw material transformed through patience, skill, and respect for the medium.</p>
+            <p style="color: var(--text-muted); margin: 0;">It basically creates a structured way to break down problems and catch mistakes before they snowball. Still a work in progress, but it's been useful. <a href="https://github.com/ctavolazzi/NovaSystem" target="_blank" rel="noreferrer" style="color: var(--link);">Check it out on GitHub →</a></p>
           </div>
         </div>
 
         <div class="project-card" onclick="toggleCard(this)">
-          <span class="project-tag">Dino Details</span>
-          <h3>Headlight Restoration</h3>
-          <p>Precision auto detailing and headlight restoration. Taking what's faded and making it shine again.</p>
+          <span class="project-tag">Creative</span>
+          <h3>Teleport Massive</h3>
+          <p>A sci-fi narrative universe exploring AI, consciousness, and the future of humanity. Leveraging generative AI for world-building.</p>
           <div class="project-chips">
-            <span class="chip">Precision</span>
-            <span class="chip">Restoration</span>
-            <span class="chip">Detail</span>
-          </div>
-          <span class="project-expand-hint">Click to explore →</span>
-          <div class="project-expanded">
-            <div class="project-stats">
-              <div class="stat">
-                <div class="stat-value">200+</div>
-                <div class="stat-label">Cars Detailed</div>
-              </div>
-              <div class="stat">
-                <div class="stat-value">98%</div>
-                <div class="stat-label">Clarity</div>
-              </div>
-              <div class="stat">
-                <div class="stat-value">5★</div>
-                <div class="stat-label">Rating</div>
-              </div>
-            </div>
-            <p style="color: var(--text-muted); margin: 0;">The satisfaction of bringing something back to life, of seeing the before and after transformation.</p>
-          </div>
-        </div>
-
-        <div class="project-card" onclick="toggleCard(this)">
-          <span class="project-tag">Teleport Massive</span>
-          <h3>Sci-Fi Series & AI Video</h3>
-          <p>Building a sci-fi narrative universe powered by AI video generation. Creating worlds and stories that push boundaries.</p>
-          <div class="project-chips">
-            <span class="chip">AI</span>
+            <span class="chip">AI Video</span>
             <span class="chip">Storytelling</span>
-            <span class="chip">Video</span>
+            <span class="chip">Worldbuilding</span>
           </div>
           <span class="project-expand-hint">Click to explore →</span>
           <div class="project-expanded">
@@ -1059,18 +1185,18 @@
                 <div class="stat-label">Launch</div>
               </div>
             </div>
-            <p style="color: var(--text-muted); margin: 0;">Where storytelling meets cutting-edge tech—creating something that's never been done before.</p>
+            <p style="color: var(--text-muted); margin: 0;">Where systems thinking meets narrative design—exploring what it means to be human in an age of artificial minds.</p>
           </div>
         </div>
 
         <div class="project-card" onclick="toggleCard(this)">
-          <span class="project-tag">Substack</span>
-          <h3>Amateur Hermit Philosophy</h3>
-          <p>Writing about nostalgia for practical skills, DIY culture, and living intentionally in a world that wants you to consume.</p>
+          <span class="project-tag">Writing</span>
+          <h3>Medium & Essays</h3>
+          <p>Long-form writing on AI, technology, philosophy, and the millennial experience. "Learning in public" as methodology.</p>
           <div class="project-chips">
-            <span class="chip">Writing</span>
+            <span class="chip">Essays</span>
             <span class="chip">Philosophy</span>
-            <span class="chip">Culture</span>
+            <span class="chip">Tech</span>
           </div>
           <span class="project-expand-hint">Click to explore →</span>
           <div class="project-expanded">
@@ -1084,51 +1210,22 @@
                 <div class="stat-label">Readers</div>
               </div>
               <div class="stat">
-                <div class="stat-value">Weekly</div>
-                <div class="stat-label">Posts</div>
-              </div>
-            </div>
-            <p style="color: var(--text-muted); margin: 0;">Thinking out loud about craft, philosophy, and the things that actually matter.</p>
-          </div>
-        </div>
-
-        <div class="project-card" onclick="toggleCard(this)">
-          <span class="project-tag">Tech & AI</span>
-          <h3>NovaSystem & Experiments</h3>
-          <p>AI experiments, system prototypes, and rapid iteration on ideas that might change how we think about work.</p>
-          <div class="project-chips">
-            <span class="chip">AI</span>
-            <span class="chip">Systems</span>
-            <span class="chip">Open Source</span>
-          </div>
-          <span class="project-expand-hint">Click to explore →</span>
-          <div class="project-expanded">
-            <div class="project-stats">
-              <div class="stat">
-                <div class="stat-value">15+</div>
-                <div class="stat-label">Prototypes</div>
-              </div>
-              <div class="stat">
                 <div class="stat-value">Active</div>
                 <div class="stat-label">Status</div>
               </div>
-              <div class="stat">
-                <div class="stat-value">OSS</div>
-                <div class="stat-label">License</div>
-              </div>
             </div>
-            <p style="color: var(--text-muted); margin: 0;">The lab where ideas go to be tested—breaking things, building things, figuring out what's next.</p>
+            <p style="color: var(--text-muted); margin: 0;">From data science tutorials to existential poetry. Vulnerability as a teaching tool. <a href="https://medium.com/@thecoffeejesus" target="_blank" rel="noreferrer" style="color: var(--link);">Read on Medium →</a></p>
           </div>
         </div>
 
         <div class="project-card" onclick="toggleCard(this)">
-          <span class="project-tag">Chico FabLab</span>
-          <h3>Component Library</h3>
-          <p>A focused wiki to codify components, patterns, and team rituals. Documentation people actually use.</p>
+          <span class="project-tag">Systems</span>
+          <h3>Documentation & Wikis</h3>
+          <p>Building knowledge systems that people actually use. Codifying patterns, processes, and institutional memory.</p>
           <div class="project-chips">
-            <span class="chip">Design Systems</span>
+            <span class="chip">Knowledge Mgmt</span>
             <span class="chip">Documentation</span>
-            <span class="chip">Teams</span>
+            <span class="chip">Systems</span>
           </div>
           <span class="project-expand-hint">Click to explore →</span>
           <div class="project-expanded">
@@ -1146,7 +1243,36 @@
                 <div class="stat-label">Status</div>
               </div>
             </div>
-            <p style="color: var(--text-muted); margin: 0;">Systems thinking in action. <a href="https://ctavolazzi.github.io/chicofablab.github.io/" target="_blank" rel="noreferrer" style="color: var(--link);">View the Wiki →</a></p>
+            <p style="color: var(--text-muted); margin: 0;">Systems thinking in action—making the implicit explicit. <a href="https://ctavolazzi.github.io/chicofablab.github.io/" target="_blank" rel="noreferrer" style="color: var(--link);">View Example →</a></p>
+          </div>
+        </div>
+
+        <div class="project-card" onclick="toggleCard(this)">
+          <span class="project-tag">Craft</span>
+          <h3>Physical Making</h3>
+          <p>Woodworking, knife-making, and tactile creation. Where the digital mind reconnects with material reality.</p>
+          <div class="project-chips">
+            <span class="chip">Woodworking</span>
+            <span class="chip">Knives</span>
+            <span class="chip">Handcraft</span>
+          </div>
+          <span class="project-expand-hint">Click to explore →</span>
+          <div class="project-expanded">
+            <div class="project-stats">
+              <div class="stat">
+                <div class="stat-value">50+</div>
+                <div class="stat-label">Pieces</div>
+              </div>
+              <div class="stat">
+                <div class="stat-value">3+</div>
+                <div class="stat-label">Years</div>
+              </div>
+              <div class="stat">
+                <div class="stat-value">∞</div>
+                <div class="stat-label">Patience</div>
+              </div>
+            </div>
+            <p style="color: var(--text-muted); margin: 0;">Raw material transformed through patience and respect for the medium. The antidote to pure abstraction.</p>
           </div>
         </div>
       </div>
@@ -1155,13 +1281,13 @@
     <section id="skills" class="skills-section reveal">
       <div class="section-header">
         <h2>Skills</h2>
-        <span class="section-badge">What I do</span>
+        <span class="section-badge">Capabilities</span>
       </div>
 
       <div class="skills-grid">
         <div class="skill-item">
           <div class="skill-header">
-            <span class="skill-name">Product Design & UX</span>
+            <span class="skill-name">Systems Analysis</span>
             <span class="skill-level">95%</span>
           </div>
           <div class="skill-bar">
@@ -1170,7 +1296,7 @@
         </div>
         <div class="skill-item">
           <div class="skill-header">
-            <span class="skill-name">Frontend Development</span>
+            <span class="skill-name">AI/LLM Architecture</span>
             <span class="skill-level">90%</span>
           </div>
           <div class="skill-bar">
@@ -1179,16 +1305,7 @@
         </div>
         <div class="skill-item">
           <div class="skill-header">
-            <span class="skill-name">AI & Automation</span>
-            <span class="skill-level">85%</span>
-          </div>
-          <div class="skill-bar">
-            <div class="skill-fill" data-width="85%"></div>
-          </div>
-        </div>
-        <div class="skill-item">
-          <div class="skill-header">
-            <span class="skill-name">Content & Writing</span>
+            <span class="skill-name">Research & Synthesis</span>
             <span class="skill-level">92%</span>
           </div>
           <div class="skill-bar">
@@ -1197,77 +1314,57 @@
         </div>
         <div class="skill-item">
           <div class="skill-header">
-            <span class="skill-name">Physical Craft</span>
-            <span class="skill-level">88%</span>
-          </div>
-          <div class="skill-bar">
-            <div class="skill-fill" data-width="88%"></div>
-          </div>
-        </div>
-        <div class="skill-item">
-          <div class="skill-header">
-            <span class="skill-name">Systems Thinking</span>
+            <span class="skill-name">Technical Writing</span>
             <span class="skill-level">90%</span>
           </div>
           <div class="skill-bar">
             <div class="skill-fill" data-width="90%"></div>
           </div>
         </div>
-      </div>
-    </section>
-
-    <section id="gallery" class="gallery-section reveal">
-      <div class="section-header">
-        <h2>Pixel Lab</h2>
-        <span class="section-badge" style="background: rgba(163, 113, 247, 0.15); color: var(--purple);">Side quest</span>
-      </div>
-
-      <div class="gallery-grid">
-        <div class="gallery-item">
-          <img src="assets/gallery/images/wizard_128x128.png" alt="Wizard" onerror="this.parentElement.style.display='none';">
+        <div class="skill-item">
+          <div class="skill-header">
+            <span class="skill-name">Python Development</span>
+            <span class="skill-level">85%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-fill" data-width="85%"></div>
+          </div>
         </div>
-        <div class="gallery-item">
-          <img src="assets/gallery/images/knight_128x128.png" alt="Knight" onerror="this.parentElement.style.display='none';">
-        </div>
-        <div class="gallery-item">
-          <img src="assets/gallery/images/dragon_128x128.png" alt="Dragon" onerror="this.parentElement.style.display='none';">
-        </div>
-        <div class="gallery-item">
-          <img src="assets/gallery/images/spaceship_128x128.png" alt="Spaceship" onerror="this.parentElement.style.display='none';">
-        </div>
-        <div class="gallery-item">
-          <img src="assets/gallery/images/robot_128x128.png" alt="Robot" onerror="this.parentElement.style.display='none';">
-        </div>
-        <div class="gallery-item">
-          <img src="assets/gallery/images/treasure_128x128.png" alt="Treasure" onerror="this.parentElement.style.display='none';">
+        <div class="skill-item">
+          <div class="skill-header">
+            <span class="skill-name">Facilitation & Education</span>
+            <span class="skill-level">88%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-fill" data-width="88%"></div>
+          </div>
         </div>
       </div>
-      <p class="gallery-note">Sometimes I make little pictures for no reason. These are some of them.</p>
     </section>
 
     <section id="approach" class="reveal">
       <div class="section-header">
         <h2>How I Work</h2>
-        <span class="section-badge">Philosophy</span>
+        <span class="section-badge">The basics</span>
       </div>
 
       <div class="two-col">
         <div class="panel">
           <h3>My Approach</h3>
           <ul>
-            <li><strong>Design to Deploy</strong> — I own the story, visuals, and code. Less ceremony, more shipping.</li>
-            <li><strong>Systems, Not Scraps</strong> — Building repeatable patterns that scale without dead weight.</li>
-            <li><strong>Visible Momentum</strong> — Tight demos, quick clips, written context. Collaborators always know where we are.</li>
-            <li><strong>Bias for Clarity</strong> — Cut features that don't sing. The narrative stays sharp.</li>
+            <li><strong>I ask a lot of questions first</strong> — Usually the real problem isn't what it looks like at first glance.</li>
+            <li><strong>I look for the simple fix</strong> — Sometimes there's an easy win hiding in plain sight. I try to find those first.</li>
+            <li><strong>I'll tell you what I don't know</strong> — I'd rather say "I'm not sure, let me look into it" than pretend.</li>
+            <li><strong>I try to explain as I go</strong> — So you understand what we're doing and why, not just the end result.</li>
           </ul>
         </div>
         <div class="panel">
-          <h3>What You Get</h3>
+          <h3>Things I Can Help With</h3>
           <ul>
-            <li><strong>Product Design</strong> — UX flows, visual systems, interaction patterns, launch visuals.</li>
-            <li><strong>Frontend Craft</strong> — HTML/CSS/JS with focus on performance and polish.</li>
-            <li><strong>Documentation</strong> — Playbooks and guidelines people actually read.</li>
-            <li><strong>Workshop Energy</strong> — Facilitation, critiques, and live-build sessions.</li>
+            <li><strong>AI tools</strong> — Getting set up, figuring out what's useful, avoiding the hype.</li>
+            <li><strong>Stuck projects</strong> — Fresh eyes on something that's not working.</li>
+            <li><strong>Research</strong> — Digging into a topic and summarizing what matters.</li>
+            <li><strong>Just talking it through</strong> — Sometimes you just need someone to think with.</li>
           </ul>
         </div>
       </div>
@@ -1304,8 +1401,8 @@
     </section>
 
     <section class="contact reveal">
-      <h2>Let's Build Something</h2>
-      <p>I ship fast, document as I go, and make sure the work feels like it belongs. Want to collaborate?</p>
+      <h2>Need a Hand?</h2>
+      <p>If you've got something you're working on and think I might be able to help, reach out. No pressure, happy to just chat about it first.</p>
       <div class="contact-links">
         <a href="https://github.com/ctavolazzi" class="btn btn-primary" target="_blank" rel="noreferrer">
           Get in Touch
@@ -1313,8 +1410,8 @@
             <path d="M5 12h14M13 5l7 7-7 7"/>
           </svg>
         </a>
-        <a href="#projects" class="btn btn-secondary">
-          View Projects
+        <a href="https://medium.com/@thecoffeejesus" class="btn btn-secondary" target="_blank" rel="noreferrer">
+          Read My Writing
         </a>
       </div>
     </section>
@@ -1427,12 +1524,13 @@
     const terminalBody = document.getElementById('terminalBody');
 
     const commands = {
-      help: 'Available commands: help, about, skills, projects, hi, clear, date, secret',
-      about: 'Christopher Tavolazzi — Builder, creator, maker. I turn ideas into things.',
-      skills: 'Design · Development · AI · Craft · Writing · Systems',
-      projects: 'Porchroot · Dino Details · Teleport Massive · NovaSystem · CFL Wiki',
-      hi: 'Hey there! Thanks for exploring. 👋',
-      hello: 'Hello! Nice to meet you. Try "help" to see more commands.',
+      help: 'Commands: help, about, skills, projects, nova, hi, clear, date, secret',
+      about: 'Hey! I\'m Chris. I like figuring things out and helping people with AI stuff, stuck projects, and general problem-solving.',
+      skills: 'Research · Writing · Python · AI tools · Explaining things · Asking good questions',
+      projects: 'NovaSystem · Teleport Massive · Medium writing · Various experiments',
+      nova: 'NovaSystem is a tool I built to get better answers out of AI assistants. Still working on it. Check GitHub if curious.',
+      hi: 'Hey! Thanks for poking around.',
+      hello: 'Hi there! Try "about" or "projects" to learn more.',
       date: new Date().toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }),
       clear: 'CLEAR',
       secret: 'Hint: ↑↑↓↓←→←→BA'
