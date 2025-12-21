@@ -430,6 +430,295 @@
     .delay-4 { animation-delay: 0.4s; }
     .delay-5 { animation-delay: 0.5s; }
     .delay-6 { animation-delay: 0.6s; }
+    .delay-7 { animation-delay: 0.7s; }
+    .delay-8 { animation-delay: 0.8s; }
+
+    /* Focus Areas / What I Build */
+    .focus-areas {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-bottom: 4rem;
+    }
+    .focus-card {
+      background: var(--bg-elevated);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.25rem;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+    .focus-card:hover {
+      border-color: var(--border-hover);
+      transform: translateY(-2px);
+    }
+    .focus-icon {
+      font-size: 1.5rem;
+      margin-bottom: 0.75rem;
+      display: block;
+    }
+    .focus-card h3 {
+      font-size: 0.95rem;
+      font-weight: 600;
+      margin: 0 0 0.5rem;
+      color: var(--text);
+    }
+    .focus-card p {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin: 0;
+      line-height: 1.5;
+    }
+
+    /* Stats Row */
+    .stats-row {
+      display: flex;
+      justify-content: center;
+      gap: 3rem;
+      padding: 2rem 0;
+      margin-bottom: 3rem;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      flex-wrap: wrap;
+    }
+    .stat-item {
+      text-align: center;
+    }
+    .stat-number {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 1.75rem;
+      font-weight: 600;
+      color: var(--text);
+      display: block;
+      line-height: 1.2;
+    }
+    .stat-label {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* Tech Tags */
+    .tech-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-bottom: 1rem;
+    }
+    .tech-tag {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.7rem;
+      padding: 0.2rem 0.5rem;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      color: var(--text-muted);
+    }
+
+    /* GitHub Section */
+    .github-section {
+      margin-bottom: 4rem;
+    }
+    .github-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1rem;
+    }
+    .github-card {
+      background: var(--bg-elevated);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.25rem;
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+      transition: all 0.3s ease;
+    }
+    .github-card:hover {
+      border-color: var(--accent);
+      transform: translateY(-2px);
+    }
+    .github-card-header {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 0.75rem;
+    }
+    .github-card-header svg {
+      width: 16px;
+      height: 16px;
+      color: var(--text-muted);
+      flex-shrink: 0;
+    }
+    .github-card h3 {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.9rem;
+      font-weight: 500;
+      margin: 0;
+      color: var(--link);
+    }
+    .github-card p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin: 0;
+      line-height: 1.5;
+      flex: 1;
+    }
+    .github-stats {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1rem;
+      font-size: 0.75rem;
+      color: var(--text-subtle);
+    }
+    .github-stats span {
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+    .github-stats .lang-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+    }
+    .lang-python { background: #3572A5; }
+    .lang-javascript { background: #f1e05a; }
+    .lang-typescript { background: #3178c6; }
+
+    /* Skills Grid in About */
+    .skills-section {
+      margin-top: 1.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+    }
+    .skills-section h3 {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin: 0 0 1rem;
+    }
+    .skills-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .skill-tag {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      padding: 0.35rem 0.65rem;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      color: var(--text-muted);
+      transition: all 0.2s;
+    }
+    .skill-tag:hover {
+      border-color: var(--accent);
+      color: var(--text);
+    }
+    .skill-tag.primary {
+      border-color: var(--accent);
+      color: var(--accent);
+      background: var(--accent-soft);
+    }
+
+    /* Currently Section */
+    .currently-section {
+      background: var(--bg-elevated);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      margin-bottom: 4rem;
+    }
+    .currently-header {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+    }
+    .currently-header h2 {
+      font-size: 1rem;
+      font-weight: 600;
+      margin: 0;
+      color: var(--text);
+    }
+    .pulse-dot {
+      width: 8px;
+      height: 8px;
+      background: var(--green);
+      border-radius: 50%;
+      animation: pulse 2s infinite;
+    }
+    .currently-items {
+      display: grid;
+      gap: 0.75rem;
+    }
+    .currently-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+    .currently-item .icon {
+      flex-shrink: 0;
+      width: 20px;
+      text-align: center;
+    }
+
+    /* Writing Section */
+    .writing-section {
+      margin-bottom: 4rem;
+    }
+    .writing-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+    .writing-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1rem 1.25rem;
+      background: var(--bg-elevated);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    .writing-item:hover {
+      border-color: var(--border-hover);
+      transform: translateX(4px);
+    }
+    .writing-icon {
+      font-size: 1.25rem;
+      flex-shrink: 0;
+    }
+    .writing-content {
+      flex: 1;
+      min-width: 0;
+    }
+    .writing-title {
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--text);
+      margin: 0 0 0.25rem;
+    }
+    .writing-meta {
+      font-size: 0.8rem;
+      color: var(--text-subtle);
+    }
+    .writing-arrow {
+      color: var(--text-subtle);
+      transition: transform 0.2s;
+    }
+    .writing-item:hover .writing-arrow {
+      transform: translateX(4px);
+      color: var(--accent);
+    }
   </style>
 </head>
 <body>
@@ -478,6 +767,52 @@
       </div>
     </section>
 
+    <!-- Focus Areas -->
+    <section class="fade-in delay-1">
+      <div class="focus-areas">
+        <div class="focus-card">
+          <span class="focus-icon">⚡</span>
+          <h3>AI Agents</h3>
+          <p>Multi-agent systems and LLM orchestration frameworks</p>
+        </div>
+        <div class="focus-card">
+          <span class="focus-icon">🔧</span>
+          <h3>Automation</h3>
+          <p>Workflow pipelines, scheduled tasks, and CI/CD</p>
+        </div>
+        <div class="focus-card">
+          <span class="focus-icon">🌐</span>
+          <h3>Web Projects</h3>
+          <p>Full-stack sites from concept to production</p>
+        </div>
+        <div class="focus-card">
+          <span class="focus-icon">✍️</span>
+          <h3>Technical Writing</h3>
+          <p>Documentation, tutorials, and dev blogs</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats -->
+    <div class="stats-row fade-in delay-2">
+      <div class="stat-item">
+        <span class="stat-number">4+</span>
+        <span class="stat-label">Live Sites</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">50+</span>
+        <span class="stat-label">Repositories</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">Python</span>
+        <span class="stat-label">Primary Stack</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">Open</span>
+        <span class="stat-label">Source First</span>
+      </div>
+    </div>
+
     <section id="projects">
       <div class="section-header fade-in delay-1">
         <h2>Active Projects</h2>
@@ -491,6 +826,12 @@
             <span class="status status-active"><span class="status-dot"></span> Active</span>
           </h3>
           <p>AI agent frameworks and local LLM tooling. Home of NovaSystem, a multi-agent orchestration library in Python.</p>
+          <div class="tech-tags">
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">LangChain</span>
+            <span class="tech-tag">Ollama</span>
+            <span class="tech-tag">FastAPI</span>
+          </div>
           <span class="project-url">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
@@ -507,6 +848,11 @@
             <span class="status status-active"><span class="status-dot"></span> Active</span>
           </h3>
           <p>Local resource site for Chico, Florida. Business directory, event calendar, and community news for a small town.</p>
+          <div class="tech-tags">
+            <span class="tech-tag">Next.js</span>
+            <span class="tech-tag">React</span>
+            <span class="tech-tag">Vercel</span>
+          </div>
           <span class="project-url">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
@@ -523,6 +869,11 @@
             <span class="status status-building"><span class="status-dot"></span> Building</span>
           </h3>
           <p>Hosted automation services. Setting up pipelines for content publishing, data collection, and scheduled tasks.</p>
+          <div class="tech-tags">
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">Docker</span>
+            <span class="tech-tag">GitHub Actions</span>
+          </div>
           <span class="project-url">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
@@ -539,6 +890,11 @@
             <span class="status status-active"><span class="status-dot"></span> Active</span>
           </h3>
           <p>Container gardening guides and grow logs. Documenting what works (and what doesn't) in Florida zone 9b.</p>
+          <div class="tech-tags">
+            <span class="tech-tag">Hugo</span>
+            <span class="tech-tag">Markdown</span>
+            <span class="tech-tag">Netlify</span>
+          </div>
           <span class="project-url">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
@@ -551,11 +907,102 @@
       </div>
     </section>
 
-    <section id="about" class="about-section fade-in delay-6">
+    <!-- Open Source -->
+    <section class="github-section fade-in delay-6">
+      <div class="section-header">
+        <h2>Open Source</h2>
+        <p>Selected repositories from GitHub</p>
+      </div>
+      <div class="github-grid">
+        <a href="https://github.com/ctavolazzi/NovaSystem" target="_blank" rel="noreferrer" class="github-card">
+          <div class="github-card-header">
+            <svg viewBox="0 0 16 16" fill="currentColor">
+              <path d="M2 2.5A2.5 2.5 0 0 1 4.5 0h8.75a.75.75 0 0 1 .75.75v12.5a.75.75 0 0 1-.75.75h-2.5a.75.75 0 0 1 0-1.5h1.75v-2h-8a1 1 0 0 0-.714 1.7.75.75 0 1 1-1.072 1.05A2.495 2.495 0 0 1 2 11.5Zm10.5-1h-8a1 1 0 0 0-1 1v6.708A2.486 2.486 0 0 1 4.5 9h8ZM5 12.25a.25.25 0 0 1 .25-.25h3.5a.25.25 0 0 1 .25.25v3.25a.25.25 0 0 1-.4.2l-1.45-1.087a.249.249 0 0 0-.3 0L5.4 15.7a.25.25 0 0 1-.4-.2Z"/>
+            </svg>
+            <h3>NovaSystem</h3>
+          </div>
+          <p>Multi-agent orchestration framework for building AI systems with local LLMs</p>
+          <div class="github-stats">
+            <span><span class="lang-dot lang-python"></span> Python</span>
+          </div>
+        </a>
+
+        <a href="https://github.com/ctavolazzi/teleportmassive" target="_blank" rel="noreferrer" class="github-card">
+          <div class="github-card-header">
+            <svg viewBox="0 0 16 16" fill="currentColor">
+              <path d="M2 2.5A2.5 2.5 0 0 1 4.5 0h8.75a.75.75 0 0 1 .75.75v12.5a.75.75 0 0 1-.75.75h-2.5a.75.75 0 0 1 0-1.5h1.75v-2h-8a1 1 0 0 0-.714 1.7.75.75 0 1 1-1.072 1.05A2.495 2.495 0 0 1 2 11.5Zm10.5-1h-8a1 1 0 0 0-1 1v6.708A2.486 2.486 0 0 1 4.5 9h8ZM5 12.25a.25.25 0 0 1 .25-.25h3.5a.25.25 0 0 1 .25.25v3.25a.25.25 0 0 1-.4.2l-1.45-1.087a.249.249 0 0 0-.3 0L5.4 15.7a.25.25 0 0 1-.4-.2Z"/>
+            </svg>
+            <h3>teleportmassive</h3>
+          </div>
+          <p>Automation toolkit for content pipelines and scheduled publishing workflows</p>
+          <div class="github-stats">
+            <span><span class="lang-dot lang-python"></span> Python</span>
+          </div>
+        </a>
+
+        <a href="https://github.com/ctavolazzi/ctavolazzi.github.io" target="_blank" rel="noreferrer" class="github-card">
+          <div class="github-card-header">
+            <svg viewBox="0 0 16 16" fill="currentColor">
+              <path d="M2 2.5A2.5 2.5 0 0 1 4.5 0h8.75a.75.75 0 0 1 .75.75v12.5a.75.75 0 0 1-.75.75h-2.5a.75.75 0 0 1 0-1.5h1.75v-2h-8a1 1 0 0 0-.714 1.7.75.75 0 1 1-1.072 1.05A2.495 2.495 0 0 1 2 11.5Zm10.5-1h-8a1 1 0 0 0-1 1v6.708A2.486 2.486 0 0 1 4.5 9h8ZM5 12.25a.25.25 0 0 1 .25-.25h3.5a.25.25 0 0 1 .25.25v3.25a.25.25 0 0 1-.4.2l-1.45-1.087a.249.249 0 0 0-.3 0L5.4 15.7a.25.25 0 0 1-.4-.2Z"/>
+            </svg>
+            <h3>ctavolazzi.github.io</h3>
+          </div>
+          <p>This portfolio site—clean HTML, no frameworks, just vibes</p>
+          <div class="github-stats">
+            <span><span class="lang-dot lang-javascript"></span> HTML/CSS</span>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- Currently -->
+    <section class="currently-section fade-in delay-7">
+      <div class="currently-header">
+        <span class="pulse-dot"></span>
+        <h2>Currently</h2>
+      </div>
+      <div class="currently-items">
+        <div class="currently-item">
+          <span class="icon">🔨</span>
+          <span>Building multi-agent systems with local LLMs and LangChain</span>
+        </div>
+        <div class="currently-item">
+          <span class="icon">📝</span>
+          <span>Writing about AI development on Medium</span>
+        </div>
+        <div class="currently-item">
+          <span class="icon">🌱</span>
+          <span>Shipping side projects and maintaining live sites</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="about-section fade-in delay-8">
       <h2>About Me</h2>
       <p>I'm a software developer focused on AI tooling and automation. Most of my work is in Python—building agent frameworks, local LLM integrations, and workflow automation.</p>
       <p>Before tech, I worked as a journalist, which is where I learned to write clearly and ask good questions. I still write regularly on Medium about AI development and the tools I'm building.</p>
       <p>I run multiple sites because I like to ship things. The projects above are all live and running.</p>
+
+      <div class="skills-section">
+        <h3>Tech Stack</h3>
+        <div class="skills-grid">
+          <span class="skill-tag primary">Python</span>
+          <span class="skill-tag primary">LangChain</span>
+          <span class="skill-tag primary">FastAPI</span>
+          <span class="skill-tag">JavaScript</span>
+          <span class="skill-tag">React</span>
+          <span class="skill-tag">Next.js</span>
+          <span class="skill-tag">Node.js</span>
+          <span class="skill-tag">Docker</span>
+          <span class="skill-tag">Git</span>
+          <span class="skill-tag">PostgreSQL</span>
+          <span class="skill-tag">Ollama</span>
+          <span class="skill-tag">OpenAI API</span>
+          <span class="skill-tag">GitHub Actions</span>
+          <span class="skill-tag">Vercel</span>
+          <span class="skill-tag">Linux</span>
+        </div>
+      </div>
     </section>
 
     <section id="contact" class="contact">
