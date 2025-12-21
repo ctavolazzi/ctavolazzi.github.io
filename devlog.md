@@ -1,5 +1,29 @@
 # Development Log
 
+## 2025-12-21
+
+### Portfolio Enhancements - Featured Writing & Services Clarity
+**Work Effort:** 00.06 (via MCP work-efforts tool)
+
+**Objective:** Add high-impact elements that convert visitors to clients
+
+**Changes:**
+1. **Hero Services Line** - Added "I can help with: AI agent development · Workflow automation · Technical writing"
+2. **Featured Writing Section** - New section with Medium article highlights:
+   - "The AI Agents Are Coming: A Practical Guide for the Rest of Us"
+   - "How to Actually Use AI Agents Without Losing Your Mind"
+   - "View All Articles on Medium" CTA
+
+**Rationale:**
+- Journalism background is a differentiator—showcasing writing proves expertise
+- "Available for consulting" was vague—now clarifies specific services
+- Content demonstrates capability better than claims
+- Creates clear path: Read → Trust → Hire
+
+**Status:** ✅ Completed
+
+---
+
 ## 2025-12-20
 
 ### Docs-Maintainer MCP Server
@@ -95,11 +119,20 @@ python3 scripts/serve.py
 ### Tone Down Neon/Orange Colors
 **Work Effort:** [[_work_efforts/00-09_project_management/00_portfolio/00.04_tone_down_neon_orange_colors|00.04]]
 
-**Status:** In Progress
+**Status:** ✅ Completed
 
 **Changes:**
 - Reduced accent color from `#f0883e` (bright neon) to `#d97706` (subdued amber)
 - Updated accent-soft rgba to match new color
 - Adjusted hero gradient end color to `#f59e0b` for consistency
 
-**Result:** More professional appearance while maintaining warmth and visual hierarchy.
+**Visual Testing (2025-12-21):**
+| Section | Assessment |
+|---------|------------|
+| Hero | Name, badge, avatar ring, CTA - professional amber |
+| Projects | Links amber, status badges green - clear hierarchy |
+| About | Primary tech tags highlighted - good visual emphasis |
+| Contact | Email CTA amber, secondary neutral - proper hierarchy |
+| Footer | Muted gray links - clean |
+
+**Result:** More professional appearance while maintaining warmth and visual hierarchy. All sections tested and verified.

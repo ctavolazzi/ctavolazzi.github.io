@@ -185,8 +185,17 @@
       font-size: 1.1rem;
       color: var(--text-muted);
       max-width: 600px;
-      margin: 0 0 1.5rem;
+      margin: 0 0 1rem;
       line-height: 1.7;
+    }
+    .hero-services {
+      font-size: 0.9rem;
+      color: var(--text-subtle);
+      margin: 0 0 1.5rem;
+      font-family: 'JetBrains Mono', monospace;
+    }
+    .hero-services strong {
+      color: var(--text-muted);
     }
     .hero-links {
       display: flex;
@@ -749,6 +758,9 @@
           <h1><span>Christopher Tavolazzi</span></h1>
           <p class="hero-role">Builder · Writer · Creator</p>
           <p class="hero-subtitle">I write Python, build AI-powered tools, and run a handful of websites. This page is the hub.</p>
+          <p class="hero-services">
+            <strong>I can help with:</strong> AI agent development · Workflow automation · Technical writing
+          </p>
         </div>
       </div>
       <div class="hero-links">
@@ -955,8 +967,42 @@
       </div>
     </section>
 
+    <!-- Featured Writing -->
+    <section class="writing-section fade-in delay-7">
+      <div class="section-header">
+        <h2>Featured Writing</h2>
+        <p>Technical articles on Medium</p>
+      </div>
+      <div class="writing-list">
+        <a href="https://medium.com/@christavolazzi/the-ai-agents-are-coming-a-practical-guide-for-the-rest-of-us-e4bbf7599aa6" target="_blank" rel="noreferrer" class="writing-item">
+          <span class="writing-icon">📝</span>
+          <div class="writing-content">
+            <h3 class="writing-title">The AI Agents Are Coming: A Practical Guide for the Rest of Us</h3>
+            <span class="writing-meta">AI Development · Medium</span>
+          </div>
+          <span class="writing-arrow">→</span>
+        </a>
+        <a href="https://medium.com/@christavolazzi/how-to-actually-use-ai-agents-without-losing-your-mind-or-your-job-6d0ae47c2e4b" target="_blank" rel="noreferrer" class="writing-item">
+          <span class="writing-icon">🤖</span>
+          <div class="writing-content">
+            <h3 class="writing-title">How to Actually Use AI Agents Without Losing Your Mind</h3>
+            <span class="writing-meta">Practical AI · Medium</span>
+          </div>
+          <span class="writing-arrow">→</span>
+        </a>
+        <a href="https://medium.com/@christavolazzi" target="_blank" rel="noreferrer" class="writing-item" style="background: var(--accent-soft); border-color: var(--accent);">
+          <span class="writing-icon">✍️</span>
+          <div class="writing-content">
+            <h3 class="writing-title">View All Articles on Medium</h3>
+            <span class="writing-meta">More writing about AI, automation, and building things</span>
+          </div>
+          <span class="writing-arrow">→</span>
+        </a>
+      </div>
+    </section>
+
     <!-- Currently -->
-    <section class="currently-section fade-in delay-7">
+    <section class="currently-section fade-in delay-8">
       <div class="currently-header">
         <span class="pulse-dot"></span>
         <h2>Currently</h2>
