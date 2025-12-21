@@ -91,3 +91,15 @@ python3 scripts/serve.py
 - Port 5555 as requested
 - Static site, no build process needed
 - Server handles directory serving automatically
+
+### Tone Down Neon/Orange Colors
+**Work Effort:** [[_work_efforts/00-09_project_management/00_portfolio/00.04_tone_down_neon_orange_colors|00.04]]
+
+**Status:** In Progress
+
+**Changes:**
+- Reduced accent color from `#f0883e` (bright neon) to `#d97706` (subdued amber)
+- Updated accent-soft rgba to match new color
+- Adjusted hero gradient end color to `#f59e0b` for consistency
+
+**Result:** More professional appearance while maintaining warmth and visual hierarchy.
