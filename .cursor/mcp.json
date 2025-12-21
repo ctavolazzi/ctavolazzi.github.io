@@ -1,0 +1,16 @@
+{
+  "mcpServers": {
+    "docs-maintainer": {
+      "command": "/Users/ctavolazzi/Code/.mcp-servers/docs-maintainer/.venv/bin/python3",
+      "args": ["/Users/ctavolazzi/Code/.mcp-servers/docs-maintainer/server.py"]
+    },
+    "work-efforts": {
+      "command": "node",
+      "args": ["/Users/ctavolazzi/Code/.mcp-servers/work-efforts/server.js"]
+    },
+    "simple-tools": {
+      "command": "node",
+      "args": ["/Users/ctavolazzi/Code/.mcp-servers/simple-tools/server.js"]
+    }
+  }
+}
